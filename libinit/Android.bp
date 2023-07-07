@@ -1,0 +1,13 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_static {
+    name: "init_xiaomi_elish",
+    srcs: ["init_xiaomi_elish.cpp"],
+    whole_static_libs: ["//device/xiaomi/sm8250-common:libinit_xiaomi_kona"],
+    include_dirs: ["system/core/init"],
+    recovery_available: true,
+}

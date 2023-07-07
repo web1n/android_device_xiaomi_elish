@@ -1,0 +1,1450 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Be careful to write the static overlay xml                             -->
+<!-- 1. do not create the new path name here, the new path name should      -->
+<!--    be created in common mixer path xml                                 -->
+<!-- 2. the new path name should not contain the nested path, and should be -->
+<!--    defined follow after default ctrl                                   -->
+<!-- 3. the default ctl here will override that in common mixer path xml    -->
+<!-- 4. the first level path will replace the path in common mixer path xml -->
+<!-- 5. the max nested path can't exceed 10                                 -->
+
+<mixer>
+    <!-- TERT TDM interface -->
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia1" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia4" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia5" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia7" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia8" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia10" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia11" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia12" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia13" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia14" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia15" value="0" />
+    <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia16" value="0" />
+    <ctl name="TERT_TDM_RX_0_Voice Mixer Voip" value="0" />
+    <ctl name="ADC2_MIXER Switch" value="1" />
+    <ctl name="ADC3_MIXER Switch" value="1" />
+    <ctl name="ADC2 MUX" value="INP3" />
+    <ctl name="ADC3 MUX" value="INP4" />
+    <ctl name="ADC1 Volume" value="8" />
+    <ctl name="ADC2 Volume" value="8" />
+    <ctl name="ADC3 Volume" value="8" />
+    <ctl name="ADC4 Volume" value="8" />
+    <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+    <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+    <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+    <ctl name="TERT_TDM_TX_0 Channels" value="Two" />
+    <ctl name="TERT_TDM_TX_0 Format" value="S24_LE" />
+    <ctl name="TERT_TDM_TX_0 SampleRate" value="KHZ_48" />
+    <ctl name="TERT_TDM_RX_1 Channels" value="One" />
+    <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
+    <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />
+    <ctl name="USB_AUDIO_RX Format" value="S24_LE" />
+    <!-- smart PA begin -->
+    <!-- left smart PA
+    <ctl name="DSP1 Firmware" value="Protection" />
+    <ctl name="DSP1 Preload Switch" value="1" />
+    <ctl name="DRE DRE Switch" value="1" />
+    <ctl name="PCM Source" value="None" />
+    <ctl name="PCM Soft Ramp" value="4ms" />
+    <ctl name="AMP PCM Gain" value="18" />
+    <ctl name="DSP Block Bypass" value="Off" />
+    <ctl name="ASP TX1 Source" value="Zero" />
+    <ctl name="ASP TX2 Source" value="Zero" />
+    <ctl name="DSP RX1 Source" value="Zero" />
+    <ctl name="DSP RX2 Source" value="Zero" />
+    <ctl name="ASPTX Ref" value="None" />
+    <ctl name="ASPRX1 Slot Position" value="1" />
+    <ctl name="ASPRX2 Slot Position" value="4" />
+    <ctl name="Fast Use Case Delta File" value="spk1_playback_delta.txt"/>
+    <ctl name="Fast Use Case Switch Enable" value="1"/>
+    <ctl name="Boost Class-H Tracking Enable" value="1" />
+    <ctl name="Boost Target Voltage" value="0" /> -->
+     <!-- right smart PA
+    <ctl name="RCV DSP1 Firmware" value="Protection" />
+    <ctl name="RCV DSP1 Preload Switch" value="1" />
+    <ctl name="RCV DRE DRE Switch" value="1" />
+    <ctl name="RCV PCM Source" value="None" />
+    <ctl name="RCV PCM Soft Ramp" value="4ms" />
+    <ctl name="RCV AMP PCM Gain" value="18" />
+    <ctl name="RCV DSP Block Bypass" value="Off" />
+    <ctl name="RCV ASP TX1 Source" value="Zero" />
+    <ctl name="RCV ASP TX2 Source" value="Zero" />
+    <ctl name="RCV DSP RX1 Source" value="Zero" />
+    <ctl name="RCV DSP RX2 Source" value="Zero" />
+    <ctl name="RCV ASPTX Ref" value="None" />
+    <ctl name="RCV ASPRX1 Slot Position" value="0" />
+    <ctl name="RCV ASPRX2 Slot Position" value="2" />
+    <ctl name="RCV Fast Use Case Delta File" value="spk2_playback_delta.txt"/>
+    <ctl name="RCV Fast Use Case Switch Enable" value="1"/>
+    <ctl name="RCV Boost Class-H Tracking Enable" value="1" />
+    <ctl name="RCV Boost Target Voltage" value="0" /> -->
+    
+    <ctl name="TRH DSP1 Firmware" value="Protection" />
+    <ctl name="TRH DSP1 Preload Switch" value="1" />
+    <ctl name="TRH DRE DRE Switch" value="1" />
+    <ctl name="TRH PCM Source" value="None" />
+    <ctl name="TRH ASPTX Ref" value="None" />
+    <ctl name="TRH PCM Soft Ramp" value="4ms" />
+    <ctl name="TRH AMP PCM Gain" value="18" />
+    <ctl name="TRH ASP TX1 Source" value="DSPTX1" />
+    <ctl name="TRH ASP TX2 Source" value="Zero" />
+    <ctl name="TRH ASP TX3 Source" value="Zero" />
+    <ctl name="TRH ASP TX4 Source" value="Zero" />
+    <ctl name="TRH ASPTX1 Slot Position" value="0" />
+    <ctl name="TRH ASPTX2 Slot Position" value="0" />
+    <ctl name="TRH ASPTX3 Slot Position" value="0" />
+    <ctl name="TRH ASPTX4 Slot Position" value="0" />
+    <ctl name="TRH DSP RX1 Source" value="ASPRX1" />
+    <ctl name="TRH DSP RX2 Source" value="ASPRX2" />
+    <ctl name="TRH ASPRX1 Slot Position" value="0" />
+    <ctl name="TRH ASPRX2 Slot Position" value="1" />
+    <ctl name="TRH Boost Class-H Tracking Enable" value="1" />
+    <ctl name="TRH Boost Target Voltage" value="0" />
+    <ctl name="TRH Fast Use Case Delta File" value="TRH-music.txt"/>
+    <ctl name="TRH Fast Use Case Switch Enable" value="1"/>
+    <ctl name="TRH Channel Swap" value="Off" />
+
+    <ctl name="TLH DSP1 Firmware" value="Protection" />
+    <ctl name="TLH DSP1 Preload Switch" value="1" />
+    <ctl name="TLH DRE DRE Switch" value="1" />
+    <ctl name="TLH PCM Source" value="None" />
+    <ctl name="TLH ASPTX Ref" value="None" />
+    <ctl name="TLH PCM Soft Ramp" value="4ms" />
+    <ctl name="TLH AMP PCM Gain" value="18" />
+    <ctl name="TLH ASP TX1 Source" value="DSPTX1" />
+    <ctl name="TLH ASP TX2 Source" value="Zero" />
+    <ctl name="TLH ASP TX3 Source" value="Zero" />
+    <ctl name="TLH ASP TX4 Source" value="Zero" />
+    <ctl name="TLH ASPTX1 Slot Position" value="1" />
+    <ctl name="TLH ASPTX2 Slot Position" value="1" />
+    <ctl name="TLH ASPTX3 Slot Position" value="1" />
+    <ctl name="TLH ASPTX4 Slot Position" value="1" />
+    <ctl name="TLH DSP RX1 Source" value="ASPRX1" />
+    <ctl name="TLH DSP RX2 Source" value="ASPRX2" />
+    <ctl name="TLH ASPRX1 Slot Position" value="0" />
+    <ctl name="TLH ASPRX2 Slot Position" value="1" />
+    <ctl name="TLH Boost Class-H Tracking Enable" value="1" />
+    <ctl name="TLH Boost Target Voltage" value="0" />
+    <ctl name="TLH Fast Use Case Delta File" value="TLH-music.txt"/>
+    <ctl name="TLH Fast Use Case Switch Enable" value="1"/>
+    <ctl name="TLH Channel Swap" value="Off" />
+
+    <ctl name="TRL DSP1 Firmware" value="Protection" />
+    <ctl name="TRL DSP1 Preload Switch" value="1" />
+    <ctl name="TRL DRE DRE Switch" value="1" />
+    <ctl name="TRL PCM Source" value="None" />
+    <ctl name="TRL ASPTX Ref" value="None" />
+    <ctl name="TRL PCM Soft Ramp" value="4ms" />
+    <ctl name="TRL AMP PCM Gain" value="18" />
+    <ctl name="TRL ASP TX1 Source" value="DSPTX1" />
+    <ctl name="TRL ASP TX2 Source" value="Zero" />
+    <ctl name="TRL ASP TX3 Source" value="Zero" />
+    <ctl name="TRL ASP TX4 Source" value="Zero" />
+    <ctl name="TRL ASPTX1 Slot Position" value="2" />
+    <ctl name="TRL ASPTX2 Slot Position" value="2" />
+    <ctl name="TRL ASPTX3 Slot Position" value="2" />
+    <ctl name="TRL ASPTX4 Slot Position" value="2" />
+    <ctl name="TRL DSP RX1 Source" value="ASPRX1" />
+    <ctl name="TRL DSP RX2 Source" value="ASPRX2" />
+    <ctl name="TRL ASPRX1 Slot Position" value="0" />
+    <ctl name="TRL ASPRX2 Slot Position" value="1" />
+    <ctl name="TRL Boost Class-H Tracking Enable" value="1" />
+    <ctl name="TRL Boost Target Voltage" value="0" />
+    <ctl name="TRL Fast Use Case Delta File" value="TRL-music.txt"/>
+    <ctl name="TRL Fast Use Case Switch Enable" value="1"/>
+    <ctl name="TRL Channel Swap" value="Off" />
+
+    <ctl name="TLL DSP1 Firmware" value="Protection" />
+    <ctl name="TLL DSP1 Preload Switch" value="1" />
+    <ctl name="TLL DRE DRE Switch" value="1" />
+    <ctl name="TLL PCM Source" value="None" />
+    <ctl name="TLL ASPTX Ref" value="None" />
+    <ctl name="TLL PCM Soft Ramp" value="4ms" />
+    <ctl name="TLL AMP PCM Gain" value="18" />
+    <ctl name="TLL ASP TX1 Source" value="DSPTX1" />
+    <ctl name="TLL ASP TX2 Source" value="Zero" />
+    <ctl name="TLL ASP TX3 Source" value="Zero" />
+    <ctl name="TLL ASP TX4 Source" value="Zero" />
+    <ctl name="TLL ASPTX1 Slot Position" value="3" />
+    <ctl name="TLL ASPTX2 Slot Position" value="3" />
+    <ctl name="TLL ASPTX3 Slot Position" value="3" />
+    <ctl name="TLL ASPTX4 Slot Position" value="3" />
+    <ctl name="TLL DSP RX1 Source" value="ASPRX1" />
+    <ctl name="TLL DSP RX2 Source" value="ASPRX2" />
+    <ctl name="TLL ASPRX1 Slot Position" value="0" />
+    <ctl name="TLL ASPRX2 Slot Position" value="1" />
+    <ctl name="TLL Boost Class-H Tracking Enable" value="1" />
+    <ctl name="TLL Boost Target Voltage" value="0" />
+    <ctl name="TLL Fast Use Case Delta File" value="TLL-music.txt"/>
+    <ctl name="TLL Fast Use Case Switch Enable" value="1"/>
+    <ctl name="TLL Channel Swap" value="Off" />
+
+    <ctl name="BRH DSP1 Firmware" value="Protection" />
+    <ctl name="BRH DSP1 Preload Switch" value="1" />
+    <ctl name="BRH DRE DRE Switch" value="1" />
+    <ctl name="BRH PCM Source" value="None" />
+    <ctl name="BRH ASPTX Ref" value="None" />
+    <ctl name="BRH PCM Soft Ramp" value="4ms" />
+    <ctl name="BRH AMP PCM Gain" value="18" />
+    <ctl name="BRH ASP TX1 Source" value="DSPTX1" />
+    <ctl name="BRH ASP TX2 Source" value="Zero" />
+    <ctl name="BRH ASP TX3 Source" value="Zero" />
+    <ctl name="BRH ASP TX4 Source" value="Zero" />
+    <ctl name="BRH ASPTX1 Slot Position" value="4" />
+    <ctl name="BRH ASPTX2 Slot Position" value="4" />
+    <ctl name="BRH ASPTX3 Slot Position" value="4" />
+    <ctl name="BRH ASPTX4 Slot Position" value="4" />
+    <ctl name="BRH DSP RX1 Source" value="ASPRX1" />
+    <ctl name="BRH DSP RX2 Source" value="ASPRX2" />
+    <ctl name="BRH ASPRX1 Slot Position" value="0" />
+    <ctl name="BRH ASPRX2 Slot Position" value="1" />
+    <ctl name="BRH Boost Class-H Tracking Enable" value="1" />
+    <ctl name="BRH Boost Target Voltage" value="0" />
+    <ctl name="BRH Fast Use Case Delta File" value="BRH-music.txt"/>
+    <ctl name="BRH Fast Use Case Switch Enable" value="1"/>
+    <ctl name="BRH Channel Swap" value="Off" />
+
+    <ctl name="BLH DSP1 Firmware" value="Protection" />
+    <ctl name="BLH DSP1 Preload Switch" value="1" />
+    <ctl name="BLH DRE DRE Switch" value="1" />
+    <ctl name="BLH PCM Source" value="None" />
+    <ctl name="BLH ASPTX Ref" value="None" />
+    <ctl name="BLH PCM Soft Ramp" value="4ms" />
+    <ctl name="BLH AMP PCM Gain" value="18" />
+    <ctl name="BLH ASP TX1 Source" value="DSPTX1" />
+    <ctl name="BLH ASP TX2 Source" value="Zero" />
+    <ctl name="BLH ASP TX3 Source" value="Zero" />
+    <ctl name="BLH ASP TX4 Source" value="Zero" />
+    <ctl name="BLH ASPTX1 Slot Position" value="5" />
+    <ctl name="BLH ASPTX2 Slot Position" value="5" />
+    <ctl name="BLH ASPTX3 Slot Position" value="5" />
+    <ctl name="BLH ASPTX4 Slot Position" value="5" />
+    <ctl name="BLH DSP RX1 Source" value="ASPRX1" />
+    <ctl name="BLH DSP RX2 Source" value="ASPRX2" />
+    <ctl name="BLH ASPRX1 Slot Position" value="0" />
+    <ctl name="BLH ASPRX2 Slot Position" value="1" />
+    <ctl name="BLH Boost Class-H Tracking Enable" value="1" />
+    <ctl name="BLH Boost Target Voltage" value="0" />
+    <ctl name="BLH Fast Use Case Delta File" value="BLH-music.txt"/>
+    <ctl name="BLH Fast Use Case Switch Enable" value="1"/>
+    <ctl name="BLH Channel Swap" value="Off" />
+
+    <ctl name="BLL DSP1 Firmware" value="Protection" />
+    <ctl name="BLL DSP1 Preload Switch" value="1" />
+    <ctl name="BLL DRE DRE Switch" value="1" />
+    <ctl name="BLL PCM Source" value="None" />
+    <ctl name="BLL ASPTX Ref" value="None" />
+    <ctl name="BLL PCM Soft Ramp" value="4ms" />
+    <ctl name="BLL AMP PCM Gain" value="18" />
+    <ctl name="BLL ASP TX1 Source" value="DSPTX1" />
+    <ctl name="BLL ASP TX2 Source" value="Zero" />
+    <ctl name="BLL ASP TX3 Source" value="Zero" />
+    <ctl name="BLL ASP TX4 Source" value="Zero" />
+    <ctl name="BLL ASPTX1 Slot Position" value="6" />
+    <ctl name="BLL ASPTX2 Slot Position" value="6" />
+    <ctl name="BLL ASPTX3 Slot Position" value="6" />
+    <ctl name="BLL ASPTX4 Slot Position" value="6" />
+    <ctl name="BLL DSP RX1 Source" value="ASPRX1" />
+    <ctl name="BLL DSP RX2 Source" value="ASPRX2" />
+    <ctl name="BLL ASPRX1 Slot Position" value="0" />
+    <ctl name="BLL ASPRX2 Slot Position" value="1" />
+    <ctl name="BLL Boost Class-H Tracking Enable" value="1" />
+    <ctl name="BLL Boost Target Voltage" value="0" />
+    <ctl name="BLL Fast Use Case Delta File" value="BLL-music.txt"/>
+    <ctl name="BLL Fast Use Case Switch Enable" value="1"/>
+    <ctl name="BLL Channel Swap" value="Off" />
+
+    <ctl name="BRL DSP1 Firmware" value="Protection" />
+    <ctl name="BRL DSP1 Preload Switch" value="1" />
+    <ctl name="BRL DRE DRE Switch" value="1" />
+    <ctl name="BRL PCM Source" value="None" />
+    <ctl name="BRL ASPTX Ref" value="None" />
+    <ctl name="BRL PCM Soft Ramp" value="4ms" />
+    <ctl name="BRL AMP PCM Gain" value="18" />
+    <ctl name="BRL ASP TX1 Source" value="DSPTX1" />
+    <ctl name="BRL ASP TX2 Source" value="Zero" />
+    <ctl name="BRL ASP TX3 Source" value="Zero" />
+    <ctl name="BRL ASP TX4 Source" value="Zero" />
+    <ctl name="BRL ASPTX1 Slot Position" value="7" />
+    <ctl name="BRL ASPTX2 Slot Position" value="7" />
+    <ctl name="BRL ASPTX3 Slot Position" value="7" />
+    <ctl name="BRL ASPTX4 Slot Position" value="7" />
+    <ctl name="BRL DSP RX1 Source" value="ASPRX1" />
+    <ctl name="BRL DSP RX2 Source" value="ASPRX2" />
+    <ctl name="BRL ASPRX1 Slot Position" value="0" />
+    <ctl name="BRL ASPRX2 Slot Position" value="1" />
+    <ctl name="BRL Boost Class-H Tracking Enable" value="1" />
+    <ctl name="BRL Boost Target Voltage" value="0" />
+    <ctl name="BRL Fast Use Case Delta File" value="BRL-music.txt"/>
+    <ctl name="BRL Fast Use Case Switch Enable" value="1"/>
+    <ctl name="BRL Channel Swap" value="Off" />
+
+    <!-- channel reverse in pa -->
+    <ctl name="TLL VPBR Config" value="33575688" />
+    <ctl name="TLL Noise Gate Config" value="16245" />
+    <ctl name="TLH VPBR Config" value="33575688" />
+    <ctl name="TLH Noise Gate Config" value="16245" />
+    <ctl name="TRL VPBR Config" value="33575688" />
+    <ctl name="TRL Noise Gate Config" value="16245" />
+    <ctl name="TRH VPBR Config" value="33575688" />
+    <ctl name="TRH Noise Gate Config" value="16245" />
+    <ctl name="BLL VPBR Config" value="33575688" />
+    <ctl name="BLL Noise Gate Config" value="16245" />
+    <ctl name="BLH VPBR Config" value="33575688" />
+    <ctl name="BLH Noise Gate Config" value="16245" />
+    <ctl name="BRL VPBR Config" value="33575688" />
+    <ctl name="BRL Noise Gate Config" value="16245" />
+    <ctl name="BRH VPBR Config" value="33575688" />
+    <ctl name="BRH Noise Gate Config" value="16245" />
+    <!-- smart PA end -->
+    <ctl name="COMP1 Switch" value="0" />
+    <ctl name="COMP2 Switch" value="0" />
+    <ctl name="HPHL Volume" value="20" />
+    <ctl name="HPHR Volume" value="20" />
+    <!-- Multimode Voice1 -->
+    <ctl name="TERT_TDM_RX_0_Voice Mixer VoiceMMode1" value="0" />
+    <ctl name="VoiceMMode1_Tx Mixer TX_CDC_DMA_TX_3_MMode1" value="0" />
+    <!-- Multimode Voice2 -->
+    <ctl name="TERT_TDM_RX_0_Voice Mixer VoiceMMode2" value="0" />
+    <ctl name="VoiceMMode2_Tx Mixer TX_CDC_DMA_TX_3_MMode2" value="0" />
+
+    <!-- Voice external ec. reference -->
+    <ctl name="VOC_EXT_EC MUX" value="NONE" />
+    <!-- Voice external ec. reference end -->
+
+    <!-- echo reference -->
+    <ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
+    <ctl name="AUDIO_REF_EC_UL10 MUX" value="None" />
+    <ctl name="EC Reference Channels" value="Zero"/>
+
+    <ctl name="Voip_Tx Mixer TX_CDC_DMA_TX_3_Voip" value="0" />
+
+    <!-- ultrasound related -->
+    <ctl name="Ultrasound Enable" value="Off" />
+    <ctl name="Ultrasound RampDown" value="Off"/>
+    <ctl name="Ultrasound Event" value="0"/>
+    <ctl name="Ultrasound Mode" value="0"/>
+    <ctl name="Ultrasound Rx Port" value="Off"/>
+    <ctl name="Ultrasound Microphone Index" value="0"/>
+    <ctl name="Ultrasound Suspend" value="0"/>
+
+
+    <path name="deep-buffer-playback">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia1" value="1" />
+    </path>
+
+    <path name="low-latency-playback">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia5" value="1" />
+    </path>
+
+    <path name="audio-ull-playback">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia8" value="1" />
+    </path>
+
+    <path name="compress-offload-playback">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia4" value="1" />
+    </path>
+
+    <path name="compress-offload-playback2">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia7" value="1" />
+    </path>
+
+    <path name="compress-offload-playback3">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-offload-playback4">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia11" value="1" />
+    </path>
+
+    <path name="compress-offload-playback5">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia12" value="1" />
+    </path>
+
+    <path name="compress-offload-playback6">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia13" value="1" />
+    </path>
+
+    <path name="compress-offload-playback7">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia14" value="1" />
+    </path>
+
+    <path name="compress-offload-playback8">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia15" value="1" />
+    </path>
+
+    <path name="compress-offload-playback9">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia16" value="1" />
+    </path>
+
+    <path name="audio-playback-voip">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-voip-call">
+        <ctl name="TERT_TDM_RX_0_Voice Mixer Voip" value="1" />
+        <ctl name="Voip_Tx Mixer TX_CDC_DMA_TX_3_Voip" value="1" />
+    </path>
+
+    <path name="voicemmode1-call">
+        <ctl name="TERT_TDM_RX_0_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="VoiceMMode1_Tx Mixer TX_CDC_DMA_TX_3_MMode1" value="1" />
+        <ctl name="TLL Noise Gate Config" value="51" />
+        <ctl name="TLH Noise Gate Config" value="51" />
+        <ctl name="TRL Noise Gate Config" value="51" />
+        <ctl name="TRH Noise Gate Config" value="51" />
+        <ctl name="BLL Noise Gate Config" value="51" />
+        <ctl name="BLH Noise Gate Config" value="51" />
+        <ctl name="BRL Noise Gate Config" value="51" />
+        <ctl name="BRH Noise Gate Config" value="51" />
+    </path>
+
+    <path name="voicemmode2-call">
+        <ctl name="TERT_TDM_RX_0_Voice Mixer VoiceMMode2" value="1" />
+        <ctl name="VoiceMMode2_Tx Mixer TX_CDC_DMA_TX_3_MMode2" value="1" />
+        <ctl name="TLL Noise Gate Config" value="51" />
+        <ctl name="TLH Noise Gate Config" value="51" />
+        <ctl name="TRL Noise Gate Config" value="51" />
+        <ctl name="TRH Noise Gate Config" value="51" />
+        <ctl name="BLL Noise Gate Config" value="51" />
+        <ctl name="BLH Noise Gate Config" value="51" />
+        <ctl name="BRL Noise Gate Config" value="51" />
+        <ctl name="BRH Noise Gate Config" value="51" />
+    </path>
+
+    <path name="deep-buffer-playback speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia1" value="1" />
+    </path>
+
+    <path name="low-latency-playback speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia5" value="1" />
+    </path>
+
+    <path name="audio-ull-playback speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia8" value="1" />
+    </path>
+
+    <path name="compress-offload-playback speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia4" value="1" />
+    </path>
+
+    <path name="compress-offload-playback2 speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia7" value="1" />
+    </path>
+
+    <path name="compress-offload-playback3 speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-offload-playback4 speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia11" value="1" />
+    </path>
+
+    <path name="compress-offload-playback5 speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia12" value="1" />
+    </path>
+
+    <path name="compress-offload-playback6 speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia13" value="1" />
+    </path>
+
+    <path name="compress-offload-playback7 speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia14" value="1" />
+    </path>
+
+    <path name="compress-offload-playback8 speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia15" value="1" />
+    </path>
+
+    <path name="compress-offload-playback9 speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia16" value="1" />
+    </path>
+
+    <path name="audio-playback-voip speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia10" value="1" />
+        <ctl name="TLL Noise Gate Config" value="51" />
+        <ctl name="TLH Noise Gate Config" value="51" />
+        <ctl name="TRL Noise Gate Config" value="51" />
+        <ctl name="TRH Noise Gate Config" value="51" />
+        <ctl name="BLL Noise Gate Config" value="51" />
+        <ctl name="BLH Noise Gate Config" value="51" />
+        <ctl name="BRL Noise Gate Config" value="51" />
+        <ctl name="BRH Noise Gate Config" value="51" />
+    </path>
+
+    <path name="deep-buffer-playback handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia1" value="1" />
+    </path>
+
+    <path name="low-latency-playback handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia5" value="1" />
+    </path>
+
+    <path name="audio-ull-playback handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia8" value="1" />
+    </path>
+
+    <path name="compress-offload-playback handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia4" value="1" />
+    </path>
+
+    <path name="compress-offload-playback2 handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia7" value="1" />
+    </path>
+
+    <path name="compress-offload-playback3 handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-offload-playback4 handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia11" value="1" />
+    </path>
+
+    <path name="compress-offload-playback5 handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia12" value="1" />
+    </path>
+
+    <path name="compress-offload-playback6 handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia13" value="1" />
+    </path>
+
+    <path name="compress-offload-playback7 handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia14" value="1" />
+    </path>
+
+    <path name="compress-offload-playback8 handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia15" value="1" />
+    </path>
+
+    <path name="compress-offload-playback9 handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia16" value="1" />
+    </path>
+
+    <path name="audio-playback-voip handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-voip-call speaker">
+        <ctl name="VOIP_EXT_EC MUX" value="TERT_TDM_TX_0" />
+        <ctl name="TERT_TDM_RX_0_Voice Mixer Voip" value="1" />
+        <ctl name="Voip_Tx Mixer TX_CDC_DMA_TX_3_Voip" value="1" />
+        <ctl name="TLL Noise Gate Config" value="51" />
+        <ctl name="TLH Noise Gate Config" value="51" />
+        <ctl name="TRL Noise Gate Config" value="51" />
+        <ctl name="TRH Noise Gate Config" value="51" />
+        <ctl name="BLL Noise Gate Config" value="51" />
+        <ctl name="BLH Noise Gate Config" value="51" />
+        <ctl name="BRL Noise Gate Config" value="51" />
+        <ctl name="BRH Noise Gate Config" value="51" />
+    </path>
+
+    <path name="compress-voip-call handset">
+        <ctl name="TERT_TDM_RX_0_Voice Mixer Voip" value="1" />
+        <ctl name="Voip_Tx Mixer TX_CDC_DMA_TX_3_Voip" value="1" />
+    </path>
+
+    <path name="voicemmode1-call speaker">
+        <ctl name="VOC_EXT_EC MUX" value="TERT_TDM_TX" />
+        <ctl name="TERT_TDM_RX_0_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="VoiceMMode1_Tx Mixer TX_CDC_DMA_TX_3_MMode1" value="1" />
+        <ctl name="TLL Noise Gate Config" value="51" />
+        <ctl name="TLH Noise Gate Config" value="51" />
+        <ctl name="TRL Noise Gate Config" value="51" />
+        <ctl name="TRH Noise Gate Config" value="51" />
+        <ctl name="BLL Noise Gate Config" value="51" />
+        <ctl name="BLH Noise Gate Config" value="51" />
+        <ctl name="BRL Noise Gate Config" value="51" />
+        <ctl name="BRH Noise Gate Config" value="51" />
+    </path>
+
+    <path name="voicemmode2-call speaker">
+        <ctl name="VOC_EXT_EC MUX" value="TERT_TDM_TX" />
+        <ctl name="TERT_TDM_RX_0_Voice Mixer VoiceMMode2" value="1" />
+        <ctl name="VoiceMMode2_Tx Mixer TX_CDC_DMA_TX_3_MMode2" value="1" />
+        <ctl name="TLL Noise Gate Config" value="51" />
+        <ctl name="TLH Noise Gate Config" value="51" />
+        <ctl name="TRL Noise Gate Config" value="51" />
+        <ctl name="TRH Noise Gate Config" value="51" />
+        <ctl name="BLL Noise Gate Config" value="51" />
+        <ctl name="BLH Noise Gate Config" value="51" />
+        <ctl name="BRL Noise Gate Config" value="51" />
+        <ctl name="BRH Noise Gate Config" value="51" />
+    </path>
+
+    <path name="voicemmode1-call handset">
+        <!--ctl name="VOC_EXT_EC MUX" value="TERT_TDM_TX" /-->
+        <ctl name="TERT_TDM_RX_0_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="VoiceMMode1_Tx Mixer TX_CDC_DMA_TX_3_MMode1" value="1" />
+    </path>
+
+    <path name="voicemmode2-call handset">
+        <!--ctl name="VOC_EXT_EC MUX" value="TERT_TDM_TX" /-->
+        <ctl name="TERT_TDM_RX_0_Voice Mixer VoiceMMode2" value="1" />
+        <ctl name="VoiceMMode2_Tx Mixer TX_CDC_DMA_TX_3_MMode2" value="1" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-protected">
+        <path name="deep-buffer-playback speaker" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-and-display-port">
+        <path name="deep-buffer-playback display-port" />
+        <path name="deep-buffer-playback speaker" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-and-usb-headphones">
+        <path name="deep-buffer-playback usb-headphones" />
+        <path name="deep-buffer-playback speaker" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-and-headphones">
+        <path name="deep-buffer-playback headphones" />
+        <path name="deep-buffer-playback speaker" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-and-bt-sco">
+        <path name="deep-buffer-playback bt-sco" />
+        <path name="deep-buffer-playback speaker" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-and-bt-sco-wb">
+        <path name="deep-buffer-playback bt-sco-wb" />
+        <path name="deep-buffer-playback speaker" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-and-bt-sco-swb">
+        <path name="deep-buffer-playback bt-sco-swb" />
+        <path name="deep-buffer-playback speaker" />
+    </path>
+
+    <path name="deep-buffer-playback speaker-and-bt-a2dp">
+        <path name="deep-buffer-playback bt-a2dp" />
+        <path name="deep-buffer-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-protected">
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-bt-sco">
+        <path name="low-latency-playback bt-sco" />
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-bt-sco-wb">
+        <path name="low-latency-playback bt-sco-wb" />
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-bt-sco-swb">
+        <path name="low-latency-playback bt-sco-swb" />
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-bt-a2dp">
+        <path name="low-latency-playback bt-a2dp" />
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-display-port">
+        <path name="low-latency-playback display-port" />
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-usb-headphones">
+        <path name="low-latency-playback usb-headphones" />
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-headphones">
+        <path name="low-latency-playback headphones" />
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="audio-ull-playback speaker-protected">
+        <path name="audio-ull-playback speaker" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-headphones">
+        <path name="audio-ull-playback speaker" />
+        <path name="audio-ull-playback headphones" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-bt-sco">
+        <path name="audio-ull-playback bt-sco" />
+        <path name="audio-ull-playback speaker" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-bt-sco-swb">
+        <path name="audio-ull-playback bt-sco-swb" />
+        <path name="audio-ull-playback speaker" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-bt-a2dp">
+        <path name="audio-ull-playback bt-a2dp" />
+        <path name="audio-ull-playback speaker" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-bt-sco-wb">
+        <path name="audio-ull-playback bt-sco-wb" />
+        <path name="audio-ull-playback speaker" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-display-port">
+        <path name="audio-ull-playback display-port" />
+        <path name="audio-ull-playback speaker" />
+    </path>
+
+    <path name="mmap-playback">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia16" value="1" />
+    </path>
+
+    <path name="mmap-playback speaker">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia16" value="1" />
+    </path>
+
+    <path name="mmap-playback handset">
+        <ctl name="TERT_TDM_RX_0 Audio Mixer MultiMedia16" value="1" />
+    </path>
+
+    <path name="compress-offload-playback speaker-protected">
+        <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-display-port">
+        <path name="compress-offload-playback display-port" />
+        <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-bt-sco">
+        <path name="compress-offload-playback bt-sco" />
+        <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-bt-a2dp">
+        <path name="compress-offload-playback bt-a2dp" />
+        <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback bt-sco-wb" />
+        <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback bt-sco-swb" />
+        <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-usb-headphones">
+        <path name="compress-offload-playback usb-headphones" />
+        <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback speaker-and-headphones">
+        <path name="compress-offload-playback headphones" />
+        <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback2 speaker-and-display-port">
+        <path name="compress-offload-playback2 display-port" />
+        <path name="compress-offload-playback2 speaker" />
+    </path>
+
+    <path name="compress-offload-playback2 speaker-and-bt-sco">
+        <path name="compress-offload-playback2 bt-sco" />
+        <path name="compress-offload-playback2 speaker" />
+    </path>
+
+    <path name="compress-offload-playback2 speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback2 bt-sco-wb" />
+        <path name="compress-offload-playback2 speaker" />
+    </path>
+
+    <path name="compress-offload-playback2 speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback2 bt-sco-swb" />
+        <path name="compress-offload-playback2 speaker" />
+    </path>
+
+    <path name="compress-offload-playback2 speaker-and-bt-a2dp">
+        <path name="compress-offload-playback2 bt-a2dp" />
+        <path name="compress-offload-playback2 speaker" />
+    </path>
+
+    <path name="compress-offload-playback2 speaker-and-usb-headphones">
+        <path name="compress-offload-playback2 usb-headphones" />
+        <path name="compress-offload-playback2 speaker" />
+    </path>
+
+    <path name="compress-offload-playback2 speaker-and-headphones">
+        <path name="compress-offload-playback2 headphones" />
+        <path name="compress-offload-playback2 speaker" />
+    </path>
+
+    <path name="compress-offload-playback3 speaker-and-display-port">
+        <path name="compress-offload-playback3 display-port" />
+        <path name="compress-offload-playback3 speaker" />
+    </path>
+
+    <path name="compress-offload-playback3 speaker-and-bt-sco">
+        <path name="compress-offload-playback3 bt-sco" />
+        <path name="compress-offload-playback3 speaker" />
+    </path>
+
+    <path name="compress-offload-playback3 speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback3 bt-sco-wb" />
+        <path name="compress-offload-playback3 speaker" />
+    </path>
+
+    <path name="compress-offload-playback3 speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback3 bt-sco-swb" />
+        <path name="compress-offload-playback3 speaker" />
+    </path>
+
+    <path name="compress-offload-playback3 speaker-and-bt-a2dp">
+        <path name="compress-offload-playback3 bt-a2dp" />
+        <path name="compress-offload-playback3 speaker" />
+    </path>
+
+    <path name="compress-offload-playback3 speaker-and-usb-headphones">
+        <path name="compress-offload-playback3 usb-headphones" />
+        <path name="compress-offload-playback3 speaker" />
+    </path>
+
+    <path name="compress-offload-playback3 speaker-and-headphones">
+        <path name="compress-offload-playback3 headphones" />
+        <path name="compress-offload-playback3 speaker" />
+    </path>
+
+    <path name="compress-offload-playback4 speaker-and-display-port">
+        <path name="compress-offload-playback4 display-port" />
+        <path name="compress-offload-playback4 speaker" />
+    </path>
+
+    <path name="compress-offload-playback4 speaker-and-usb-headphones">
+        <path name="compress-offload-playback4 usb-headphones" />
+        <path name="compress-offload-playback4 speaker" />
+    </path>
+
+    <path name="compress-offload-playback4 speaker-and-headphones">
+        <path name="compress-offload-playback4 headphones" />
+        <path name="compress-offload-playback4 speaker" />
+    </path>
+
+    <path name="compress-offload-playback4 speaker-and-bt-sco">
+        <path name="compress-offload-playback4 bt-sco" />
+        <path name="compress-offload-playback4 speaker" />
+    </path>
+
+    <path name="compress-offload-playback4 speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback4 bt-sco-wb" />
+        <path name="compress-offload-playback4 speaker" />
+    </path>
+
+    <path name="compress-offload-playback4 speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback4 bt-sco-swb" />
+        <path name="compress-offload-playback4 speaker" />
+    </path>
+
+    <path name="compress-offload-playback4 speaker-and-bt-a2dp">
+        <path name="compress-offload-playback4 bt-a2dp" />
+        <path name="compress-offload-playback4 speaker" />
+    </path>
+
+    <path name="compress-offload-playback5 speaker-and-display-port">
+        <path name="compress-offload-playback5 display-port" />
+        <path name="compress-offload-playback5 speaker" />
+    </path>
+
+    <path name="compress-offload-playback5 speaker-and-bt-sco">
+        <path name="compress-offload-playback5 bt-sco" />
+        <path name="compress-offload-playback5 speaker" />
+    </path>
+
+    <path name="compress-offload-playback5 speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback5 bt-sco-wb" />
+        <path name="compress-offload-playback5 speaker" />
+    </path>
+
+    <path name="compress-offload-playback5 speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback5 bt-sco-swb" />
+        <path name="compress-offload-playback5 speaker" />
+    </path>
+
+    <path name="compress-offload-playback5 speaker-and-bt-a2dp">
+        <path name="compress-offload-playback5 bt-a2dp" />
+        <path name="compress-offload-playback5 speaker" />
+    </path>
+
+    <path name="compress-offload-playback5 speaker-and-usb-headphones">
+        <path name="compress-offload-playback5 usb-headphones" />
+        <path name="compress-offload-playback5 speaker" />
+    </path>
+
+    <path name="compress-offload-playback5 speaker-and-headphones">
+        <path name="compress-offload-playback5 headphones" />
+        <path name="compress-offload-playback5 speaker" />
+    </path>
+
+    <path name="compress-offload-playback6 speaker-and-display-port">
+        <path name="compress-offload-playback6 display-port" />
+        <path name="compress-offload-playback6 speaker" />
+    </path>
+
+    <path name="compress-offload-playback6 speaker-and-bt-sco">
+        <path name="compress-offload-playback6 bt-sco" />
+        <path name="compress-offload-playback6 speaker" />
+    </path>
+
+    <path name="compress-offload-playback6 speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback6 bt-sco-wb" />
+        <path name="compress-offload-playback6 speaker" />
+    </path>
+
+    <path name="compress-offload-playback6 speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback6 bt-sco-swb" />
+        <path name="compress-offload-playback6 speaker" />
+    </path>
+
+    <path name="compress-offload-playback6 speaker-and-bt-a2dp">
+        <path name="compress-offload-playback6 bt-a2dp" />
+        <path name="compress-offload-playback6 speaker" />
+    </path>
+
+    <path name="compress-offload-playback6 speaker-and-usb-headphones">
+        <path name="compress-offload-playback6 usb-headphones" />
+        <path name="compress-offload-playback6 speaker" />
+    </path>
+
+    <path name="compress-offload-playback6 speaker-and-headphones">
+        <path name="compress-offload-playback6 headphones" />
+        <path name="compress-offload-playback6 speaker" />
+    </path>
+
+    <path name="compress-offload-playback7 speaker-and-display-port">
+        <path name="compress-offload-playback7 display-port" />
+        <path name="compress-offload-playback7 speaker" />
+    </path>
+
+    <path name="compress-offload-playback7 speaker-and-bt-sco">
+        <path name="compress-offload-playback7 bt-sco" />
+        <path name="compress-offload-playback7 speaker" />
+    </path>
+
+    <path name="compress-offload-playback7 speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback7 bt-sco-wb" />
+        <path name="compress-offload-playback7 speaker" />
+    </path>
+
+    <path name="compress-offload-playback7 speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback7 bt-sco-swb" />
+        <path name="compress-offload-playback7 speaker" />
+    </path>
+
+    <path name="compress-offload-playback7 speaker-and-bt-a2dp">
+        <path name="compress-offload-playback7 bt-a2dp" />
+        <path name="compress-offload-playback7 speaker" />
+    </path>
+
+    <path name="compress-offload-playback7 speaker-and-usb-headphones">
+        <path name="compress-offload-playback7 usb-headphones" />
+        <path name="compress-offload-playback7 speaker" />
+    </path>
+
+    <path name="compress-offload-playback7 speaker-and-headphones">
+        <path name="compress-offload-playback7 headphones" />
+        <path name="compress-offload-playback7 speaker" />
+    </path>
+
+    <path name="compress-offload-playback8 speaker-and-display-port">
+        <path name="compress-offload-playback8 display-port" />
+        <path name="compress-offload-playback8 speaker" />
+    </path>
+
+    <path name="compress-offload-playback8 speaker-and-bt-sco">
+        <path name="compress-offload-playback8 bt-sco" />
+        <path name="compress-offload-playback8 speaker" />
+    </path>
+
+    <path name="compress-offload-playback8 speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback8 bt-sco-wb" />
+        <path name="compress-offload-playback8 speaker" />
+    </path>
+
+    <path name="compress-offload-playback8 speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback8 bt-sco-swb" />
+        <path name="compress-offload-playback8 speaker" />
+    </path>
+
+    <path name="compress-offload-playback8 speaker-and-bt-a2dp">
+        <path name="compress-offload-playback8 bt-a2dp" />
+        <path name="compress-offload-playback8 speaker" />
+    </path>
+
+    <path name="compress-offload-playback8 speaker-and-usb-headphones">
+        <path name="compress-offload-playback8 usb-headphones" />
+        <path name="compress-offload-playback8 speaker" />
+    </path>
+
+    <path name="compress-offload-playback8 speaker-and-headphones">
+        <path name="compress-offload-playback8 headphones" />
+        <path name="compress-offload-playback8 speaker" />
+    </path>
+
+    <path name="compress-offload-playback9 speaker-and-display-port">
+        <path name="compress-offload-playback9 display-port" />
+        <path name="compress-offload-playback9 speaker" />
+    </path>
+
+    <path name="compress-offload-playback9 speaker-and-bt-sco">
+        <path name="compress-offload-playback9 bt-sco" />
+        <path name="compress-offload-playback9 speaker" />
+    </path>
+
+    <path name="compress-offload-playback9 speaker-and-bt-sco-wb">
+        <path name="compress-offload-playback9 bt-sco-wb" />
+        <path name="compress-offload-playback9 speaker" />
+    </path>
+
+    <path name="compress-offload-playback9 speaker-and-bt-sco-swb">
+        <path name="compress-offload-playback9 bt-sco-swb" />
+        <path name="compress-offload-playback9 speaker" />
+    </path>
+
+    <path name="compress-offload-playback9 speaker-and-bt-a2dp">
+        <path name="compress-offload-playback9 bt-a2dp" />
+        <path name="compress-offload-playback9 speaker" />
+    </path>
+
+    <path name="compress-offload-playback9 speaker-and-usb-headphones">
+        <path name="compress-offload-playback9 usb-headphones" />
+        <path name="compress-offload-playback9 speaker" />
+    </path>
+
+    <path name="compress-offload-playback9 speaker-and-headphones">
+        <path name="compress-offload-playback9 headphones" />
+        <path name="compress-offload-playback9 speaker" />
+    </path>
+
+    <path name="echo-reference-voip speaker">
+        <ctl name="EC Reference Channels" value="Four"/>
+        <ctl name="AUDIO_REF_EC_UL10 MUX" value="TERT_TDM_TX_0" />
+    </path>
+
+    <path name="echo-reference speaker">
+        <ctl name="EC Reference Channels" value="Four"/>
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="TERT_TDM_TX_0" />
+    </path>
+
+    <path name="echo-reference-voip earpiece">
+        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="AUDIO_REF_EC_UL10 MUX" value="TERT_TDM_RX_0" />
+    </path>
+
+    <path name="echo-reference-voip handset">
+        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="AUDIO_REF_EC_UL10 MUX" value="TERT_TDM_RX_0" />
+    </path>
+
+    <path name="echo-reference earpiece">
+        <ctl name="EC Reference Channels" value="One"/>
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="TERT_TDM_RX_0" />
+    </path>
+
+    <path name="ultrasound-proximity">
+        <ctl name="Mi_Ultrasound Enable" value="On" />
+        <!--<ctl name="Mi_Ultrasound Mode" value="725" />
+        <ctl name="Mi_Ultrasound Log Level" value="4" />
+        <ctl name="Mi_Ultrasound Debug Mode" value="1" />
+        <ctl name="Mi_Ultrasound Custom Setting 1" value="1" />-->
+    </path>
+
+    <path name="ultrasound-proximity-output">
+        <ctl name="Mi_Ultrasound Rx Device" value="0"/>
+    </path>
+
+    <path name="ultrasound-proximity-output handset">
+        <ctl name="Mi_Ultrasound Rx Device" value="0"/>
+    </path>
+
+    <path name="ultrasound-proximity-output speaker">
+        <ctl name="Mi_Ultrasound Rx Device" value="1"/>
+        <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />
+        <ctl name="TERT_TDM_RX_1 Channels" value="One" />
+        <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
+    </path>
+
+    <path name="ultrasound-proximity-output speaker-and-headphones">
+        <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />
+        <ctl name="TERT_TDM_RX_1 Channels" value="One" />
+        <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
+    </path>
+
+
+    <path name="ultrasound-output">
+        <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />
+        <ctl name="TERT_TDM_RX_1 Channels" value="One" />
+        <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
+        <ctl name="RCV PCM Source" value="DSP" />
+        <ctl name="RCV DSP RX1 Source" value="ASPRX1" />
+        <ctl name="RCV DSP RX2 Source" value="ASPRX2" />
+        <ctl name="RCV ASP TX1 Source" value="DSPTX1" />
+        <ctl name="RCV ASPRX1 Slot Position" value="0" />
+        <ctl name="RCV ASPRX2 Slot Position" value="2" />
+        <ctl name="RCV ASPTX Ref" value="Ref" />
+        <ctl name="Cirrus SP Usecase Config" value="None" />
+    </path>
+
+    <path name="ultrasound-cover1">
+        <!--  mixer controls for RX use-case  -->
+    </path>
+
+    <path name="ultrasound-cover1-output">
+        <!--  mixer controls for RX use-case  -->
+    </path>
+
+    <path name="ultrasound-cover1-output handset">
+    </path>
+
+    <path name="ultrasound-cover1-input">
+        <!--  mixer controls for TX use-case  -->
+    </path>
+
+    <path name="ultrasound-rampdown">
+        <!--ctl name="Mi_Ultrasound RampDown" value="On"/-->
+    </path>
+
+    <path name="ultrasound-screen-on">
+        <ctl name="Mi_Ultrasound Event" value="1"/>
+    </path>
+
+    <path name="ultrasound-on">
+        <ctl name="Mi_Ultrasound Tx Port" value="On" />
+    </path>
+
+    <path name="ultrasound-output-stereo">
+        <!--  mixer controls for receiver/speaker stereo mode  -->
+    </path>
+
+    <path name="ultrasound-suspend">
+        <ctl name="Mi_Ultrasound Suspend" value="1"/>>
+    </path>
+
+    <path name="ultrasound-stop-report">
+        <ctl name="Mi_Ultrasound ReportNone" value="1"/>
+    </path>
+
+    <path name="ultrasound-input">
+        <ctl name="TX_CDC_DMA_TX_4 Channels" value="One" />
+        <ctl name="TX_CDC_DMA_TX_4 SampleRate" value="KHZ_48" />
+        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
+        <ctl name="TX SMIC MUX2" value="ADC2" />
+        <ctl name="HDR34 MUX" value="HDR34" />
+        <ctl name="TX_AIF2_CAP Mixer DEC2" value="1" />
+        <ctl name="ADC3_MIXER Switch" value="1" />
+        <ctl name="ADC3 Volume" value="12" />
+    </path>
+
+    <path name="speaker">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="TRH PCM Source" value="DSP" />
+        <ctl name="TLH PCM Source" value="DSP" />
+        <ctl name="TLH ASPTX Ref" value="Ref" />
+        <ctl name="TRL PCM Source" value="DSP" />
+        <ctl name="TLL PCM Source" value="DSP" />
+        <ctl name="TLL ASPTX Ref" value="Ref" />
+        <ctl name="BRH PCM Source" value="DSP" />
+        <ctl name="BRH ASPTX Ref" value="Ref" />
+        <ctl name="BLH PCM Source" value="DSP" />
+        <ctl name="BLL PCM Source" value="DSP" />
+        <ctl name="BRL PCM Source" value="DSP" />
+        <ctl name="BRL ASPTX Ref" value="Ref" />
+    </path>
+
+    <path name="speaker1">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="TRH PCM Source" value="DSP" />
+    </path>
+
+    <path name="speaker2">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="TLH PCM Source" value="DSP" />
+    </path>
+
+    <path name="speaker3">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="TRL PCM Source" value="DSP" />
+    </path>
+
+    <path name="speaker4">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="TLL PCM Source" value="DSP" />
+    </path>
+
+    <path name="speaker5">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="BRH PCM Source" value="DSP" />
+    </path>
+
+    <path name="speaker6">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="BLH PCM Source" value="DSP" />
+    </path>
+
+    <path name="speaker7">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="BLL PCM Source" value="DSP" />
+    </path>
+
+    <path name="speaker8">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="BRL PCM Source" value="DSP" />
+    </path>
+
+    <path name="speaker-mono">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="ASP TX1 Source" value="DSPTX1" />
+        <ctl name="ASP TX2 Source" value="DSPTX1" />
+        <ctl name="DSP RX1 Source" value="ASPRX1" />
+        <ctl name="DSP RX2 Source" value="ASPRX1" />
+        <ctl name="ASPRX1 Slot Position" value="1" />
+        <ctl name="RCV PCM Source" value="None" />
+        <ctl name="PCM Source" value="DSP" />
+        <ctl name="ASPTX Ref" value="Ref" />
+    </path>
+
+    <path name="speaker-mono-2">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="RCV DSP RX1 Source" value="ASPRX1" />
+        <ctl name="RCV DSP RX2 Source" value="ASPRX2" />
+        <ctl name="RCV ASP TX1 Source" value="DSPTX1" />
+        <ctl name="RCV ASP TX2 Source" value="DSPTX1" />
+        <ctl name="RCV ASPRX1 Slot Position" value="0" />
+        <ctl name="RCV ASPRX2 Slot Position" value="2" />
+        <ctl name="PCM Source" value="None" />
+        <ctl name="RCV PCM Source" value="DSP" />
+        <ctl name="RCV ASPTX Ref" value="Ref" />
+    </path>
+
+    <path name="speaker-protected">
+        <path name="speaker" />
+    </path>
+
+    <path name="voice-speaker-protected">
+        <path name="speaker" />
+        <ctl name="BLH Fast Use Case Delta File" value="BLH-voice.txt"/>
+        <ctl name="BLL Fast Use Case Delta File" value="BLL-voice.txt"/>
+        <ctl name="BRH Fast Use Case Delta File" value="BRH-voice.txt"/>
+        <ctl name="BRL Fast Use Case Delta File" value="BRL-voice.txt"/>
+        <ctl name="TLH Fast Use Case Delta File" value="TLH-voice.txt"/>
+        <ctl name="TLL Fast Use Case Delta File" value="TLL-voice.txt"/>
+        <ctl name="TRH Fast Use Case Delta File" value="TRH-voice.txt"/>
+        <ctl name="TRL Fast Use Case Delta File" value="TRL-voice.txt"/>
+    </path>
+
+    <path name="voice-speaker">
+        <path name="speaker" />
+        <ctl name="BLH Fast Use Case Delta File" value="BLH-voice.txt"/>
+        <ctl name="BLL Fast Use Case Delta File" value="BLL-voice.txt"/>
+        <ctl name="BRH Fast Use Case Delta File" value="BRH-voice.txt"/>
+        <ctl name="BRL Fast Use Case Delta File" value="BRL-voice.txt"/>
+        <ctl name="TLH Fast Use Case Delta File" value="TLH-voice.txt"/>
+        <ctl name="TLL Fast Use Case Delta File" value="TLL-voice.txt"/>
+        <ctl name="TRH Fast Use Case Delta File" value="TRH-voice.txt"/>
+        <ctl name="TRL Fast Use Case Delta File" value="TRL-voice.txt"/>
+    </path>
+
+    <path name="voice-speaker-stereo">
+        <ctl name="TERT_TDM_TX_0 Channels" value="Four" />
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="TRH PCM Source" value="DSP" />
+        <ctl name="TLH PCM Source" value="DSP" />
+        <ctl name="TLH ASPTX Ref" value="Ref" />
+        <ctl name="TRL PCM Source" value="DSP" />
+        <ctl name="TLL PCM Source" value="DSP" />
+        <ctl name="TLL ASPTX Ref" value="Ref" />
+        <ctl name="BRH PCM Source" value="DSP" />
+        <ctl name="BRH ASPTX Ref" value="Ref" />
+        <ctl name="BLH PCM Source" value="DSP" />
+        <ctl name="BLL PCM Source" value="DSP" />
+        <ctl name="BRL PCM Source" value="DSP" />
+        <ctl name="BRL ASPTX Ref" value="Ref" />
+        <ctl name="BLH Fast Use Case Delta File" value="BLH-voice.txt"/>
+        <ctl name="BLL Fast Use Case Delta File" value="BLL-voice.txt"/>
+        <ctl name="BRH Fast Use Case Delta File" value="BRH-voice.txt"/>
+        <ctl name="BRL Fast Use Case Delta File" value="BRL-voice.txt"/>
+        <ctl name="TLH Fast Use Case Delta File" value="TLH-voice.txt"/>
+        <ctl name="TLL Fast Use Case Delta File" value="TLL-voice.txt"/>
+        <ctl name="TRH Fast Use Case Delta File" value="TRH-voice.txt"/>
+        <ctl name="TRL Fast Use Case Delta File" value="TRL-voice.txt"/>
+    </path>
+
+    <path name="voice-speaker-2">
+        <path name="speaker" />
+        <ctl name="BLH Fast Use Case Delta File" value="BLH-voice.txt"/>
+        <ctl name="BLL Fast Use Case Delta File" value="BLL-voice.txt"/>
+        <ctl name="BRH Fast Use Case Delta File" value="BRH-voice.txt"/>
+        <ctl name="BRL Fast Use Case Delta File" value="BRL-voice.txt"/>
+        <ctl name="TLH Fast Use Case Delta File" value="TLH-voice.txt"/>
+        <ctl name="TLL Fast Use Case Delta File" value="TLL-voice.txt"/>
+        <ctl name="TRH Fast Use Case Delta File" value="TRH-voice.txt"/>
+        <ctl name="TRL Fast Use Case Delta File" value="TRL-voice.txt"/>
+    </path>
+
+    <path name="handset">
+        <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
+        <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
+        <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />
+        <ctl name="TERT_TDM_RX_1 Channels" value="One" />
+        <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
+        <ctl name="RCV DSP RX1 Source" value="ASPRX1" />
+        <ctl name="RCV DSP RX2 Source" value="ASPRX2" />
+        <ctl name="RCV ASP TX1 Source" value="DSPTX1" />
+        <ctl name="RCV ASPRX1 Slot Position" value="0" />
+        <ctl name="RCV ASPRX2 Slot Position" value="2" />
+        <ctl name="RCV ASPTX Ref" value="Ref" />
+        <ctl name="RCV PCM Source" value="DSP" />
+        <ctl name="RCV AMP PCM Gain" value="3" />
+        <ctl name="Cirrus SP Usecase Config" value="None" />
+        <ctl name="RCV Fast Use Case Delta File" value="rcv_voice_delta.txt"/>
+        <ctl name="RCV Boost Class-H Tracking Enable" value="0" />
+        <ctl name="RCV Boost Target Voltage" value="50" />
+        <ctl name="Mi_Ultrasound Rx Device" value="0"/>
+    </path>
+
+    <path name="handset-mic">
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
+        <ctl name="TX DEC1 MUX" value="SWR_MIC"/>
+        <ctl name="TX SMIC MUX1" value="ADC0" />
+        <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
+        <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
+        <ctl name="TX SMIC MUX0" value="ADC3" />
+        <ctl name="ADC4_MIXER Switch" value="1" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="ADC4 MUX" value="INP5" />
+        <ctl name="ADC4 Volume" value="6" />
+    </path>
+
+    <path name="va-enroll-mic">
+        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
+        <ctl name="TX SMIC MUX0" value="ADC0" />
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="One" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="ADC1 Volume" value="12" />
+    </path>
+
+    <path name="speaker-mic">
+        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
+        <ctl name="TX SMIC MUX0" value="ADC3" />
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="One" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="ADC4_MIXER Switch" value="1" />
+        <ctl name="ADC4 MUX" value="INP5" />
+        <ctl name="ADC4 Volume" value="6" />
+    </path>
+    <!-- Dual MIC devices -->
+    <path name="handset-dmic-endfire">
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
+        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
+        <ctl name="TX SMIC MUX0" value="ADC0" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="ADC1 Volume" value="8" />
+        <ctl name="TX DEC1 MUX" value="SWR_MIC"/>
+        <ctl name="TX SMIC MUX1" value="ADC3" />
+        <ctl name="ADC4_MIXER Switch" value="1" />
+        <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
+        <ctl name="ADC4 MUX" value="INP5" />
+        <ctl name="ADC4 Volume" value="8" />
+    </path>
+
+    <path name="speaker-dmic-endfire">
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
+        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
+        <ctl name="TX SMIC MUX0" value="ADC0" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="TX DEC1 MUX" value="SWR_MIC"/>
+        <ctl name="TX SMIC MUX1" value="ADC3" />
+        <ctl name="ADC4_MIXER Switch" value="1" />
+        <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
+        <ctl name="ADC4 MUX" value="INP5" />
+        <ctl name="ADC4 Volume" value="6" />
+    </path>
+
+    <path name="voice-headphones">
+        <path name="headphones" />
+        <ctl name="COMP1 Switch" value="0" />
+        <ctl name="COMP2 Switch" value="0" />
+        <ctl name="HPHL Volume" value="20" />
+        <ctl name="HPHR Volume" value="20" />
+    </path>
+
+    <path name="headphones">
+        <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
+        <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
+        <ctl name="RX INT1_1 MIX1 INP0" value="RX1" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX_HPH_PWR_MODE" value="LOHIFI" />
+        <ctl name="RX HPH Mode" value="CLS_H_LOHIFI" />
+        <ctl name="RX_COMP1 Switch" value="0" />
+        <ctl name="RX_COMP2 Switch" value="0" />
+        <ctl name="HPHL_COMP Switch" value="0" />
+        <ctl name="HPHR_COMP Switch" value="0" />
+        <ctl name="HPHL Volume" value="20" />
+        <ctl name="HPHR Volume" value="20" />
+        <ctl name="HPHL_RDAC Switch" value="1" />
+        <ctl name="HPHR_RDAC Switch" value="1" />
+        <ctl name="COMP1 Switch" value="0" />
+        <ctl name="COMP2 Switch" value="0" />
+    </path>
+
+    <path name="hph-lowpower-mode">
+        <ctl name="RX HPH Mode" value="CLS_H_LOHIFI" />
+    </path>
+
+    <path name="sidetone-headphones">
+    </path>
+
+    <path name="handset-stereo-dmic-ef">
+        <path name="handset-dmic-dual-adc" />
+    </path>
+
+    <path name="camcorder-dmic">
+        <path name="handset-dmic-dual-adc" />
+    </path>
+</mixer>
