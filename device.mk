@@ -29,6 +29,13 @@ PRODUCT_PACKAGES += \
     libmegface \
     libpiex_shim
 
+# Parts
+PRODUCT_PACKAGES += \
+    MiPadParts
+
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.touchfeature@1.0.vendor
+
 # RRO Overlays
 PRODUCT_PACKAGES += \
     FrameworkResOverlayElish \

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">平板设置</string>
+
+    <!-- Xiaomi Stylus -->
+    <string name="stylus_title">小米灵感触控笔</string>
+    <string name="stylus_switch_title">启用小米灵感触控笔</string>
+    <string name="stylus_driver_version_title">选择驱动版本</string>
+    <string name="stylus_notification_channel">小米灵感触控笔</string>
+    <string name="stylus_name">小米灵感触控笔</string>
+    <string name="stylus_gen2_name">小米灵感触控笔二代</string>
+    <string name="stylus_detect_notification">配对以使用触控笔功能</string>
+    <string name="stylus_bluetooth_not_enable">蓝牙尚未开启</string>
+    <string name="stylus_is_connected">%s已连接</string>
+    <string name="stylus_restart_needed">重启平板生效</string>
+
+    <!-- Xiaomi Keyboard -->
+    <string name="keyboard_title">小米键盘式双面保护壳</string>
+    <string name="keyboard_switch_title">启用键盘式双面保护壳</string>
+</resources>

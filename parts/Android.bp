@@ -1,0 +1,28 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "MiPadParts",
+    defaults: [
+        "SettingsLibDefaults",
+    ],
+
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+    privileged: true,
+
+    static_libs: [
+        "org.lineageos.settings.resources",
+        "//hardware/xiaomi:vendor.xiaomi.hardware.touchfeature-V1.0-java",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+}
