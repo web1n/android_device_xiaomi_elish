@@ -502,7 +502,7 @@
     <bool name="config_lidControlsSleep">true</bool>
 
     <!-- Whether device supports double tap to wake -->
-    <bool name="config_supportDoubleTapWake">false</bool>
+    <bool name="config_supportDoubleTapWake">true</bool>
 
     <!-- Indicates whether device has a power button fingerprint sensor. -->
     <bool name="config_is_powerbutton_fps">true</bool>
