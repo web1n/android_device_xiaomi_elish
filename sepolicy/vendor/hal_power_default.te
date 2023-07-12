@@ -1,3 +1,1 @@
-type vendor_touchfeature_device, dev_type;
-
-allow hal_power_default vendor_touchfeature_device:chr_file rw_file_perms;
+allow hal_power_default touchfeature_device:chr_file rw_file_perms;

@@ -1,18 +1,15 @@
 app_domain(padsettings_app)
 
 # Allow padsettings_app to find *_service
-allow padsettings_app {
-  app_api_service
-}:service_manager find;
+allow padsettings_app app_api_service:service_manager find;
+
+hal_client_domain(padsettings_app, hal_touchfeature)
 
 # Allow padsettings_app to read and write to cgroup
 allow padsettings_app cgroup:file rw_file_perms;
 
-# Allow padsettings_app to find hal_touchfeature_xiaomi_hwservice
-allow padsettings_app hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
-
-# Allow binder communication with hal_touchfeature_xiaomi_default
-binder_call(padsettings_app, hal_touchfeature_xiaomi_default)
+# Allow binder communication with hal_touchfeature
+binder_call(padsettings_app, hal_touchfeature)
 
 # Allow padsettings_app to read and write sysfs_keyboard_status
 allow padsettings_app sysfs_keyboard_status:file rw_file_perms;
