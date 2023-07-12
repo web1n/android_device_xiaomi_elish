@@ -1,0 +1,6 @@
+# Battery Supply
+genfscon sysfs /devices/platform/soc/soc:dual-FuelGauge/power_supply/bms                               u:object_r:vendor_sysfs_battery_supply:s0
+
+genfscon sysfs /devices/platform/soc/884000.i2c/i2c-6/6-0065/power_supply/bq2597x-master               u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/884000.i2c/i2c-6/6-0066/power_supply/bq2597x-slave                u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/980000.i2c/i2c-0/0-0055/power_supply/bms_slave                    u:object_r:vendor_sysfs_battery_supply:s0

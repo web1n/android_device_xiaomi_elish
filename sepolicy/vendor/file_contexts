@@ -1,2 +1,7 @@
 # Power
 /dev/xiaomi-touch                                                  u:object_r:vendor_touchfeature_device:s0
+
+# Battery Supply
+/sys/devices(/platform)?/soc/[a-f0-9]+.i2c/i2c-[0-9]/[0-9]-[a-f0-9]+/power_supply/bms(/.*)?    u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.i2c/i2c-[0-9]/[0-9]-[a-f0-9]+/power_supply/bms_master(/.*)?    u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.i2c/i2c-[0-9]+/[0-9]+-[a-f0-9]+/power_supply/(idt|nuvolta)(/.*)?    u:object_r:vendor_sysfs_battery_supply:s0
