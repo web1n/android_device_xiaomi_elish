@@ -1,0 +1,13 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init configuration files
+prebuilt_etc {
+    name: "init.elish.rc",
+    src: "etc/init.elish.rc",
+    sub_dir: "init",
+    vendor: true,
+}

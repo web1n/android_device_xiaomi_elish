@@ -36,6 +36,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.touchfeature@1.0.vendor
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    init.elish.rc
+
 # RRO Overlays
 PRODUCT_PACKAGES += \
     FrameworkResOverlayElish \
