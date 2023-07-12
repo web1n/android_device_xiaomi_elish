@@ -5,6 +5,10 @@ allow padsettings_app app_api_service:service_manager find;
 
 hal_client_domain(padsettings_app, hal_touchfeature)
 
+# Allow padsettings_app read and write /data/data subdirectory
+allow padsettings_app system_app_data_file:dir create_dir_perms;
+allow padsettings_app system_app_data_file:{ file lnk_file } create_file_perms;
+
 # Allow padsettings_app to read and write to cgroup
 allow padsettings_app cgroup:file rw_file_perms;
 
