@@ -1,0 +1,2 @@
+# Xiaomi Keyboard
+genfscon sysfs /devices/platform/soc/soc:xiaomi_keyboard/xiaomi_keyboard_conn_status                   u:object_r:sysfs_keyboard_status:s0

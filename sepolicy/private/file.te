@@ -1,2 +1,1 @@
-# sysfs
-type sysfs_xiaomi_keyboard, sysfs_type, fs_type;
+type sysfs_keyboard_status, sysfs_type, fs_type;

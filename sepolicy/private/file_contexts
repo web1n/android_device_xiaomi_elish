@@ -1,2 +1,0 @@
-# Sys files
-/sys/devices/platform/soc/soc:xiaomi_keyboard/xiaomi_keyboard_conn_status u:object_r:sysfs_xiaomi_keyboard:s0
