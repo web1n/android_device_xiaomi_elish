@@ -63,6 +63,8 @@
                 android:value="com.android.settings.category.ia.device" />
         </activity>
 
+        <service android:name=".keyboard.KeyboardService" />
+
         <service android:name=".stylus.StylusService" />
 
         <receiver

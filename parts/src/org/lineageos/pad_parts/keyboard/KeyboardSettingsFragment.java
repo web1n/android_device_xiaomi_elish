@@ -38,6 +38,6 @@ public class KeyboardSettingsFragment extends PreferenceFragment implements OnMa
 
     @Override
     public void onSwitchChanged(Switch switchView, boolean isChecked) {
-        KeyboardUtils.enableKeyboard(isChecked);
+        KeyboardUtils.checkKeyboardService(getContext());
     }
 }
