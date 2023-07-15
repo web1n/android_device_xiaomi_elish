@@ -54,7 +54,9 @@ TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(ELISH_PREBUILT)/Image
 TARGET_PREBUILT_DTB := $(ELISH_PREBUILT)/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(ELISH_PREBUILT)/dtbo.img
-PRODUCT_COPY_FILES += $(ELISH_PREBUILT)/dtb.img:dtb.img
+PRODUCT_COPY_FILES += \
+    $(ELISH_PREBUILT)/dtb.img:dtb.img \
+    $(call find-copy-subdir-files,*,$(ELISH_PREBUILT)/modules/,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
 
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := elish
