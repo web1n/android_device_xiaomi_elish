@@ -44,8 +44,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworkResOverlayElish \
     NetworkStackOverlayMIUI \
+    SettingsOverlayElish \
     SettingsProviderOverlayElish \
-    SettingsOverlayElish
+    SystemUIOverlayElish
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30
