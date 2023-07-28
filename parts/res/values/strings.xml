@@ -32,4 +32,10 @@
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">Xiaomi Keyboard</string>
     <string name="keyboard_switch_title">Enable Xiaomi Keyboard</string>
+
+    <!-- Rotation -->
+    <string name="force_rotate_title">Force app rotate</string>
+    <string name="force_rotate_summary">Force app rotation(regardless of manifest values)</string>
+    <string name="force_rotate_switch_title">Force app rotate</string>
+    <string name="force_rotate_app_list_title">App list</string>
 </resources>

@@ -24,6 +24,7 @@ import android.util.Log;
 
 import org.lineageos.pad_parts.keyboard.KeyboardUtils;
 import org.lineageos.pad_parts.stylus.StylusUtils;
+import org.lineageos.pad_parts.rotation.RotationUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
@@ -36,5 +37,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         KeyboardUtils.checkKeyboardService(context);
         StylusUtils.checkStylusService(context);
+        RotationUtils.checkRotateService(context);
     }
 }

@@ -32,4 +32,10 @@
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">小米键盘式双面保护壳</string>
     <string name="keyboard_switch_title">启用键盘式双面保护壳</string>
+
+    <!-- Rotation -->
+    <string name="force_rotate_title">强制屏幕旋转</string>
+    <string name="force_rotate_summary">强制应用支持用户屏幕方向显示（忽略清单值如何）</string>
+    <string name="force_rotate_switch_title">强制应用支持用户屏幕方向显示</string>
+    <string name="force_rotate_app_list_title">应用列表</string>
 </resources>
