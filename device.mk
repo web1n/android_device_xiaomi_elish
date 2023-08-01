@@ -57,10 +57,5 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
-    ro.adb.secure.recovery=0
-
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/elish/elish-vendor.mk)
