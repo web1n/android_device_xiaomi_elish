@@ -9,3 +9,12 @@
 -keep class org.lineageos.pad_parts.rotation.* {
   *;
 }
+
+-keep class org.lineageos.pad_parts.headset.* {
+  *;
+}
+
+# Keep keyhandler constructor
+-keep public class * implements com.android.internal.os.DeviceKeyHandler {
+    public <init>(android.content.Context);
+}

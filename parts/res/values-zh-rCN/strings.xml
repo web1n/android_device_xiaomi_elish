@@ -38,4 +38,10 @@
     <string name="force_rotate_summary">强制应用支持用户屏幕方向显示（忽略清单值如何）</string>
     <string name="force_rotate_switch_title">强制应用支持用户屏幕方向显示</string>
     <string name="force_rotate_app_list_title">应用列表</string>
+
+    <!-- Headset button -->
+    <string name="headset_button_control_title">耳机线控设置</string>
+    <string name="headset_button_control_updown_button_title">上下按钮</string>
+    <string name="headset_button_jack_profile_volume">调节音量增加/减少</string>
+    <string name="headset_button_jack_profile_music">播放下一曲/上一曲</string>
 </resources>

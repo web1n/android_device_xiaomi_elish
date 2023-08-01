@@ -80,6 +80,22 @@
                 android:resource="@string/force_rotate_summary"/>
         </activity>
 
+        <activity
+            android:name=".headset.HeadsetButtonSettingsActivity"
+            android:label="@string/headset_button_control_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.system" />
+        </activity>
+
+        <activity
+            android:name=".headset.KeyHandler"
+            android:enabled="false" />
+
         <service android:name=".keyboard.KeyboardService" />
 
         <service android:name=".stylus.StylusService" />

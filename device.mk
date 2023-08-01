@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
 # RRO Overlays
 PRODUCT_PACKAGES += \
     FrameworkResOverlayElish \
+    LineageSDKOverlayElish \
     NetworkStackOverlayMIUI \
     SettingsOverlayElish \
     SettingsProviderOverlayElish \
