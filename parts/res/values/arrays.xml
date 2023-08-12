@@ -27,12 +27,14 @@
     </string-array>
 
     <!-- Values for Headset button -->
-    <string-array name="headset_button_jack_profile_entries" translatable="false">
-        <item>@string/headset_button_jack_profile_volume</item>
-        <item>@string/headset_button_jack_profile_music</item>
+    <string-array name="headset_updown_button_profile_entries" translatable="false">
+        <item>@string/headset_updown_button_profile_off</item>
+        <item>@string/headset_updown_button_profile_volume</item>
+        <item>@string/headset_updown_button_profile_music</item>
     </string-array>
 
-    <string-array name="headset_button_jack_profile_values" translatable="false">
+    <string-array name="headset_updown_button_profile_values" translatable="false">
+        <item>off</item>
         <item>volume</item>
         <item>music</item>
     </string-array>

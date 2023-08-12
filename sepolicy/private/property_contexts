@@ -1,2 +1,2 @@
 # Headset
-persist.audio.button_jack.profile.lineage u:object_r:audio_headset_button_jack_profile_prop:s0
+persist.audio.headset.updown_button.profile u:object_r:audio_headset_button_profile_prop:s0

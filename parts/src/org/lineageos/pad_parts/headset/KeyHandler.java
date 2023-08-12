@@ -31,8 +31,8 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private static final String BUTTON_DEVICE_NAME = "kona-mtp-snd-card Button Jack";
 
-    protected static final String BUTTON_JACK_PROP
-            = "persist.audio.button_jack.profile.lineage";
+    protected static final String UPDOWN_BUTTON_PROFILE_PROP
+            = "persist.audio.headset.updown_button.profile";
     protected static final String PROFILE_VOLUME = "volume";
     protected static final String PROFILE_MUSIC = "music";
 
@@ -54,7 +54,7 @@ public class KeyHandler implements DeviceKeyHandler {
             return event;
         }
 
-        String buttonProfile = SystemProperties.get(BUTTON_JACK_PROP, PROFILE_VOLUME);
+        String buttonProfile = SystemProperties.get(UPDOWN_BUTTON_PROFILE_PROP, PROFILE_VOLUME);
         if(!buttonProfile.equals(PROFILE_VOLUME) && !buttonProfile.equals(PROFILE_MUSIC)) {
             return null;
         }

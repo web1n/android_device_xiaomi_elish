@@ -20,10 +20,10 @@
 
     <ListPreference
         android:key="headset_updown_button"
-        android:entries="@array/headset_button_jack_profile_entries"
-        android:entryValues="@array/headset_button_jack_profile_values"
+        android:entries="@array/headset_updown_button_profile_entries"
+        android:entryValues="@array/headset_updown_button_profile_values"
         android:defaultValue="volume"
-        android:title="@string/headset_button_control_updown_button_title"
+        android:title="@string/headset_updown_button_profile_title"
         android:summary="%s" />
 
 </PreferenceScreen>

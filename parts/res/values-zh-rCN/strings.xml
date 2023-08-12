@@ -41,7 +41,8 @@
 
     <!-- Headset button -->
     <string name="headset_button_control_title">耳机线控设置</string>
-    <string name="headset_button_control_updown_button_title">上下按钮</string>
-    <string name="headset_button_jack_profile_volume">调节音量增加/减少</string>
-    <string name="headset_button_jack_profile_music">播放下一曲/上一曲</string>
+    <string name="headset_updown_button_profile_title">上下按钮</string>
+    <string name="headset_updown_button_profile_off">禁用</string>
+    <string name="headset_updown_button_profile_volume">调节音量增加/减少</string>
+    <string name="headset_updown_button_profile_music">播放下一曲/上一曲</string>
 </resources>

@@ -41,7 +41,8 @@
 
     <!-- Headset button -->
     <string name="headset_button_control_title">Headset button control</string>
-    <string name="headset_button_control_updown_button_title">Up/Down button</string>
-    <string name="headset_button_jack_profile_volume">Control volume up/down</string>
-    <string name="headset_button_jack_profile_music">Control play next/previous</string>
+    <string name="headset_updown_button_profile_title">Up/Down button</string>
+    <string name="headset_updown_button_profile_off">Off</string>
+    <string name="headset_updown_button_profile_volume">Control volume up/down</string>
+    <string name="headset_updown_button_profile_music">Control play next/previous</string>
 </resources>

@@ -21,6 +21,6 @@ allow padsettings_app sysfs_keyboard_status:file rw_file_perms;
 # Allow padsettings_app to access uevent
 allow padsettings_app self:netlink_kobject_uevent_socket { bind create read setopt };
 
-# Allow padsettings_app to access headset button jack prop
-get_prop(padsettings_app, audio_headset_button_jack_profile_prop)
-set_prop(padsettings_app, audio_headset_button_jack_profile_prop)
+# Allow padsettings_app to access headset button prop
+get_prop(padsettings_app, audio_headset_button_profile_prop)
+set_prop(padsettings_app, audio_headset_button_profile_prop)

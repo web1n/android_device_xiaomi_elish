@@ -51,13 +51,13 @@ public class HeadsetButtonSettingsFragment extends PreferenceFragment implements
         super.onViewCreated(view, savedInstanceState);
 
         profilePerference.setValue(SystemProperties.get(
-                KeyHandler.BUTTON_JACK_PROP, KeyHandler.PROFILE_VOLUME));
+                KeyHandler.UPDOWN_BUTTON_PROFILE_PROP, KeyHandler.PROFILE_VOLUME));
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (PREFERENCE_UPDOWN_BUTTON.equals(preference.getKey())) {
-            SystemProperties.set(KeyHandler.BUTTON_JACK_PROP, (String) newValue);
+            SystemProperties.set(KeyHandler.UPDOWN_BUTTON_PROFILE_PROP, (String) newValue);
 
             ((ListPreference) preference).setValue((String) newValue);
             return false;
