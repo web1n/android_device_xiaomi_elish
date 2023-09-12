@@ -12,8 +12,6 @@ DEVICE_PATH := device/xiaomi/elish
 # Board
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
-BUILD_BROKEN_DUP_RULES := true
-
 # Display
 TARGET_SCREEN_DENSITY := 360
 
