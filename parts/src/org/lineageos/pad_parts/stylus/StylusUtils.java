@@ -49,26 +49,15 @@ public class StylusUtils {
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS = 0xEAEA;
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS_2 = 0x4D81;
 
-    protected static final String STYLUS_ENABLE = "stylus_enable";
     protected static final String STYLUS_DRIVER_VERSION = "stylus_driver_version";
 
-    private static void startService(Context context) {
+    public static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
 
         context.startServiceAsUser(new Intent(context, StylusService.class), UserHandle.CURRENT);
     }
 
-    public static void checkStylusService(Context context) {
-        if (isStylusEnabled(context)) {
-            startService(context);
-        }
-    }
-
-    protected static int enableStylus(Context context, boolean enable) {
-        return enableStylus(context, enable, getDriverVersion(context));
-    }
-
-    protected static int enableStylus(Context context, boolean enable, int driverVersion) {
+    protected static int enableStylus(boolean enable, int driverVersion) {
         int flag = (enable ? 0x10 : 0x00) | driverVersion;
 
         int result;
@@ -83,21 +72,9 @@ public class StylusUtils {
         return result;
     }
 
-    private static int getDriverVersion(Context context) {
-        SharedPreferences stylus_prefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-        return Integer.parseInt(stylus_prefs.getString(STYLUS_DRIVER_VERSION, "2"));
-    }
-
-    private static boolean isStylusEnabled(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(STYLUS_ENABLE, true);
-    }
-
-    protected static int getStylusVersion(Context context) {
-        InputManager inputManager = context.getSystemService(InputManager.class);
-
-        for (int id : inputManager.getInputDeviceIds()) {
-            InputDevice device = inputManager.getInputDevice(id);
+    protected static int getStylusVersion() {
+        for (int id : InputDevice.getDeviceIds()) {
+            InputDevice device = InputDevice.getDevice(id);
 
             if (getStylusVersion(device) != -1) {
                 return getStylusVersion(device);
@@ -120,10 +97,6 @@ public class StylusUtils {
         return -1;
     }
 
-    protected static boolean isStylusConnected(Context context) {
-        return getStylusVersion(context) != -1;
-    }
-
     protected static String macFormat(String mac) {
         if (mac.length() != 12) {
             return null;
@@ -142,18 +115,18 @@ public class StylusUtils {
     protected static void sendNotification(Context context, String mac) {
         NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
 
-        Intent bondIntent = new Intent(StylusReceiver.INTENT_ACTION_PAIR_STYLUS)
+        Intent pairIntent = new Intent(StylusReceiver.INTENT_ACTION_PAIR_STYLUS)
                 .setPackage(context.getPackageName())
                 .putExtra(StylusReceiver.EXTRA_MAC_ADDRESS, mac);
-        PendingIntent bondPendingIntent = PendingIntent.getBroadcast(context, 0,
-                bondIntent, PendingIntent.FLAG_MUTABLE | PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent pairPendingIntent = PendingIntent.getBroadcast(context, 0,
+                pairIntent, PendingIntent.FLAG_MUTABLE | PendingIntent.FLAG_CANCEL_CURRENT);
 
         Notification notification = new Notification.Builder(context, STYLUS_NOTIFICATION_CHANNEL_ID)
                 .setContentTitle(context.getString(R.string.stylus_name))
                 .setContentText(context.getString(R.string.stylus_detect_notification))
-                .setSmallIcon(R.drawable.stat_notify_sync)
-                .setContentIntent(bondPendingIntent)
-                .build();        
+                .setSmallIcon(android.R.drawable.stat_sys_data_bluetooth)
+                .setContentIntent(pairPendingIntent)
+                .build();
 
         if (notificationManager.getNotificationChannel(STYLUS_NOTIFICATION_CHANNEL_ID) == null) {
             NotificationChannel channel = new NotificationChannel(

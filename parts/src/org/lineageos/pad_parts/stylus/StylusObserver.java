@@ -60,7 +60,7 @@ public class StylusObserver extends UEventObserver implements InputManager.Input
 
     @Override
     public void onInputDeviceAdded(int deviceId) {
-        int stylus = StylusUtils.getStylusVersion(inputManager.getInputDevice(deviceId));
+        int stylus = StylusUtils.getStylusVersion(InputDevice.getDevice(deviceId));
         if (stylus == -1) {
             return;
         }
@@ -71,8 +71,8 @@ public class StylusObserver extends UEventObserver implements InputManager.Input
 
     @Override
     public void onInputDeviceRemoved(int deviceId) {
-        for (int id : inputManager.getInputDeviceIds()) {
-            InputDevice device = inputManager.getInputDevice(id);
+        for (int id : InputDevice.getDeviceIds()) {
+            InputDevice device = InputDevice.getDevice(id);
 
             if (StylusUtils.getStylusVersion(device) != -1) {
                 return;

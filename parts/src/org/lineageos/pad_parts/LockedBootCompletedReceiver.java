@@ -22,19 +22,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import org.lineageos.pad_parts.keyboard.KeyboardUtils;
-import org.lineageos.pad_parts.rotation.RotationUtils;
+import org.lineageos.pad_parts.stylus.StylusUtils;
 
-public class BootCompletedReceiver extends BroadcastReceiver {
+public class LockedBootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = true;
     private static final String TAG = "PadParts";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
+        if (DEBUG) Log.d(TAG, "Received locked boot completed intent");
 
-        KeyboardUtils.checkKeyboardService(context);
-        RotationUtils.checkRotateService(context);
+        StylusUtils.startService(context);
     }
 }

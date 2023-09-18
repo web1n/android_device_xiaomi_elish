@@ -17,14 +17,10 @@
 package org.lineageos.pad_parts.stylus;
 
 import android.app.Service;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+import android.os.UserHandle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -36,19 +32,16 @@ public class StylusService extends Service implements StylusObserver.StylusListe
     private static final boolean DEBUG = true;
 
     private StylusObserver mObserver;
-    private BluetoothAdapter mBluetoothAdapter;
 
     @Override
     public void onCreate() {
         if (DEBUG) Log.d(TAG, "Creating service");
         super.onCreate();
 
-        mBluetoothAdapter = getSystemService(BluetoothManager.class).getAdapter();
-
         mObserver = new StylusObserver(this, this);
         mObserver.startListening();
 
-        int stylusVersion = StylusUtils.getStylusVersion(this);
+        int stylusVersion = StylusUtils.getStylusVersion();
         if(stylusVersion != -1) {
             onStylusConnected(true, stylusVersion);
         }
@@ -75,7 +68,7 @@ public class StylusService extends Service implements StylusObserver.StylusListe
 
     @Override
     public void onStylusConnected(boolean connected, int version) {
-        StylusUtils.enableStylus(this, connected);
+        StylusUtils.enableStylus(connected, 2);
 
         if(connected) {
             String message = getString(
@@ -91,18 +84,11 @@ public class StylusService extends Service implements StylusObserver.StylusListe
     public void onVisibilityChanged(boolean visibility, String mac) {
         if (DEBUG) Log.d(TAG, String.format("onVisibilityChanged %b %s", visibility, mac));
 
-        if (visibility) {
-            if (mBluetoothAdapter.isEnabled()) {
-                BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(mac);
-                if (device.getBondState() != BluetoothDevice.BOND_NONE) {
-                    return;
-                }
+        Intent receiverIntent = new Intent(StylusReceiver.INTENT_ACTION_STYLUS_VISIBILITY_CHANGED)
+                .setPackage(getPackageName())
+                .putExtra(StylusReceiver.EXTRA_MAC_ADDRESS, mac);
 
-                StylusUtils.sendNotification(this, mac);
-            }
-        } else {
-            StylusUtils.cancelNotification(this);
-        }
+        sendBroadcastAsUser(receiverIntent, UserHandle.CURRENT);
     }
 
 }

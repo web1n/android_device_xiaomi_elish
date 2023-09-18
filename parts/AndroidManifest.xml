@@ -42,17 +42,13 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name=".stylus.StylusSettingsActivity"
-            android:label="@string/stylus_title"
-            android:theme="@style/Theme.SubSettingsBase">
+        <receiver
+            android:name=".LockedBootCompletedReceiver"
+            android:directBootAware="true">
             <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.device" />
-        </activity>
+        </receiver>
 
         <activity
             android:name=".keyboard.KeyboardSettingsActivity"
@@ -98,7 +94,10 @@
 
         <service android:name=".keyboard.KeyboardService" />
 
-        <service android:name=".stylus.StylusService" />
+        <service
+            android:name=".stylus.StylusService"
+            android:process=":stylus"
+            android:directBootAware="true" />
 
         <service android:name=".rotation.RotationService" />
 
@@ -107,6 +106,9 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="org.lineageos.pad_parts.action.PAIR_STYLUS" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.lineageos.pad_parts.action.STYLUS_VISIBILITY_CHANGED" />
             </intent-filter>
         </receiver>
     </application>

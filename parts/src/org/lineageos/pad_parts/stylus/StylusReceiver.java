@@ -35,37 +35,67 @@ public class StylusReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = true;
 
     protected static final String INTENT_ACTION_PAIR_STYLUS = "org.lineageos.pad_parts.action.PAIR_STYLUS";
+    protected static final String INTENT_ACTION_STYLUS_VISIBILITY_CHANGED
+           = "org.lineageos.pad_parts.action.STYLUS_VISIBILITY_CHANGED";
     protected static final String EXTRA_MAC_ADDRESS = "org.lineageos.pad_parts.extra.MAC_ADDRESS";
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (!INTENT_ACTION_PAIR_STYLUS.equals(intent.getAction())) {
-            return;
-        }
-
         String mac = intent.getStringExtra(EXTRA_MAC_ADDRESS);
+
+        if (INTENT_ACTION_PAIR_STYLUS.equals(intent.getAction())) {
+            pairStylus(context, mac);
+        } else if (INTENT_ACTION_STYLUS_VISIBILITY_CHANGED.equals(intent.getAction())) {
+            updateNotification(context, mac);
+        }
+    }
+
+    private void pairStylus(Context context, String mac) {
         if (mac == null) {
             return;
         }
         if (DEBUG) Log.d(TAG, String.format("received stylus bonding: %s", mac));
 
-        BluetoothAdapter adapter = context.getSystemService(BluetoothManager.class).getAdapter();
-        if (!adapter.isEnabled()) {
-            Toast.makeText(context, R.string.stylus_bluetooth_not_enable, Toast.LENGTH_SHORT).show();
-            return;
-        }
-
         StylusUtils.cancelNotification(context);
 
-        BluetoothDevice device = adapter.getRemoteDevice(mac);
-        if (device.getBondState() != BluetoothDevice.BOND_NONE) {
-            return;
+        BluetoothAdapter adapter = getBluetoothAdapter(context);
+        if (adapter != null) {
+            BluetoothDevice device = adapter.getRemoteDevice(mac);
+            if (device.getBondState() != BluetoothDevice.BOND_NONE) {
+                return;
+            }
+
+            device.createBond();
         }
-        device.createBond();
 
         Intent pairingIntent = new Intent(Settings.ACTION_BLUETOOTH_PAIRING_SETTINGS);
         pairingIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivityAsUser(pairingIntent, UserHandle.CURRENT);
+    }
+
+    private void updateNotification(Context context, String mac) {
+        if (DEBUG) Log.d(TAG, String.format("received visibility changed %s", mac));
+        BluetoothAdapter adapter = getBluetoothAdapter(context);
+
+        if (mac == null) {
+            StylusUtils.cancelNotification(context);
+        } else if (adapter != null) {
+            BluetoothDevice device = adapter.getRemoteDevice(mac);
+            if (device.getBondState() != BluetoothDevice.BOND_NONE) {
+                return;
+            }
+
+            StylusUtils.sendNotification(context, mac);
+        }
+    }
+
+    private BluetoothAdapter getBluetoothAdapter(Context context) {
+        BluetoothAdapter adapter = context.getSystemService(BluetoothManager.class).getAdapter();
+        if (!adapter.isEnabled()) {
+            return null;
+        }
+
+        return adapter;
     }
 
 }

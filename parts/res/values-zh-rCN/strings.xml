@@ -18,16 +18,11 @@
     <string name="app_name">平板设置</string>
 
     <!-- Xiaomi Stylus -->
-    <string name="stylus_title">小米灵感触控笔</string>
-    <string name="stylus_switch_title">启用小米灵感触控笔</string>
-    <string name="stylus_driver_version_title">选择驱动版本</string>
     <string name="stylus_notification_channel">小米灵感触控笔</string>
     <string name="stylus_name">小米灵感触控笔</string>
     <string name="stylus_gen2_name">小米灵感触控笔二代</string>
     <string name="stylus_detect_notification">配对以使用触控笔功能</string>
-    <string name="stylus_bluetooth_not_enable">蓝牙尚未开启</string>
     <string name="stylus_is_connected">%s已连接</string>
-    <string name="stylus_restart_needed">重启平板生效</string>
 
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">小米键盘式双面保护壳</string>
