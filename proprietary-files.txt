@@ -47,10 +47,12 @@ vendor/lib/rfsa/adsp/misound_res_spk4ch.bin
 
 # Audio-Hardware
 vendor/lib/hw/audio.primary.kona.so:vendor/lib/hw/audio.primary.elish.so;FIX_SONAME
+vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
 vendor/lib/liba2dpoffload.so:vendor/lib/liba2dpoffload_elish.so;FIX_SONAME
 vendor/lib/vndk/libxlog.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudiocloudctrl.so
+vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioroute_ext.so
 vendor/lib/libfcsam.so
 vendor/lib/libmmhardware.so
