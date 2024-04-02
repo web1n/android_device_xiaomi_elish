@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package org.lineageos.pad_parts.headset;
+package org.lineageos.pad_parts.button;
 
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
-public class HeadsetButtonSettingsActivity extends CollapsingToolbarBaseActivity {
+public class ButtonSettingsActivity extends CollapsingToolbarBaseActivity {
 
-    private static final String TAG_HEADSET = "headset";
+    private static final String TAG_BUTTON = "button";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class HeadsetButtonSettingsActivity extends CollapsingToolbarBaseActivity
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction().replace(
                     com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                    new HeadsetButtonSettingsFragment(), TAG_HEADSET).commit();
+                    new ButtonSettingsFragment(), TAG_BUTTON).commit();
         }
     }
 }

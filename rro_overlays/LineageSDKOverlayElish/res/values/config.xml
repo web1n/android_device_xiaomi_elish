@@ -26,6 +26,6 @@
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>org.lineageos.lineageparts.gestures.KeyHandler</item>
-        <item>org.lineageos.pad_parts.headset.KeyHandler</item>
+        <item>org.lineageos.pad_parts.button.KeyHandler</item>
     </string-array>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The LineageOS Project
+     Copyright (C) 2023-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,10 +34,16 @@
     <string name="force_rotate_switch_title">Force app rotate</string>
     <string name="force_rotate_app_list_title">App list</string>
 
-    <!-- Headset button -->
-    <string name="headset_button_control_title">Headset button control</string>
-    <string name="headset_updown_button_profile_title">Up/Down button</string>
-    <string name="headset_updown_button_profile_off">Off</string>
-    <string name="headset_updown_button_profile_volume">Control volume up/down</string>
-    <string name="headset_updown_button_profile_music">Control play next/previous</string>
+    <!-- Button -->
+    <string name="button_control_title">Headset and Stylus button</string>
+    <string name="headset_button_title">Headser Up/Down button</string>
+    <string name="headset_button_disable">Disable</string>
+    <string name="headset_button_volume">Control volume up/down</string>
+    <string name="headset_button_music">Control play next/previous</string>
+    <string name="stylus_button_title">Stylus button</string>
+    <string name="stylus_button_disable">Disable</string>
+    <string name="stylus_button_default">Default</string>
+    <string name="stylus_button_updown">As Up/Down button</string>
+    <string name="stylus_button_volume">Control volume up/down</string>
+    <string name="stylus_button_music">Control play next/previous</string>
 </resources>

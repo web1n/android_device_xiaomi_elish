@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The LineageOS Project
+     Copyright (C) 2023-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License"
      you may not use this file except in compliance with the License.
@@ -16,14 +16,22 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/headset_button_control_title">
+    android:title="@string/button_control_title">
 
     <ListPreference
-        android:key="headset_updown_button"
-        android:entries="@array/headset_updown_button_profile_entries"
-        android:entryValues="@array/headset_updown_button_profile_values"
+        android:key="headset_button"
+        android:entries="@array/headset_button_entries"
+        android:entryValues="@array/headset_button_values"
         android:defaultValue="volume"
-        android:title="@string/headset_updown_button_profile_title"
+        android:title="@string/headset_button_title"
+        android:summary="%s" />
+
+    <ListPreference
+        android:key="stylus_button"
+        android:entries="@array/stylus_button_entries"
+        android:entryValues="@array/stylus_button_values"
+        android:defaultValue="default"
+        android:title="@string/stylus_button_title"
         android:summary="%s" />
 
 </PreferenceScreen>
