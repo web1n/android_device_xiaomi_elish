@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The LineageOS Project
+ * Copyright (C) 2023-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package org.lineageos.pad_parts.headset;
+package org.lineageos.pad_parts.button;
 
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.R;
 
-public class HeadsetButtonSettingsActivity extends CollapsingToolbarBaseActivity {
+public class ButtonSettingsActivity extends CollapsingToolbarBaseActivity {
 
-    private static final String TAG_HEADSET = "headset";
+    private static final String TAG_BUTTON = "button";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(R.id.content_frame,
-                new HeadsetButtonSettingsFragment(), TAG_HEADSET).commit();
+                new ButtonSettingsFragment(), TAG_BUTTON).commit();
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The LineageOS Project
+     Copyright (C) 2023-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,10 +34,16 @@
     <string name="force_rotate_switch_title">强制应用支持用户屏幕方向显示</string>
     <string name="force_rotate_app_list_title">应用列表</string>
 
-    <!-- Headset button -->
-    <string name="headset_button_control_title">耳机线控设置</string>
-    <string name="headset_updown_button_profile_title">上下按钮</string>
-    <string name="headset_updown_button_profile_off">禁用</string>
-    <string name="headset_updown_button_profile_volume">调节音量增加/减少</string>
-    <string name="headset_updown_button_profile_music">播放下一曲/上一曲</string>
+    <!-- Button -->
+    <string name="button_control_title">耳机线控及手写笔按键</string>
+    <string name="headset_button_title">耳机线控按键</string>
+    <string name="headset_button_disable">禁用</string>
+    <string name="headset_button_volume">调节音量增加/减少</string>
+    <string name="headset_button_music">播放下一曲/上一曲</string>
+    <string name="stylus_button_title">手写笔按键</string>
+    <string name="stylus_button_disable">禁用</string>
+    <string name="stylus_button_default">默认功能</string>
+    <string name="stylus_button_updown">上下翻页</string>
+    <string name="stylus_button_volume">调节音量增加/减少</string>
+    <string name="stylus_button_music">播放下一曲/上一曲</string>
 </resources>

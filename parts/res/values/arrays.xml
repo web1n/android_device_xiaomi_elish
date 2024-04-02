@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2023 The LineageOS Project
+     Copyright (C) 2023-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -27,14 +27,31 @@
     </string-array>
 
     <!-- Values for Headset button -->
-    <string-array name="headset_updown_button_profile_entries" translatable="false">
-        <item>@string/headset_updown_button_profile_off</item>
-        <item>@string/headset_updown_button_profile_volume</item>
-        <item>@string/headset_updown_button_profile_music</item>
+    <string-array name="headset_button_entries" translatable="false">
+        <item>@string/headset_button_disable</item>
+        <item>@string/headset_button_volume</item>
+        <item>@string/headset_button_music</item>
     </string-array>
 
-    <string-array name="headset_updown_button_profile_values" translatable="false">
-        <item>off</item>
+    <string-array name="headset_button_values" translatable="false">
+        <item>disable</item>
+        <item>volume</item>
+        <item>music</item>
+    </string-array>
+
+    <!-- Values for Stylus button -->
+    <string-array name="stylus_button_entries" translatable="false">
+        <item>@string/stylus_button_disable</item>
+        <item>@string/stylus_button_default</item>
+        <!-- <item>@string/stylus_button_updown</item> -->
+        <item>@string/stylus_button_volume</item>
+        <item>@string/stylus_button_music</item>
+    </string-array>
+
+    <string-array name="stylus_button_values" translatable="false">
+        <item>disable</item>
+        <item>default</item>
+        <!-- <item>updown</item> -->
         <item>volume</item>
         <item>music</item>
     </string-array>
