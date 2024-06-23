@@ -1,0 +1,4 @@
+dontaudit {
+  hal_camera_default
+  zygote
+} property_type:file { getattr read write open map };

@@ -1,0 +1,4 @@
+dontaudit {
+  odrefresh
+  shell
+} property_type:file { getattr read write open map };
