@@ -28,8 +28,10 @@ public class RotationSettingsActivity extends CollapsingToolbarBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(
-                com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                new RotationSettingsFragment(), TAG_ROTATION).commit();
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction().replace(            
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                    new RotationSettingsFragment(), TAG_ROTATION).commit();
+        }
     }
 }

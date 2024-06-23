@@ -28,8 +28,10 @@ public class HeadsetButtonSettingsActivity extends CollapsingToolbarBaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(
-                com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                new HeadsetButtonSettingsFragment(), TAG_HEADSET).commit();
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction().replace(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                    new HeadsetButtonSettingsFragment(), TAG_HEADSET).commit();
+        }
     }
 }
