@@ -17,24 +17,23 @@
 
 package org.lineageos.pad_parts;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+import android.app.Application;
 import android.util.Log;
 
 import org.lineageos.pad_parts.keyboard.KeyboardUtils;
 import org.lineageos.pad_parts.rotation.RotationUtils;
 
-public class BootCompletedReceiver extends BroadcastReceiver {
+public class PersistentApplication extends Application {
 
     private static final boolean DEBUG = true;
     private static final String TAG = "PadParts";
 
     @Override
-    public void onReceive(final Context context, Intent intent) {
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
+    public void onCreate() {
+        super.onCreate();
+        if (DEBUG) Log.d(TAG, "PadParts Application onCreate");
 
-        KeyboardUtils.checkKeyboardService(context);
-        RotationUtils.checkRotateService(context);
+        KeyboardUtils.checkKeyboardService(this);
+        RotationUtils.checkRotateService(this);
     }
 }
