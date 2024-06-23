@@ -611,7 +611,6 @@ vendor/etc/sensors/sensor_diag.cfg
 vendor/etc/sensors/sns_reg_config
 
 # Sensors
-vendor/bin/init.qcom.sensors.sh
 vendor/bin/sensors.qti
 vendor/bin/sscrpcd
 vendor/etc/init/init.vendor.sensors.rc
