@@ -35,14 +35,15 @@ public class StylusObserver extends UEventObserver implements InputManager.Input
         void onVisibilityChanged(boolean visibility, String mac);
     }
 
-    private final InputManager inputManager;
-    private final StylusListener listener;
+    private final InputManager mInputManager;
+    private final StylusListener mListener;
 
+    private int mConnectedDevice = -1;
     private String mCurrentMac = null;
 
     public StylusObserver(Context context, StylusListener listener) {
-        this.inputManager = context.getSystemService(InputManager.class);
-        this.listener = listener;
+        this.mInputManager = context.getSystemService(InputManager.class);
+        this.mListener = listener;
     }
 
     @Override
@@ -52,7 +53,7 @@ public class StylusObserver extends UEventObserver implements InputManager.Input
         if (!Objects.equals(mCurrentMac, mac)) {
             if (DEBUG) Log.d(TAG, String.format("stylus mac changed: %s", mac));
 
-            listener.onVisibilityChanged(mac != null, mac);
+            mListener.onVisibilityChanged(mac != null, mac);
         }
 
         mCurrentMac = mac;
@@ -60,27 +61,28 @@ public class StylusObserver extends UEventObserver implements InputManager.Input
 
     @Override
     public void onInputDeviceAdded(int deviceId) {
+        if (mConnectedDevice != -1) {
+            return;
+        }
         int stylus = StylusUtils.getStylusVersion(InputDevice.getDevice(deviceId));
         if (stylus == -1) {
             return;
         }
         if (DEBUG) Log.d(TAG, "stylus connected");
 
-        listener.onStylusConnected(true, stylus);
+        mConnectedDevice = deviceId;
+        mListener.onStylusConnected(true, stylus);
     }
 
     @Override
     public void onInputDeviceRemoved(int deviceId) {
-        for (int id : InputDevice.getDeviceIds()) {
-            InputDevice device = InputDevice.getDevice(id);
-
-            if (StylusUtils.getStylusVersion(device) != -1) {
-                return;
-            }
+        if (mConnectedDevice != deviceId) {
+            return;
         }
-
         if (DEBUG) Log.d(TAG, "stylus disconnected");
-        listener.onStylusConnected(false, -1);
+
+        mConnectedDevice = -1;
+        mListener.onStylusConnected(false, -1);
     }
 
     @Override
@@ -91,12 +93,12 @@ public class StylusObserver extends UEventObserver implements InputManager.Input
     public void startListening() {
         super.startObserving("POWER_SUPPLY_PEN_MAC");
 
-        inputManager.registerInputDeviceListener(this, null);
+        mInputManager.registerInputDeviceListener(this, null);
     }
 
     public void stopListening() {
         super.stopObserving();
 
-        inputManager.unregisterInputDeviceListener(this);
+        mInputManager.unregisterInputDeviceListener(this);
     }
 }

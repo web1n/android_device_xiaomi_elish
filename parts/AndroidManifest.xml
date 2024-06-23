@@ -42,14 +42,6 @@
             </intent-filter>
         </receiver>
 
-        <receiver
-            android:name=".LockedBootCompletedReceiver"
-            android:directBootAware="true">
-            <intent-filter>
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
         <activity
             android:name=".keyboard.KeyboardSettingsActivity"
             android:label="@string/keyboard_title"
@@ -92,18 +84,18 @@
             android:name=".button.KeyHandler"
             android:enabled="false" />
 
-        <service android:name=".keyboard.KeyboardService" />
+        <activity
+            android:name=".stylus.StylusHandler"
+            android:enabled="false" />
 
-        <service
-            android:name=".stylus.StylusService"
-            android:process=":stylus"
-            android:directBootAware="true" />
+        <service android:name=".keyboard.KeyboardService" />
 
         <service android:name=".rotation.RotationService" />
 
         <receiver
             android:name=".stylus.StylusReceiver"
-            android:exported="false">
+            android:exported="true"
+            android:permission="android.permission.BLUETOOTH_ADMIN">
             <intent-filter>
                 <action android:name="org.lineageos.pad_parts.action.PAIR_STYLUS" />
             </intent-filter>
