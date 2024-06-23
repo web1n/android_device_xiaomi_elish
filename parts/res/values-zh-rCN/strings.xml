@@ -20,9 +20,7 @@
     <!-- Xiaomi Stylus -->
     <string name="stylus_notification_channel">小米灵感触控笔</string>
     <string name="stylus_name">小米灵感触控笔</string>
-    <string name="stylus_gen2_name">小米灵感触控笔二代</string>
     <string name="stylus_detect_notification">配对以使用触控笔功能</string>
-    <string name="stylus_is_connected">%s已连接</string>
 
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">小米键盘式双面保护壳</string>

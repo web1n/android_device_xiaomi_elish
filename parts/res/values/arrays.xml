@@ -15,17 +15,6 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Values for Stylus driver version -->
-    <string-array name="stylus_driver_version_entries" translatable="false">
-        <item>@string/stylus_name</item>
-        <item>@string/stylus_gen2_name</item>
-    </string-array>
-
-    <string-array name="stylus_driver_version_values" translatable="false">
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <!-- Values for Headset button -->
     <string-array name="headset_button_entries" translatable="false">
         <item>@string/headset_button_disable</item>

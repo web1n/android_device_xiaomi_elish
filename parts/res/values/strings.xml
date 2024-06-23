@@ -20,9 +20,7 @@
     <!-- Xiaomi Stylus -->
     <string name="stylus_notification_channel">Xiaomi Stylus</string>
     <string name="stylus_name">Xiaomi Stylus</string>
-    <string name="stylus_gen2_name">Xiaomi Stylus(gen 2)</string>
     <string name="stylus_detect_notification">do you want to pair</string>
-    <string name="stylus_is_connected">%s is connected</string>
 
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">Xiaomi Keyboard</string>

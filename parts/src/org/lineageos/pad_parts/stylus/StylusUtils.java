@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The LineageOS Project
+ * Copyright (C) 2023-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,8 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.hardware.input.InputManager;
-import android.os.UserHandle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.InputDevice;
 
@@ -48,14 +42,6 @@ public class StylusUtils {
     private static final int INPUT_VENDOR_ID_XIAOMI = 0x1915;
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS = 0xEAEA;
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS_2 = 0x4D81;
-
-    protected static final String STYLUS_DRIVER_VERSION = "stylus_driver_version";
-
-    public static void startService(Context context) {
-        if (DEBUG) Log.d(TAG, "Starting service");
-
-        context.startServiceAsUser(new Intent(context, StylusService.class), UserHandle.CURRENT);
-    }
 
     protected static int enableStylus(boolean enable, int driverVersion) {
         int flag = (enable ? 0x10 : 0x00) | driverVersion;
