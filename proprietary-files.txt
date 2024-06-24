@@ -446,20 +446,6 @@ vendor/lib/modules/rmnet_perf.ko
 vendor/lib/modules/rmnet_shs.ko
 vendor/lib/modules/sla.ko
 
-# GNSS
-vendor/bin/hw/airoha.hardware.anld
-vendor/bin/hw/android.hardware.gnss@2.1-service-airoha
-vendor/etc/airoha_config/anld_user_setting.xml
-vendor/etc/gnss/ag3335_bootloader.bin
-vendor/etc/gnss/gnss_config.bin
-vendor/etc/gnss/gnss_demo.bin
-vendor/etc/gnss/partition_table.bin
-vendor/etc/gnss/slave_da_UART.bin
-vendor/etc/init/airoha.hardware.anld.rc
-vendor/etc/init/android.hardware.gnss@2.1-service-airoha.rc
--vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-airoha.xml
-vendor/lib64/libairoha_libc++_shared.so
-
 # IPA firmware
 vendor/etc/init/ipa_fws.rc
 vendor/firmware/ipa_fws.b00
