@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The LineageOS Project
+ * Copyright (C) 2023-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,16 @@
 package org.lineageos.pad_parts.keyboard;
 
 import android.os.Bundle;
-import android.widget.Switch;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.preference.PreferenceFragment;
 
 import com.android.settingslib.widget.MainSwitchPreference;
-import com.android.settingslib.widget.OnMainSwitchChangeListener;
 
 import org.lineageos.pad_parts.R;
 
-public class KeyboardSettingsFragment extends PreferenceFragment implements OnMainSwitchChangeListener {
+public class KeyboardSettingsFragment extends PreferenceFragment implements OnCheckedChangeListener {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -37,7 +37,7 @@ public class KeyboardSettingsFragment extends PreferenceFragment implements OnMa
     }
 
     @Override
-    public void onSwitchChanged(Switch switchView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         KeyboardUtils.checkKeyboardService(getContext());
     }
 }

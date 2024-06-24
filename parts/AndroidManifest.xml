@@ -48,6 +48,7 @@
 
         <activity
             android:name=".keyboard.KeyboardSettingsActivity"
+            android:exported="false"
             android:label="@string/keyboard_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
@@ -60,6 +61,7 @@
 
         <activity
             android:name=".rotation.RotationSettingsActivity"
+            android:exported="false"
             android:label="@string/force_rotate_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
@@ -74,6 +76,7 @@
 
         <activity
             android:name=".headset.HeadsetButtonSettingsActivity"
+            android:exported="false"
             android:label="@string/headset_button_control_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
@@ -86,6 +89,7 @@
 
         <activity
             android:name=".headset.KeyHandler"
+            android:exported="false"
             android:enabled="false" />
 
         <service android:name=".keyboard.KeyboardService" />
