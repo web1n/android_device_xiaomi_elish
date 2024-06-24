@@ -24,4 +24,4 @@ PRODUCT_MODEL := M2105K81AC
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-BUILD_FINGERPRINT := Xiaomi/elish/elish:13/RKQ1.211001.001/V14.0.5.0.TKYCNXM:user/release-keys
+BUILD_FINGERPRINT := Xiaomi/elish/elish:13/RKQ1.211001.001/V816.0.2.0.TKYCNXM:user/release-keys
