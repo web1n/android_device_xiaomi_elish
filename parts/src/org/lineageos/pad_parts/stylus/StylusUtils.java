@@ -25,6 +25,8 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.InputDevice;
 
+import org.lineageos.pad_parts.utils.FileUtils;
+
 import org.lineageos.pad_parts.R;
 
 import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
@@ -33,6 +35,8 @@ public class StylusUtils {
 
     private static final String TAG = "StylusUtils";
     private static final boolean DEBUG = true;
+
+    private static final boolean IS_OSS_KERNEL;
 
     private static final int STYLUS_NOTIFICATION_ID = 10;
     private static final String STYLUS_NOTIFICATION_CHANNEL_ID = "XIAOMI_STYLUS";
@@ -43,8 +47,21 @@ public class StylusUtils {
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS = 0xEAEA;
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS_2 = 0x4D81;
 
+    static {
+        String kernel = FileUtils.readOneLine("/proc/version");
+        IS_OSS_KERNEL = kernel == null || !kernel.contains("pangu");
+
+        if (DEBUG) Log.d(TAG, String.format("kernel: %s, IS_OSS_KERNEL: %b", kernel, IS_OSS_KERNEL));
+    }
+
     protected static int enableStylus(boolean enable, int driverVersion) {
-        int flag = (enable ? 0x10 : 0x00) | driverVersion;
+        int flag;
+        if (IS_OSS_KERNEL) {
+            flag = enable ? 1 : 0;
+            if (DEBUG) Log.d(TAG, "OSS kernel cannot select stylus driver version");
+        } else {
+            flag = (enable ? 0x10 : 0x00) | driverVersion;
+        }
 
         int result;
         try {
