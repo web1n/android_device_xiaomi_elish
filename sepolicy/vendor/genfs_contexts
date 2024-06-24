@@ -1,2 +1,11 @@
-# Battery Supply
-genfscon sysfs /devices/platform/soc/soc:dual-FuelGauge/power_supply/bms                               u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/a80000.i2c/i2c-3/3-003b/power_supply/idt                          u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/soc:dual-FuelGauge/power_supply/bms                               u:object_r:sysfs_battery_supply:s0
+
+genfscon sysfs /devices/platform/soc/884000.i2c/i2c-6/6-0065/wakeup                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/884000.i2c/i2c-6/6-0066/wakeup                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/980000.i2c/i2c-0/0-0055/wakeup                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/994000.qcom,qup_uart/wakeup                                       u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a80000.i2c/i2c-3/3-003b/wakeup                                    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.1.auto/usb1/wakeup            u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.1.auto/usb2/wakeup            u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a94000.i2c/i2c-5/5-0055/wakeup                                    u:object_r:sysfs_wakeup:s0
