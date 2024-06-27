@@ -29,7 +29,8 @@
     <application
         android:label="@string/app_name"
         android:name=".PersistentApplication"
-        android:persistent="true">
+        android:persistent="true"
+        android:enableOnBackInvokedCallback="true">
 
         <activity
             android:name=".keyboard.KeyboardSettingsActivity"
