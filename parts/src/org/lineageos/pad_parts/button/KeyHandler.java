@@ -32,6 +32,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final String TAG = "KeyHandler";
 
     private static final String HEADSET_BUTTON_DEVICE_NAME = "kona-mtp-snd-card Button Jack";
+    private static final String HEADSET_BUTTON_DEVICE_NAME_2 = "kona-mtp-snd-card Headset Jack";
     private static final String STYLUS_BUTTON_DEVICE_NAME = "Xiaomi Smart Pen";
 
     private static final int HEADSET_BUTTON_UP = 257;
@@ -61,8 +62,9 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private KeyEvent handleHeadsetButtonEvent(KeyEvent event) {
-        if (!HEADSET_BUTTON_DEVICE_NAME.equals(
-                mInputManager.getInputDevice(event.getDeviceId()).getName())) {
+        String deviceName = mInputManager.getInputDevice(event.getDeviceId()).getName();
+        if (!HEADSET_BUTTON_DEVICE_NAME.equals(deviceName)
+                && !HEADSET_BUTTON_DEVICE_NAME_2.equals(deviceName)) {
             return event;
         }
 
