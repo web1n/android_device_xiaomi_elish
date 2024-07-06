@@ -5,6 +5,10 @@
 //
 
 soong_namespace {
+    imports: [
+        "hardware/google/interfaces",
+        "hardware/google/pixel",
+    ],
 }
 
 install_symlink {

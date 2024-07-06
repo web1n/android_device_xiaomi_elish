@@ -71,7 +71,9 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel
 
 # Wlan fix for stock kernel
 ifeq ($(TARGET_USE_PREBUILT_KERNEL),true)
