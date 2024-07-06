@@ -6,3 +6,17 @@
 
 soong_namespace {
 }
+
+install_symlink {
+    name: "firmware_qca6390_WCNSS_qcom_cfg.ini_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/qca_cld/qca6390/WCNSS_qcom_cfg.ini",
+    symlink_target: "/vendor/etc/wifi/WCNSS_qcom_cfg.ini",
+}
+
+install_symlink {
+    name: "firmware_qca6390_wlan_mac.bin_symlink",
+    vendor: true,
+    installed_location: "firmware/wlan/qca_cld/qca6390/wlan_mac.bin",
+    symlink_target: "/mnt/vendor/persist/wlan/wlan_mac.bin",
+}

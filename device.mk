@@ -73,5 +73,12 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Wlan fix for stock kernel
+ifeq ($(TARGET_USE_PREBUILT_KERNEL),true)
+PRODUCT_PACKAGES += \
+    firmware_qca6390_WCNSS_qcom_cfg.ini_symlink \
+    firmware_qca6390_wlan_mac.bin_symlink
+endif
+
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/elish/elish-vendor.mk)
