@@ -29,6 +29,21 @@ TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_elish
 # Kernel
 TARGET_KERNEL_CONFIG += vendor/xiaomi/elish.config
 
+ifeq ($(TARGET_USE_PREBUILT_KERNEL),true)
+TARGET_NO_KERNEL_OVERRIDE := true
+
+ELISH_PREBUILT := device/xiaomi/elish-prebuilt
+
+PRODUCT_COPY_FILES += \
+    $(ELISH_PREBUILT)/Image:kernel \
+    $(ELISH_PREBUILT)/dtb.img:dtb.img
+
+BOARD_PREBUILT_DTBOIMAGE := $(ELISH_PREBUILT)/dtbo.img
+
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(ELISH_PREBUILT)/modules/modules.load))
+BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(ELISH_PREBUILT)/modules/*.ko)
+endif
+
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := elish
 
