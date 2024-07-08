@@ -59,6 +59,7 @@ PRODUCT_PACKAGES += \
 
 # RRO Overlays
 PRODUCT_PACKAGES += \
+    ApertureOverlayElish \
     FrameworkResOverlayElish \
     LineageSDKOverlayElish \
     NetworkStackOverlayMIUI \
