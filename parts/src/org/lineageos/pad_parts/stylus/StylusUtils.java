@@ -20,6 +20,8 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -98,6 +100,25 @@ public class StylusUtils {
 
         // can only get when bluetooth connected
         return -1;
+    }
+
+    private static BluetoothDevice getBluetoothDevice(String mac) {
+        BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+        if (mac == null || adapter == null || !adapter.isEnabled()) {
+            return null;
+        }
+
+        return adapter.getRemoteDevice(mac);
+    }
+
+    protected static void updateBluetoothDeviceType(String mac) {
+        BluetoothDevice device = getBluetoothDevice(mac);
+        if (device == null || device.getMetadata(BluetoothDevice.METADATA_DEVICE_TYPE) != null) {
+            return;
+        }
+
+        device.setMetadata(
+                BluetoothDevice.METADATA_DEVICE_TYPE, BluetoothDevice.DEVICE_TYPE_STYLUS.getBytes());
     }
 
     protected static String macFormat(String mac) {

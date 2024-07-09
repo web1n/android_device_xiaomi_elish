@@ -35,6 +35,8 @@ public class StylusHandler implements DeviceKeyHandler, StylusObserver.StylusLis
     private final Context mContext;
     private final StylusObserver mObserver;
 
+    private String mCurrentMac = null;
+
     public StylusHandler(Context context) {
         if (DEBUG) Log.d(TAG, "StylusHandler");
 
@@ -50,13 +52,20 @@ public class StylusHandler implements DeviceKeyHandler, StylusObserver.StylusLis
     @Override
     public void onStylusConnected(boolean connected, int version) {
         if (DEBUG) Log.d(TAG, String.format("onStylusConnected %b %d", connected, version));
+        if (!connected) mCurrentMac = null;
 
         StylusUtils.enableStylus(connected, 2);
+
+        if (mCurrentMac != null) {
+            if (DEBUG) Log.d(TAG, "updateBluetoothDeviceType");
+            StylusUtils.updateBluetoothDeviceType(mCurrentMac);
+        }
     }
 
     @Override
     public void onVisibilityChanged(boolean visibility, String mac) {
         if (DEBUG) Log.d(TAG, String.format("onVisibilityChanged %b %s", visibility, mac));
+        if (visibility) mCurrentMac = mac;
 
         Intent receiverIntent = new Intent(StylusReceiver.INTENT_ACTION_STYLUS_VISIBILITY_CHANGED)
                 .addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY_BEFORE_BOOT)
