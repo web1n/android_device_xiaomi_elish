@@ -48,9 +48,7 @@ endif
 TARGET_OTA_ASSERT_DEVICE := elish
 
 # Power
-ifeq ($(TARGET_USE_PREBUILT_KERNEL),true)
 TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB := //$(DEVICE_PATH):libperfmgr-ext-xiaomi
-endif
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
