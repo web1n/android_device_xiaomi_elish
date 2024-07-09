@@ -523,4 +523,8 @@
         <item>0</item> <!--item>sensorLocationY</item-->
         <item>50</item> <!--item>sensorRadius</item-->
     </array>
+
+    <!-- Flag indicating whether the show Stylus pointer icon.
+     If set, a pointer icon will be shown over the location of a stylus pointer.-->
+    <bool name="config_enableStylusPointerIcon">false</bool>
 </resources>
