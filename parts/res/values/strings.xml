@@ -39,7 +39,6 @@
     <string name="headset_button_volume">Control volume up/down</string>
     <string name="headset_button_music">Control play next/previous</string>
     <string name="stylus_button_title">Stylus button</string>
-    <string name="stylus_button_disable">Disable</string>
     <string name="stylus_button_default">Default</string>
     <string name="stylus_button_updown">As Up/Down button</string>
     <string name="stylus_button_volume">Control volume up/down</string>

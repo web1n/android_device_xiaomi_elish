@@ -17,6 +17,8 @@
 package org.lineageos.pad_parts.button;
 
 import android.content.ContentResolver;
+import android.os.UserHandle;
+import android.provider.Settings;
 
 import lineageos.providers.LineageSettings;
 
@@ -37,6 +39,11 @@ public class ButtonUtils {
 
     protected static void putSettingString(ContentResolver resolver, String key, String value) {
         LineageSettings.Global.putStringForUser(resolver, key, value, 0);
+    }
+
+    protected static boolean isStylusButtonsEnabled(ContentResolver resolver) {
+        return Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.STYLUS_BUTTONS_ENABLED, 1, UserHandle.USER_CURRENT) == 1;
     }
 
 }

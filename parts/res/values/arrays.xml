@@ -30,7 +30,6 @@
 
     <!-- Values for Stylus button -->
     <string-array name="stylus_button_entries" translatable="false">
-        <item>@string/stylus_button_disable</item>
         <item>@string/stylus_button_default</item>
         <!-- <item>@string/stylus_button_updown</item> -->
         <item>@string/stylus_button_volume</item>
@@ -38,7 +37,6 @@
     </string-array>
 
     <string-array name="stylus_button_values" translatable="false">
-        <item>disable</item>
         <item>default</item>
         <!-- <item>updown</item> -->
         <item>volume</item>

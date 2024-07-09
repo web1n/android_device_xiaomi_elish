@@ -91,6 +91,9 @@ public class KeyHandler implements DeviceKeyHandler {
                 mInputManager.getInputDevice(event.getDeviceId()).getName())) {
             return event;
         }
+        if (!ButtonUtils.isStylusButtonsEnabled(mContentResolver)) {
+            return null;
+        }
 
         int keyCode;
         switch (getSettingString(mContentResolver, STYLUS_BUTTON, STYLUS_BUTTON_DEFAULT)) {

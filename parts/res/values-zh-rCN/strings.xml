@@ -39,7 +39,6 @@
     <string name="headset_button_volume">调节音量增加/减少</string>
     <string name="headset_button_music">播放下一曲/上一曲</string>
     <string name="stylus_button_title">手写笔按键</string>
-    <string name="stylus_button_disable">禁用</string>
     <string name="stylus_button_default">默认功能</string>
     <string name="stylus_button_updown">上下翻页</string>
     <string name="stylus_button_volume">调节音量增加/减少</string>
