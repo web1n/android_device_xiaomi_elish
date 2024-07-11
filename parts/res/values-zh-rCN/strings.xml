@@ -43,4 +43,9 @@
     <string name="stylus_button_updown">上下翻页</string>
     <string name="stylus_button_volume">调节音量增加/减少</string>
     <string name="stylus_button_music">播放下一曲/上一曲</string>
+
+    <!-- Stylus -->
+    <string name="stylus_hardware_version_title">硬件版本</string>
+    <string name="stylus_hardware_version_1">小米灵感触控笔一代</string>
+    <string name="stylus_hardware_version_2">小米灵感触控笔二代</string>
 </resources>

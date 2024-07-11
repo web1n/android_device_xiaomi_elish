@@ -38,6 +38,8 @@ public class StylusUtils {
     private static final String TAG = "StylusUtils";
     private static final boolean DEBUG = true;
 
+    protected static final String RECEIVER_PACKAGE =  "org.lineageos.pad_parts";
+
     private static final boolean IS_OSS_KERNEL;
 
     private static final int STYLUS_NOTIFICATION_ID = 10;
@@ -48,6 +50,12 @@ public class StylusUtils {
     private static final int INPUT_VENDOR_ID_XIAOMI = 0x1915;
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS = 0xEAEA;
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS_2 = 0x4D81;
+
+    private static final int METADATA_FAST_PAIR_CUSTOMIZED_FIELDS = 25;
+    private static final String SLICE_SETTINGS_URI = "content://org.lineageos.pad_parts.stylus/settings";
+    private static final String FAST_PAIR_CUSTOMIZED_FIELDS =
+            "<HEARABLE_CONTROL_SLICE_WITH_WIDTH>" + SLICE_SETTINGS_URI + "</HEARABLE_CONTROL_SLICE_WITH_WIDTH>";
+    protected static final String INTENT_ACTION_DUMMY = "org.lineageos.pad_parts.action.DUMMY";
 
     static {
         String kernel = FileUtils.readOneLine("/proc/version");
@@ -111,14 +119,24 @@ public class StylusUtils {
         return adapter.getRemoteDevice(mac);
     }
 
-    protected static void updateBluetoothDeviceType(String mac) {
-        BluetoothDevice device = getBluetoothDevice(mac);
-        if (device == null || device.getMetadata(BluetoothDevice.METADATA_DEVICE_TYPE) != null) {
+    private static void setBluetoothDeviceMetadata(BluetoothDevice device, int key, String value) {
+        if (device == null || value == null || device.getMetadata(key) != null) {
             return;
         }
 
-        device.setMetadata(
-                BluetoothDevice.METADATA_DEVICE_TYPE, BluetoothDevice.DEVICE_TYPE_STYLUS.getBytes());
+        device.setMetadata(key, value.getBytes());
+    }
+
+    protected static void updateBluetoothDeviceInfo(String mac) {
+        BluetoothDevice device = getBluetoothDevice(mac);
+        if (device == null) {
+            return;
+        }
+
+        setBluetoothDeviceMetadata(device,
+                BluetoothDevice.METADATA_DEVICE_TYPE, BluetoothDevice.DEVICE_TYPE_STYLUS);
+        setBluetoothDeviceMetadata(device,
+                METADATA_FAST_PAIR_CUSTOMIZED_FIELDS, FAST_PAIR_CUSTOMIZED_FIELDS);
     }
 
     protected static String macFormat(String mac) {

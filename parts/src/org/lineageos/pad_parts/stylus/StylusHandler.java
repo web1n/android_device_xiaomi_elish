@@ -57,8 +57,8 @@ public class StylusHandler implements DeviceKeyHandler, StylusObserver.StylusLis
         StylusUtils.enableStylus(connected, 2);
 
         if (mCurrentMac != null) {
-            if (DEBUG) Log.d(TAG, "updateBluetoothDeviceType");
-            StylusUtils.updateBluetoothDeviceType(mCurrentMac);
+            if (DEBUG) Log.d(TAG, "updateBluetoothDeviceInfo");
+            StylusUtils.updateBluetoothDeviceInfo(mCurrentMac);
         }
     }
 
@@ -69,7 +69,7 @@ public class StylusHandler implements DeviceKeyHandler, StylusObserver.StylusLis
 
         Intent receiverIntent = new Intent(StylusReceiver.INTENT_ACTION_STYLUS_VISIBILITY_CHANGED)
                 .addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY_BEFORE_BOOT)
-                .setPackage("org.lineageos.pad_parts")
+                .setPackage(StylusUtils.RECEIVER_PACKAGE)
                 .putExtra(StylusReceiver.EXTRA_MAC_ADDRESS, mac);
 
         mContext.sendBroadcastAsUser(receiverIntent, UserHandle.CURRENT);

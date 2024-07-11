@@ -43,4 +43,9 @@
     <string name="stylus_button_updown">As Up/Down button</string>
     <string name="stylus_button_volume">Control volume up/down</string>
     <string name="stylus_button_music">Control play next/previous</string>
+
+    <!-- Stylus -->
+    <string name="stylus_hardware_version_title">Hardware version</string>
+    <string name="stylus_hardware_version_1">Xiaomi Smart Pen (gen 1)</string>
+    <string name="stylus_hardware_version_2">Xiaomi Smart Pen (gen 2)</string>
 </resources>

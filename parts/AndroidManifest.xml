@@ -97,5 +97,10 @@
                 <action android:name="org.lineageos.pad_parts.action.STYLUS_VISIBILITY_CHANGED" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:authorities="org.lineageos.pad_parts.stylus"
+            android:name=".stylus.StylusSliceProvider"
+            android:exported="false" />
     </application>
 </manifest>

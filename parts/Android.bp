@@ -18,6 +18,10 @@ android_app {
     privileged: true,
 
     static_libs: [
+        "androidx.core_core",
+        "androidx.slice_slice-core",
+        "androidx.slice_slice-view",
+        "androidx.slice_slice-builders",
         "org.lineageos.platform.internal",
         "org.lineageos.settings.resources",
         "//hardware/xiaomi:vendor.xiaomi.hardware.touchfeature-V1.0-java",
