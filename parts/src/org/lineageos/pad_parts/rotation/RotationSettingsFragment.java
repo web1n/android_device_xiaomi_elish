@@ -37,6 +37,8 @@ import com.android.settingslib.widget.MainSwitchPreference;
 
 import java.util.Set;
 
+import org.lineageos.pad_parts.utils.SettingsUtils;
+
 import org.lineageos.pad_parts.R;
 
 public class RotationSettingsFragment extends PreferenceFragment implements
@@ -51,10 +53,10 @@ public class RotationSettingsFragment extends PreferenceFragment implements
         addPreferencesFromResource(R.xml.rotation_settings);
 
         mPrefs = getContext().getSharedPreferences(
-                RotationUtils.FORCE_ROTATE_ENABLE, Context.MODE_PRIVATE);
+                SettingsUtils.FORCE_ROTATE_ENABLE, Context.MODE_PRIVATE);
 
         MainSwitchPreference enablePreference =
-                (MainSwitchPreference) findPreference(RotationUtils.FORCE_ROTATE_ENABLE);
+                (MainSwitchPreference) findPreference(SettingsUtils.FORCE_ROTATE_ENABLE);
         enablePreference.addOnSwitchChangeListener(this);
     }
 

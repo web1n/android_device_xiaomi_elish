@@ -19,16 +19,15 @@ package org.lineageos.pad_parts.rotation;
 import android.content.Context;
 import android.content.Intent;
 import android.os.UserHandle;
-import android.preference.PreferenceManager;
-import android.provider.Settings.Secure;
 import android.util.Log;
+
+import org.lineageos.pad_parts.utils.SettingsUtils;
 
 public class RotationUtils {
 
     private static final String TAG = "RotationUtils";
     private static final boolean DEBUG = true;
 
-    protected static final String FORCE_ROTATE_ENABLE = "force_rotate_enable";
     protected static final String LAUNCHER_PACKAGE_NAME = "com.android.launcher3";
 
     private static void startService(Context context) {
@@ -42,14 +41,11 @@ public class RotationUtils {
     }
 
     public static void checkRotateService(Context context) {
-        if (isForceRotateEnabled(context)) {
+        if (SettingsUtils.isSettingEnabled(context, SettingsUtils.FORCE_ROTATE_ENABLE)) {
             startService(context);
         } else {
             stopService(context);
         }
     }
 
-    private static boolean isForceRotateEnabled(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(FORCE_ROTATE_ENABLE, false);
-    }
 }

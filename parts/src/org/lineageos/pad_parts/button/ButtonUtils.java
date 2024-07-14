@@ -16,11 +16,17 @@
 
 package org.lineageos.pad_parts.button;
 
+import android.content.Context;
 import android.content.ContentResolver;
+import android.content.res.Resources;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import java.util.Arrays;
+
 import lineageos.providers.LineageSettings;
+
+import org.lineageos.pad_parts.R;
 
 public class ButtonUtils {
     protected static final String HEADSET_BUTTON = "padparts.button.headset";
@@ -44,6 +50,27 @@ public class ButtonUtils {
     protected static boolean isStylusButtonsEnabled(ContentResolver resolver) {
         return Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.STYLUS_BUTTONS_ENABLED, 1, UserHandle.USER_CURRENT) == 1;
+    }
+
+    public static String getButtonSettingsSummary(Context context) {
+        if (context == null) {
+            return null;
+        }
+        Resources res = context.getResources();
+        ContentResolver resolver = context.getContentResolver();
+
+        int headsetIndex = Arrays.asList(res.getStringArray(R.array.headset_button_values))
+                .indexOf(getSettingString(resolver, HEADSET_BUTTON, HEADSET_BUTTON_MUSIC));
+        int stylusIndex = Arrays.asList(res.getStringArray(R.array.stylus_button_values))
+                .indexOf(getSettingString(resolver, STYLUS_BUTTON, STYLUS_BUTTON_DEFAULT));
+        headsetIndex = headsetIndex == -1 ? 0 : headsetIndex;
+        stylusIndex = stylusIndex == -1 ? 0 : stylusIndex;
+
+        return String.format("%s: %s, %s: %s",
+                res.getString(R.string.headset_button_title),
+                res.getStringArray(R.array.headset_button_entries)[headsetIndex],
+                res.getString(R.string.stylus_button_title),
+                res.getStringArray(R.array.stylus_button_entries)[stylusIndex]);
     }
 
 }

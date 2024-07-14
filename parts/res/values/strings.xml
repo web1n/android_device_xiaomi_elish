@@ -28,7 +28,6 @@
 
     <!-- Rotation -->
     <string name="force_rotate_title">Force app rotate</string>
-    <string name="force_rotate_summary">Force app rotation(regardless of manifest values)</string>
     <string name="force_rotate_switch_title">Force app rotate</string>
     <string name="force_rotate_app_list_title">App list</string>
 
@@ -48,4 +47,8 @@
     <string name="stylus_hardware_version_title">Hardware version</string>
     <string name="stylus_hardware_version_1">Xiaomi Smart Pen (gen 1)</string>
     <string name="stylus_hardware_version_2">Xiaomi Smart Pen (gen 2)</string>
+
+    <!-- Summary -->
+    <string name="summary_enabled">Enabled</string>
+    <string name="summary_disabled">Disabled</string>
 </resources>

@@ -37,6 +37,8 @@ import android.view.WindowManager;
 import java.util.HashSet;
 import java.util.Map;
 
+import org.lineageos.pad_parts.utils.SettingsUtils;
+
 public class RotationService extends Service implements
     SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -84,7 +86,7 @@ public class RotationService extends Service implements
 
     private void initSharedPreference() {
         SharedPreferences prefs = getSharedPreferences(
-                RotationUtils.FORCE_ROTATE_ENABLE, Context.MODE_PRIVATE);
+                SettingsUtils.FORCE_ROTATE_ENABLE, Context.MODE_PRIVATE);
 
         mForceRotatePackages.addAll(prefs.getAll().keySet());
         mForceRotatePackages.add(RotationUtils.LAUNCHER_PACKAGE_NAME);
@@ -118,7 +120,7 @@ public class RotationService extends Service implements
             // Do nothing
         }
 
-        getSharedPreferences(RotationUtils.FORCE_ROTATE_ENABLE, Context.MODE_PRIVATE)
+        getSharedPreferences(SettingsUtils.FORCE_ROTATE_ENABLE, Context.MODE_PRIVATE)
                 .unregisterOnSharedPreferenceChangeListener(this);
 
         mWindowManager.removeViewImmediate(mView);

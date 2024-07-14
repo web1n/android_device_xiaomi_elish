@@ -24,6 +24,8 @@ import androidx.preference.PreferenceFragment;
 
 import com.android.settingslib.widget.MainSwitchPreference;
 
+import org.lineageos.pad_parts.utils.SettingsUtils;
+
 import org.lineageos.pad_parts.R;
 
 public class KeyboardSettingsFragment extends PreferenceFragment implements OnCheckedChangeListener {
@@ -32,7 +34,8 @@ public class KeyboardSettingsFragment extends PreferenceFragment implements OnCh
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.keyboard_settings);
 
-        MainSwitchPreference enablePreference = (MainSwitchPreference) findPreference(KeyboardUtils.KEYBOARD_ENABLE);
+        MainSwitchPreference enablePreference =
+                (MainSwitchPreference) findPreference(SettingsUtils.KEYBOARD_ENABLE);
         enablePreference.addOnSwitchChangeListener(this);
     }
 

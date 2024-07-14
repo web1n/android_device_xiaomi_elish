@@ -24,6 +24,7 @@ import android.provider.Settings.Secure;
 import android.util.Log;
 
 import org.lineageos.pad_parts.utils.FileUtils;
+import org.lineageos.pad_parts.utils.SettingsUtils;
 
 public class KeyboardUtils {
 
@@ -31,7 +32,6 @@ public class KeyboardUtils {
     private static final boolean DEBUG = true;
 
     protected static final String KEYBOARD_STATUS_PATH = "/sys/devices/platform/soc/soc:xiaomi_keyboard/xiaomi_keyboard_conn_status";
-    protected static final String KEYBOARD_ENABLE = "keyboard_enable";
 
     public static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
@@ -44,7 +44,7 @@ public class KeyboardUtils {
     }
 
     public static void checkKeyboardService(Context context) {
-        if (isKeyboardEnabled(context)) {
+        if (SettingsUtils.isSettingEnabled(context, SettingsUtils.KEYBOARD_ENABLE)) {
             startService(context);
         } else {
             stopService(context);
@@ -53,10 +53,6 @@ public class KeyboardUtils {
 
     protected static void enableKeyboard(boolean enable) {
         FileUtils.writeLine(KEYBOARD_STATUS_PATH, enable ? "enable_keyboard" : "disable_keyboard");
-    }
-
-    private static boolean isKeyboardEnabled(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(KEYBOARD_ENABLE, false);
     }
 
     protected static void setShowImeWithHardKeyboard(Context context, boolean show) {

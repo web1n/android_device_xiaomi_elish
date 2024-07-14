@@ -28,7 +28,6 @@
 
     <!-- Rotation -->
     <string name="force_rotate_title">强制屏幕旋转</string>
-    <string name="force_rotate_summary">强制应用支持用户屏幕方向显示（忽略清单值如何）</string>
     <string name="force_rotate_switch_title">强制应用支持用户屏幕方向显示</string>
     <string name="force_rotate_app_list_title">应用列表</string>
 
@@ -48,4 +47,8 @@
     <string name="stylus_hardware_version_title">硬件版本</string>
     <string name="stylus_hardware_version_1">小米灵感触控笔一代</string>
     <string name="stylus_hardware_version_2">小米灵感触控笔二代</string>
+
+    <!-- Summary -->
+    <string name="summary_enabled">已启用</string>
+    <string name="summary_disabled">已禁用</string>
 </resources>
