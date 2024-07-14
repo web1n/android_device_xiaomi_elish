@@ -42,7 +42,7 @@
             </intent-filter>
             <meta-data
                 android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.device" />
+                android:value="com.android.settings.category.ia.connect" />
             <meta-data
                 android:name="com.android.settings.switch_uri"
                 android:value="content://org.lineageos.pad_parts.settings" />
@@ -52,6 +52,9 @@
             <meta-data
                 android:name="com.android.settings.keyhint"
                 android:value="keyboard_enable" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="3" />
         </activity>
 
         <activity
