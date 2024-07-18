@@ -1,0 +1,12 @@
+type airoha_gnss_hal, domain;
+hal_server_domain(airoha_gnss_hal, hal_gnss)
+
+type airoha_gnss_hal_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(airoha_gnss_hal)
+
+binder_call(airoha_gnss_hal, hwservicemanager)
+
+allow airoha_gnss_hal airoha_gnss_hal_exec:file { read getattr map execute open entrypoint };
+
+allow airoha_gnss_hal airoha_anld:unix_stream_socket connectto;

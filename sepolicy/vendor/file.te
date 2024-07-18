@@ -1,0 +1,3 @@
+# GNSS
+type airoha_data_file, file_type, data_file_type;
+type anld_socket_file, file_type;

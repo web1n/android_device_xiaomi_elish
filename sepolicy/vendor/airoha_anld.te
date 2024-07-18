@@ -1,0 +1,27 @@
+type airoha_anld, domain;
+
+type airoha_anld_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(airoha_anld)
+
+binder_call(airoha_anld, hwservicemanager)
+
+allow airoha_anld airoha_anld_exec:file { read getattr map execute open entrypoint };
+
+allow airoha_anld tty_device:chr_file rw_file_perms;
+allow airoha_anld airoha_mock_gps:chr_file rw_file_perms;
+allow airoha_anld vendor_data_file:dir w_dir_perms;
+allow airoha_anld vendor_data_file:file create_file_perms;
+allow airoha_anld gps_device:chr_file rw_file_perms;
+allow airoha_anld airoha_data_file:dir create_dir_perms;
+allow airoha_anld airoha_data_file:file create_file_perms;
+allow airoha_anld sdcard_type:dir create_dir_perms;
+allow airoha_anld sdcard_type:file create_file_perms;
+allow airoha_anld mnt_user_file:dir create_dir_perms;
+allow airoha_anld mnt_vendor_file:dir create_dir_perms;
+allow airoha_anld mnt_vendor_file:file create_file_perms;
+allow airoha_anld tmpfs:lnk_file create_file_perms;
+allow airoha_anld mnt_user_file:lnk_file create_file_perms;
+allow airoha_anld storage_file:dir create_dir_perms;
+allow airoha_anld storage_file:file create_file_perms;
+allow airoha_anld anld_socket_file:sock_file create_file_perms;
