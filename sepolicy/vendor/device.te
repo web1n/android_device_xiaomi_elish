@@ -3,3 +3,6 @@ type touchfeature_device, dev_type;
 # GNSS
 type airoha_mock_gps, dev_type;
 type gps_device, dev_type;
+
+# MIGT
+type migt_device, dev_type;

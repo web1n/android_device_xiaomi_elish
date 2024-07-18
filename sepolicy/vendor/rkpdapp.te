@@ -1,0 +1,1 @@
+allow rkpdapp zygote:unix_stream_socket getopt;

@@ -1,0 +1,9 @@
+dontaudit misctrl sysfs_dt_firmware_android:file { read open getattr };
+dontaudit misctrl sysfs_dt_firmware_android:dir { read open getattr };
+
+dontaudit odrefresh property_type:file { getattr read write open map };
+
+# Suspend
+dontaudit system_app system_suspend_control_internal_service:service_manager find;
+dontaudit system_app system_suspend_control_service:service_manager find;
+dontaudit system_app tracingproxy_service:service_manager find;
