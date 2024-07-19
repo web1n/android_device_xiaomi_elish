@@ -22,10 +22,6 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/framework_compatibility_matrix_xiaomi.xml
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_elish
-TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_elish
-
 # Kernel
 TARGET_KERNEL_CONFIG += vendor/xiaomi/elish.config
 
