@@ -2,11 +2,6 @@
 
 Xiaomi Pad 5 Pro (elish) Device Tree for Android 14 LineageOS 21.0
 
-## Which not work
-
-- GPS
-- SEPolicy
-
 ## How to flash
 
 You will lose all user data after flashing LineageOS. Remember to back it up in a safe place. I warned you.
