@@ -97,7 +97,7 @@ public class StylusUtils {
         return -1;
     }
 
-    protected static int getStylusVersion(InputDevice device) {
+    public static int getStylusVersion(InputDevice device) {
         if (device.getVendorId() == INPUT_VENDOR_ID_XIAOMI) {
             if (device.getProductId() == INPUT_PRODUCT_ID_XIAOMI_STYLUS) {
                 return 1;

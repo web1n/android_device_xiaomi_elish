@@ -21,6 +21,7 @@ import android.content.ContentResolver;
 import android.hardware.input.InputManager;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.InputDevice;
 
 import com.android.internal.os.DeviceKeyHandler;
 
@@ -30,10 +31,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private static final boolean DEBUG = true;
     private static final String TAG = "KeyHandler";
-
-    private static final String HEADSET_BUTTON_DEVICE_NAME = "kona-mtp-snd-card Button Jack";
-    private static final String HEADSET_BUTTON_DEVICE_NAME_2 = "kona-mtp-snd-card Headset Jack";
-    private static final String STYLUS_BUTTON_DEVICE_NAME = "Xiaomi Smart Pen";
 
     private static final int HEADSET_BUTTON_UP = 257;
     private static final int HEADSET_BUTTON_DOWN = 258;
@@ -62,9 +59,8 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private KeyEvent handleHeadsetButtonEvent(KeyEvent event) {
-        String deviceName = mInputManager.getInputDevice(event.getDeviceId()).getName();
-        if (!HEADSET_BUTTON_DEVICE_NAME.equals(deviceName)
-                && !HEADSET_BUTTON_DEVICE_NAME_2.equals(deviceName)) {
+        final InputDevice device = mInputManager.getInputDevice(event.getDeviceId());
+        if (device == null || !isHeadsetButtonDevice(device)) {
             return event;
         }
 
@@ -87,8 +83,8 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private KeyEvent handleStylusButtonEvent(KeyEvent event) {
-        if (!STYLUS_BUTTON_DEVICE_NAME.equals(
-                mInputManager.getInputDevice(event.getDeviceId()).getName())) {
+        final InputDevice device = mInputManager.getInputDevice(event.getDeviceId());
+        if (device == null || !isStylusDevice(device)) {
             return event;
         }
         if (!ButtonUtils.isStylusButtonsEnabled(mContentResolver)) {
