@@ -51,5 +51,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/interfaces/peripherals/1.0/default/device_framework_matrix.xml
 
+# Wi-Fi
+SOONG_CONFIG_XIAOMI_KONA_WIFI_SYMLINK_VERSION := v2
+
 # Inherit from the proprietary version
 include vendor/xiaomi/elish/BoardConfigVendor.mk
