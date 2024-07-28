@@ -1,5 +1,6 @@
 # Audio
 persist.vendor.audio.hifi=false
+ro.audio.monitorRotation=true
 ro.vendor.audio.hifi=true
 ro.vendor.audio.sfx.audiovisual=true
 ro.vendor.audio.soundtrigger.appdefine.cnn.level=35
