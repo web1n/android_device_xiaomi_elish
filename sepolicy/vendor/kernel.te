@@ -1,1 +1,3 @@
 allow kernel kernel:capability kill;
+
+allow kernel self:qipcrtr_socket create;
