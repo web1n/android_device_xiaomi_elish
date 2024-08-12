@@ -429,6 +429,11 @@ vendor/etc/permissions/com.fingerprints.extension.xml
 vendor/etc/vintf/manifest/manifest_fpc.xml
 vendor/framework/com.fingerprints.extension.jar
 vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so
+vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.default.so
+vendor/lib64/libgf_ca.so
+vendor/lib64/libgf_hal.so
+vendor/lib64/libgoodixhwfingerprint.so
+vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
 # GNSS
 vendor/bin/hw/airoha.hardware.anld
