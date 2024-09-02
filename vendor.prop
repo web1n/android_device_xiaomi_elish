@@ -44,6 +44,9 @@ vendor.audio.adm.buffering.ms=6
 vendor.audio.offload.buffer.size.kb=32
 vendor.audio_hal.period_multiplier=3
 
+# Audio hardware
+ro.hardware.audio.primary=elish
+
 # Display
 ro.surface_flinger.set_idle_timer_ms=4000
 ro.surface_flinger.set_touch_timer_ms=4000
