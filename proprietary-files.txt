@@ -432,7 +432,6 @@ vendor/etc/gnss/slave_da_UART.bin
 vendor/etc/init/airoha.hardware.anld.rc
 vendor/etc/init/android.hardware.gnss@2.1-service-airoha.rc
 -vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-airoha.xml
-vendor/lib64/libairoha_libc++_shared.so
 
 # IPA firmware
 vendor/etc/init/ipa_fws.rc
