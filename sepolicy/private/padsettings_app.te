@@ -10,11 +10,5 @@ allow padsettings_app system_app_data_file:{ file lnk_file } create_file_perms;
 # Allow padsettings_app to read and write to cgroup
 allow padsettings_app cgroup:file rw_file_perms;
 
-# Allow padsettings_app to read and write sysfs_keyboard_status
-allow padsettings_app sysfs_keyboard_status:file rw_file_perms;
-
 # Allow padsettings_app to access uevent
 allow padsettings_app self:netlink_kobject_uevent_socket { bind create read setopt };
-
-# Allow padsettings_app to read /proc/version
-allow padsettings_app proc_version:file r_file_perms;
