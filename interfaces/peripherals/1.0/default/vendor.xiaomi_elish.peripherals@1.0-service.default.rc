@@ -1,0 +1,12 @@
+on boot
+    # Xiaomi TouchFeature
+    chown system system /dev/xiaomi-touch
+    chmod 0664 /dev/xiaomi-touch
+
+    # Xiaomi Keyboard
+    chown system system /sys/bus/platform/drivers/xiaomi-keyboard/soc:xiaomi_keyboard/xiaomi_keyboard_conn_status
+
+service vendor.elish-peripherals-hal-1-0 /vendor/bin/hw/vendor.xiaomi_elish.peripherals@1.0-service.default
+    class main
+    user system
+    group system
