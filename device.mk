@@ -52,7 +52,8 @@ PRODUCT_PACKAGES += \
     MiPadParts
 
 PRODUCT_PACKAGES += \
-    vendor.xiaomi.hardware.touchfeature@1.0.vendor
+    vendor.xiaomi.hardware.touchfeature@1.0.vendor \
+    vendor.xiaomi_elish.peripherals@1.0-service.default
 
 # Remove unused packages
 PRODUCT_PACKAGES += \
