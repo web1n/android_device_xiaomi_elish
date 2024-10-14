@@ -21,13 +21,11 @@
     <string-array name="config_deviceKeyHandlerLibs" translatable="false">
         <item>/system_ext/priv-app/LineageParts/LineageParts.apk</item>
         <item>/system_ext/priv-app/MiPadParts/MiPadParts.apk</item>
-        <item>/system_ext/priv-app/MiPadParts/MiPadParts.apk</item>
     </string-array>
 
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>org.lineageos.lineageparts.gestures.KeyHandler</item>
         <item>org.lineageos.pad_parts.button.KeyHandler</item>
-        <item>org.lineageos.pad_parts.stylus.StylusHandler</item>
     </string-array>
 </resources>
