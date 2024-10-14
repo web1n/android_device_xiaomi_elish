@@ -1,0 +1,10 @@
+package vendor.xiaomi_elish.peripherals@1.0;
+
+interface IPeripherals {
+    isStylusEnabled() generates (bool enabled);
+    setStylusEnable(bool enable) generates (bool success);
+
+    isKeyboardEnabled() generates (bool enabled);
+    setKeyboardEnable(bool enable) generates (bool success);
+    isKeyboardConnected() generates (bool enabled);
+};
