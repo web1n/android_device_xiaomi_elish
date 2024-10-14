@@ -25,6 +25,7 @@ android_app {
         "org.lineageos.platform.internal",
         "org.lineageos.settings.resources",
         "//hardware/xiaomi:vendor.xiaomi.hardware.touchfeature-V1.0-java",
+        "vendor.xiaomi_elish.peripherals-V1.0-java",
     ],
 
     optimize: {
