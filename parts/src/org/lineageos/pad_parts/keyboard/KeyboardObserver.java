@@ -22,8 +22,6 @@ import android.util.Log;
 
 import java.util.Objects;
 
-import org.lineageos.pad_parts.utils.FileUtils;
-
 public class KeyboardObserver extends FileObserver {
 
     private static final String TAG = "KeyboardObserver";
@@ -35,7 +33,7 @@ public class KeyboardObserver extends FileObserver {
 
     private final KeyboardListener listener;
 
-    private Integer mCurrentStatus = null;
+    private Boolean mCurrentStatus = null;
 
     public KeyboardObserver(KeyboardListener listener) {
         super(KeyboardUtils.KEYBOARD_STATUS_PATH, FileObserver.MODIFY);
@@ -45,29 +43,16 @@ public class KeyboardObserver extends FileObserver {
 
     @Override
     public void onEvent(int event, String path) {
-        String status = FileUtils.readOneLine(KeyboardUtils.KEYBOARD_STATUS_PATH);
-        if (status == null || status.length() != 1) {
-            return;
-        }
+        boolean status = KeyboardUtils.isKeyboardConnected();
 
-        if (!Objects.equals(mCurrentStatus, Integer.parseInt(status))) {
-            mCurrentStatus = Integer.parseInt(status);
+        if (!Objects.equals(mCurrentStatus, status)) {
+            mCurrentStatus = status;
 
-            if (DEBUG) Log.d(TAG, String.format("connection status changed: %d", mCurrentStatus));
+            if (DEBUG) Log.d(TAG, String.format("connection status changed: %b", mCurrentStatus));
         } else {
             return;
         }
 
-        switch (mCurrentStatus) {
-            case 0:
-                listener.onKeyboardConnected(false);
-                break;
-            case 1:
-                listener.onKeyboardConnected(true);
-                break;
-            default:
-                if (DEBUG) Log.d(TAG, "unknown status " + status);
-                break;
-        }
+        listener.onKeyboardConnected(status);
     }
 }

@@ -23,8 +23,9 @@ import android.preference.PreferenceManager;
 import android.provider.Settings.Secure;
 import android.util.Log;
 
-import org.lineageos.pad_parts.utils.FileUtils;
 import org.lineageos.pad_parts.utils.SettingsUtils;
+
+import vendor.xiaomi_elish.peripherals.V1_0.IPeripherals;
 
 public class KeyboardUtils {
 
@@ -51,8 +52,33 @@ public class KeyboardUtils {
         }
     }
 
-    protected static void enableKeyboard(boolean enable) {
-        FileUtils.writeLine(KEYBOARD_STATUS_PATH, enable ? "enable_keyboard" : "disable_keyboard");
+    protected static boolean enableKeyboard(boolean enable) {
+        boolean result = false;
+        try {
+            IPeripherals peripherals = IPeripherals.getService();
+            if (peripherals.isKeyboardEnabled() == enable) {
+                return true;
+            }
+
+            result = peripherals.setKeyboardEnable(enable);
+        } catch (Exception e) {
+            if (DEBUG) Log.e(TAG, e.toString());
+        }
+
+        if (DEBUG) Log.d(TAG, String.format("setKeyboardEnable flag: %b, result: %b", enable, result));
+        return result;
+    }
+
+    protected static boolean isKeyboardConnected() {
+        boolean result = false;
+        try {
+            result = IPeripherals.getService().isKeyboardConnected();
+        } catch (Exception e) {
+            if (DEBUG) Log.e(TAG, e.toString());
+        }
+
+        if (DEBUG) Log.d(TAG, String.format("isKeyboardConnected result: %b", result));
+        return result;
     }
 
     protected static void setShowImeWithHardKeyboard(Context context, boolean show) {

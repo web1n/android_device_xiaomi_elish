@@ -27,11 +27,9 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.InputDevice;
 
-import org.lineageos.pad_parts.utils.FileUtils;
-
 import org.lineageos.pad_parts.R;
 
-import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
+import vendor.xiaomi_elish.peripherals.V1_0.IPeripherals;
 
 public class StylusUtils {
 
@@ -40,12 +38,8 @@ public class StylusUtils {
 
     protected static final String RECEIVER_PACKAGE =  "org.lineageos.pad_parts";
 
-    private static final boolean IS_OSS_KERNEL;
-
     private static final int STYLUS_NOTIFICATION_ID = 10;
     private static final String STYLUS_NOTIFICATION_CHANNEL_ID = "XIAOMI_STYLUS";
-
-    private static final int TOUCHFEATURE_MODE_STYLUS = 20;
 
     private static final int INPUT_VENDOR_ID_XIAOMI = 0x1915;
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS = 0xEAEA;
@@ -57,31 +51,23 @@ public class StylusUtils {
             "<HEARABLE_CONTROL_SLICE_WITH_WIDTH>" + SLICE_SETTINGS_URI + "</HEARABLE_CONTROL_SLICE_WITH_WIDTH>";
     protected static final String INTENT_ACTION_DUMMY = "org.lineageos.pad_parts.action.DUMMY";
 
-    static {
-        String kernel = FileUtils.readOneLine("/proc/version");
-        IS_OSS_KERNEL = kernel == null || !kernel.contains("pangu");
-
-        if (DEBUG) Log.d(TAG, String.format("kernel: %s, IS_OSS_KERNEL: %b", kernel, IS_OSS_KERNEL));
     }
 
-    protected static int enableStylus(boolean enable, int driverVersion) {
-        int flag;
-        if (IS_OSS_KERNEL) {
-            flag = enable ? 1 : 0;
-            if (DEBUG) Log.d(TAG, "OSS kernel cannot select stylus driver version");
-        } else {
-            flag = (enable ? 0x10 : 0x00) | driverVersion;
-        }
 
-        int result;
+    protected static boolean enableStylus(boolean enable) {
+        boolean result = false;
         try {
-            result = ITouchFeature.getService().setTouchMode(TOUCHFEATURE_MODE_STYLUS, flag);
+            IPeripherals peripherals = IPeripherals.getService();
+            if (peripherals.isStylusEnabled() == enable) {
+                return true;
+            }
+
+            result = peripherals.setStylusEnable(enable);
         } catch (Exception e) {
             if (DEBUG) Log.e(TAG, e.toString());
-            result = -1;
         }
 
-        if (DEBUG) Log.d(TAG, String.format("setTouchMode flag: %d, result: %d", flag, result));
+        if (DEBUG) Log.d(TAG, String.format("setStylueEnable flag: %b, result: %b", enable, result));
         return result;
     }
 
