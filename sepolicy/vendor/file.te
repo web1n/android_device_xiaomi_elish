@@ -1,3 +1,6 @@
 # GNSS
 type airoha_data_file, file_type, data_file_type;
 type anld_socket_file, file_type;
+
+# Xiaomi Keyboard
+type sysfs_keyboard_status, sysfs_type, fs_type;
