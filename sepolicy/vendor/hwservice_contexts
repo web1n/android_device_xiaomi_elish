@@ -1,0 +1,2 @@
+# Peripherals
+vendor.xiaomi_elish.peripherals::IPeripherals               u:object_r:hal_peripherals_hwservice:s0
