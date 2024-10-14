@@ -103,13 +103,11 @@
             android:exported="false"
             android:enabled="false" />
 
-        <activity
-            android:name=".stylus.StylusHandler"
-            android:enabled="false" />
-
         <service android:name=".keyboard.KeyboardService" />
 
         <service android:name=".rotation.RotationService" />
+
+        <service android:name=".stylus.StylusService" />
 
         <receiver
             android:name=".stylus.StylusReceiver"

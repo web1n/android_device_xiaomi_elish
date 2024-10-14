@@ -24,6 +24,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
+import android.os.UserHandle;
 import android.util.Log;
 import android.view.InputDevice;
 
@@ -51,8 +52,14 @@ public class StylusUtils {
             "<HEARABLE_CONTROL_SLICE_WITH_WIDTH>" + SLICE_SETTINGS_URI + "</HEARABLE_CONTROL_SLICE_WITH_WIDTH>";
     protected static final String INTENT_ACTION_DUMMY = "org.lineageos.pad_parts.action.DUMMY";
 
+    public static void startService(Context context) {
+        if (DEBUG) Log.d(TAG, "Starting service");
+        context.startServiceAsUser(new Intent(context, StylusService.class), UserHandle.CURRENT);
     }
 
+    public static void checkStylusService(Context context) {
+        startService(context);
+    }
 
     protected static boolean enableStylus(boolean enable) {
         boolean result = false;

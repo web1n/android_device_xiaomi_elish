@@ -16,37 +16,54 @@
 
 package org.lineageos.pad_parts.stylus;
 
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
+import android.os.IBinder;
 import android.os.UserHandle;
 import android.util.Log;
-import android.view.KeyEvent;
-
-import com.android.internal.os.DeviceKeyHandler;
 
 import org.lineageos.pad_parts.R;
 
-public class StylusHandler implements DeviceKeyHandler, StylusObserver.StylusListener {
+public class StylusService extends Service implements StylusObserver.StylusListener {
 
-    private static final String TAG = "StylusHandler";
+    private static final String TAG = "StylusService";
     private static final boolean DEBUG = true;
 
-    private final Context mContext;
-    private final StylusObserver mObserver;
+    private StylusObserver mObserver;
 
     private String mCurrentMac = null;
 
-    public StylusHandler(Context context) {
-        if (DEBUG) Log.d(TAG, "StylusHandler");
+    @Override
+    public void onCreate() {
+        if (DEBUG) Log.d(TAG, "Creating service");
+        super.onCreate();
 
-        mContext = context;
-        mObserver = new StylusObserver(context, this);
+        mObserver = new StylusObserver(this, this);
         mObserver.startListening();
+
+        if (StylusUtils.getStylusVersion() != -1) {
+            StylusUtils.enableStylus(true);
+        }
     }
 
-    public KeyEvent handleKeyEvent(KeyEvent event) {
-        return event;
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        if (DEBUG) Log.d(TAG, "Starting service");
+        return START_STICKY;
+    }
+
+    @Override
+    public void onDestroy() {
+        if (DEBUG) Log.d(TAG, "Destroying service");
+        super.onDestroy();
+
+        mObserver.stopListening();
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
     }
 
     @Override
@@ -54,7 +71,7 @@ public class StylusHandler implements DeviceKeyHandler, StylusObserver.StylusLis
         if (DEBUG) Log.d(TAG, String.format("onStylusConnected %b %d", connected, version));
         if (!connected) mCurrentMac = null;
 
-        StylusUtils.enableStylus(connected, 2);
+        StylusUtils.enableStylus(connected);
 
         if (mCurrentMac != null) {
             if (DEBUG) Log.d(TAG, "updateBluetoothDeviceInfo");
@@ -72,7 +89,7 @@ public class StylusHandler implements DeviceKeyHandler, StylusObserver.StylusLis
                 .setPackage(StylusUtils.RECEIVER_PACKAGE)
                 .putExtra(StylusReceiver.EXTRA_MAC_ADDRESS, mac);
 
-        mContext.sendBroadcastAsUser(receiverIntent, UserHandle.CURRENT);
+        sendBroadcastAsUser(receiverIntent, UserHandle.CURRENT);
     }
 
 }
