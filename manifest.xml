@@ -1,8 +1,0 @@
-<manifest version="2.0" type="device" target-level="5">
-    <!-- touchfeature -->
-    <hal format="hidl">
-        <name>vendor.xiaomi.hardware.touchfeature</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::ITouchFeature/default</fqname>
-    </hal>
-</manifest>

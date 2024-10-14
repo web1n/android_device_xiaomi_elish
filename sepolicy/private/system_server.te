@@ -1,2 +1,0 @@
-# Allow system_server communication with hal_touchfeature
-hal_client_domain(system_server, hal_touchfeature)
