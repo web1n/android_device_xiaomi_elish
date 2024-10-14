@@ -1,0 +1,18 @@
+type hal_peripherals_default, domain;
+type hal_peripherals_default_exec, exec_type, vendor_file_type, file_type;
+
+hal_server_domain(hal_peripherals_default, hal_peripherals)
+init_daemon_domain(hal_peripherals_default)
+
+# HWBinder IPC from client to server
+binder_call(hal_peripherals_client, hal_peripherals_server)
+
+add_hwservice(hal_peripherals_server, hal_peripherals_hwservice)
+allow hal_peripherals_client hal_peripherals_hwservice:hwservice_manager find;
+
+# Allow binder communication with padsettings_app
+binder_call(hal_peripherals, padsettings_app)
+
+# Allow hal_peripherals_default to read and write to touchfeature and keyboard status
+allow hal_peripherals_default touchfeature_device:chr_file rw_file_perms;
+allow hal_peripherals_default sysfs_keyboard_status:file rw_file_perms;
