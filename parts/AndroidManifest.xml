@@ -100,6 +100,31 @@
         </activity>
 
         <activity
+            android:name=".stylus.CompatibleStylusSettingsActivity"
+            android:exported="false"
+            android:label="@string/stylus_enable_compatible_stylus_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.development" />
+            <meta-data
+                android:name="com.android.settings.switch_uri"
+                android:value="content://org.lineageos.pad_parts.settings" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/stylus_enable_compatible_stylus_summary"/>
+            <meta-data
+                android:name="com.android.settings.keyhint"
+                android:value="compatible_stylus_enable" />
+            <meta-data
+                android:name="com.android.settings.profile"
+                android:value="primary_profile_only" />
+        </activity>
+
+        <activity
             android:name=".button.KeyHandler"
             android:exported="false"
             android:enabled="false" />

@@ -21,6 +21,8 @@
     <string name="stylus_notification_channel">小米灵感触控笔</string>
     <string name="stylus_name">小米灵感触控笔</string>
     <string name="stylus_detect_notification">配对以使用触控笔功能</string>
+    <string name="stylus_enable_compatible_stylus_title">启用第三方兼容触控笔支持</string>
+    <string name="stylus_enable_compatible_stylus_summary">开启后将始终启用触控笔支持，而不论小米触控笔是否已连接（重启以应用更改）</string>
 
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">小米键盘式双面保护壳</string>

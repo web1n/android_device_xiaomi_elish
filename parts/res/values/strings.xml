@@ -21,6 +21,8 @@
     <string name="stylus_notification_channel">Xiaomi Stylus</string>
     <string name="stylus_name">Xiaomi Stylus</string>
     <string name="stylus_detect_notification">do you want to pair</string>
+    <string name="stylus_enable_compatible_stylus_title">Enable Compatible Stylus Support</string>
+    <string name="stylus_enable_compatible_stylus_summary">When enabled, stylus support will always be active, regardless of whether the Xiaomi Stylus is connected. Restart to Take Effect.</string>
 
     <!-- Xiaomi Keyboard -->
     <string name="keyboard_title">Xiaomi Keyboard</string>
