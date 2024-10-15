@@ -40,14 +40,14 @@ public final class SettingsUtils {
     public static final String KEYBOARD_ENABLE = "keyboard_enable";
     public static final String COMPATIBLE_STYLUS_ENABLE = "compatible_stylus_enable";
 
-    public static boolean isValidPrefKey(String key) {
+    public static boolean isValidSwitchKey(String key) {
         return FORCE_ROTATE_ENABLE.equals(key)
                 || KEYBOARD_ENABLE.equals(key)
                 || COMPATIBLE_STYLUS_ENABLE.equals(key);
     }
 
     public static boolean isSettingEnabled(Context context, String prefKey) {
-        if (context == null || !isValidPrefKey(prefKey)) {
+        if (context == null || !isValidSwitchKey(prefKey)) {
             return false;
         }
 
@@ -57,7 +57,7 @@ public final class SettingsUtils {
 
     public static void setSettingEnabled(Context context, String prefKey, boolean enabled) {
         if (DEBUG) Log.d(TAG, "setSettingEnabled: " + prefKey + " enabled: " + enabled);
-        if (context == null || !isValidPrefKey(prefKey)) {
+        if (context == null || !isValidSwitchKey(prefKey)) {
             return;
         }
 
@@ -71,7 +71,7 @@ public final class SettingsUtils {
 
     private static void checkService(Context context, String key) {
         if (DEBUG) Log.d(TAG, "checkService: " + key);
-        if (context == null || !isValidPrefKey(key)) {
+        if (context == null || !isValidSwitchKey(key)) {
             return;
         }
 
@@ -87,7 +87,7 @@ public final class SettingsUtils {
 
     private static void notifySettingChange(Context context, String key) {
         if (DEBUG) Log.d(TAG, "notifyChange: " + key);
-        if (context == null || !isValidPrefKey(key)) {
+        if (context == null || !isValidSwitchKey(key)) {
             return;
         }
 
