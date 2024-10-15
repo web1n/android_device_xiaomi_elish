@@ -48,7 +48,7 @@ public class StylusUtils {
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS_2 = 0x4D81;
 
     private static final int METADATA_FAST_PAIR_CUSTOMIZED_FIELDS = 25;
-    private static final String SLICE_SETTINGS_URI = "content://org.lineageos.pad_parts.stylus/settings";
+    private static final String SLICE_SETTINGS_URI = "content://org.lineageos.pad_parts.stylus/settings/";
     private static final String FAST_PAIR_CUSTOMIZED_FIELDS =
             "<HEARABLE_CONTROL_SLICE_WITH_WIDTH>" + SLICE_SETTINGS_URI + "</HEARABLE_CONTROL_SLICE_WITH_WIDTH>";
     protected static final String INTENT_ACTION_DUMMY = "org.lineageos.pad_parts.action.DUMMY";
