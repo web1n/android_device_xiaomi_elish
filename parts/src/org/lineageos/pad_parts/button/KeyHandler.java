@@ -25,6 +25,7 @@ import android.view.InputDevice;
 
 import com.android.internal.os.DeviceKeyHandler;
 
+import org.lineageos.pad_parts.utils.SettingsUtils;
 import static org.lineageos.pad_parts.button.ButtonUtils.*;
 
 public class KeyHandler implements DeviceKeyHandler {
@@ -68,7 +69,8 @@ public class KeyHandler implements DeviceKeyHandler {
         }
 
         int keyCode;
-        switch (getSettingString(mContentResolver, HEADSET_BUTTON, HEADSET_BUTTON_VOLUME)) {
+        switch (SettingsUtils.getConfigValueString(
+                mContentResolver, HEADSET_BUTTON, HEADSET_BUTTON_VOLUME)) {
             case HEADSET_BUTTON_VOLUME:
                 keyCode = event.getScanCode() == HEADSET_BUTTON_UP
                         ? KeyEvent.KEYCODE_VOLUME_UP : KeyEvent.KEYCODE_VOLUME_DOWN;
@@ -95,7 +97,8 @@ public class KeyHandler implements DeviceKeyHandler {
         }
 
         int keyCode;
-        switch (getSettingString(mContentResolver, STYLUS_BUTTON, STYLUS_BUTTON_DEFAULT)) {
+        switch (SettingsUtils.getConfigValueString(
+                mContentResolver, STYLUS_BUTTON, STYLUS_BUTTON_DEFAULT)) {
             case STYLUS_BUTTON_UPDOWN:
                 keyCode = event.getScanCode() == STYLUS_BUTTON_UP
                         ? KeyEvent.KEYCODE_DPAD_UP : KeyEvent.KEYCODE_DPAD_DOWN;

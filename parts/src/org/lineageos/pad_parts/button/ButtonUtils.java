@@ -27,10 +27,9 @@ import android.view.InputDevice;
 
 import java.util.Arrays;
 
-import lineageos.providers.LineageSettings;
-
 import org.lineageos.pad_parts.Constants;
 import org.lineageos.pad_parts.R;
+import org.lineageos.pad_parts.utils.SettingsUtils;
 
 import static org.lineageos.pad_parts.stylus.StylusUtils.getStylusVersion;
 
@@ -39,23 +38,14 @@ public class ButtonUtils {
     private static final String HEADSET_BUTTON_DEVICE_NAME = "kona-mtp-snd-card Button Jack";
     private static final String HEADSET_BUTTON_DEVICE_NAME_2 = "kona-mtp-snd-card Headset Jack";
 
-    protected static final String HEADSET_BUTTON = "padparts.button.headset";
+    protected static final String HEADSET_BUTTON = "headset_button";
     protected static final String HEADSET_BUTTON_VOLUME = "volume";
     protected static final String HEADSET_BUTTON_MUSIC = "music";
-    protected static final String STYLUS_BUTTON = "padparts.button.stylus";
+    protected static final String STYLUS_BUTTON = "stylus_button";
     protected static final String STYLUS_BUTTON_DEFAULT = "default";
     protected static final String STYLUS_BUTTON_UPDOWN = "updown";
     protected static final String STYLUS_BUTTON_VOLUME = "volume";
     protected static final String STYLUS_BUTTON_MUSIC = "music";
-
-    protected static String getSettingString(ContentResolver resolver, String key, String def) {
-        String str = LineageSettings.Global.getStringForUser(resolver, key, 0);
-        return str == null ? def : str;
-    }
-
-    protected static void putSettingString(ContentResolver resolver, String key, String value) {
-        LineageSettings.Global.putStringForUser(resolver, key, value, 0);
-    }
 
     protected static boolean isStylusButtonsEnabled(ContentResolver resolver) {
         return Settings.Secure.getIntForUser(resolver,
@@ -88,9 +78,9 @@ public class ButtonUtils {
         ContentResolver resolver = context.getContentResolver();
 
         int headsetIndex = Arrays.asList(res.getStringArray(R.array.headset_button_values))
-                .indexOf(getSettingString(resolver, HEADSET_BUTTON, HEADSET_BUTTON_MUSIC));
+                .indexOf(SettingsUtils.getConfigValueString(resolver, HEADSET_BUTTON, HEADSET_BUTTON_MUSIC));
         int stylusIndex = Arrays.asList(res.getStringArray(R.array.stylus_button_values))
-                .indexOf(getSettingString(resolver, STYLUS_BUTTON, STYLUS_BUTTON_DEFAULT));
+                .indexOf(SettingsUtils.getConfigValueString(resolver, STYLUS_BUTTON, STYLUS_BUTTON_DEFAULT));
         headsetIndex = headsetIndex == -1 ? 0 : headsetIndex;
         stylusIndex = stylusIndex == -1 ? 0 : stylusIndex;
 
