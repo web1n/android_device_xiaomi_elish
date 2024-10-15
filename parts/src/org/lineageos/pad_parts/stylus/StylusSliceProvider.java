@@ -29,6 +29,7 @@ import androidx.slice.builders.SliceAction;
 import androidx.slice.builders.ListBuilder;
 
 import org.lineageos.pad_parts.button.ButtonSettingsActivity;
+import org.lineageos.pad_parts.button.ButtonUtils;
 import org.lineageos.pad_parts.R;
 
 public class StylusSliceProvider extends SliceProvider {
@@ -66,7 +67,8 @@ public class StylusSliceProvider extends SliceProvider {
     }
 
     private ListBuilder.RowBuilder createButtonSettingBuilder() {
-        if (getContext() == null) {
+        if (getContext() == null
+                || !ButtonUtils.isButtonSettingsActivityEnabled(getContext())) {
             return null;
         }
 

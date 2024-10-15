@@ -16,8 +16,10 @@
 
 package org.lineageos.pad_parts.button;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -27,6 +29,7 @@ import java.util.Arrays;
 
 import lineageos.providers.LineageSettings;
 
+import org.lineageos.pad_parts.Constants;
 import org.lineageos.pad_parts.R;
 
 import static org.lineageos.pad_parts.stylus.StylusUtils.getStylusVersion;
@@ -96,6 +99,36 @@ public class ButtonUtils {
                 res.getStringArray(R.array.headset_button_entries)[headsetIndex],
                 res.getString(R.string.stylus_button_title),
                 res.getStringArray(R.array.stylus_button_entries)[stylusIndex]);
+    }
+
+    public static void enableButtonSettingsActivity(Context context) {
+        if (context == null) {
+            return;
+        }
+        final ComponentName component = new ComponentName(
+                Constants.PACKAGE_NAME, ButtonSettingsActivity.class.getName());
+
+        context.getPackageManager().setComponentEnabledSetting(component,
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+    }
+
+    public static boolean isButtonSettingsActivityEnabled(Context context) {
+        if (context == null) {
+            return false;
+        }
+        final ComponentName component = new ComponentName(
+                Constants.PACKAGE_NAME, ButtonSettingsActivity.class.getName());
+
+        PackageManager pm = context.getPackageManager();
+        int state = pm.getComponentEnabledSetting(component);
+        if (state == PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
+            try {
+                return pm.getActivityInfo(component, 0).enabled;
+            } catch (PackageManager.NameNotFoundException e) {
+                return false;
+            }
+        }
+        return state == PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
     }
 
 }

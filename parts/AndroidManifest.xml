@@ -81,6 +81,7 @@
 
         <activity
             android:name=".button.ButtonSettingsActivity"
+            android:enabled="false"
             android:exported="false"
             android:label="@string/button_control_title"
             android:theme="@style/Theme.SubSettingsBase">
