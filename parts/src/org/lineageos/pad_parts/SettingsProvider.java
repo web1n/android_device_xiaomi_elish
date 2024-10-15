@@ -35,6 +35,9 @@ import static com.android.settingslib.drawer.SwitchesProvider.METHOD_ON_CHECKED_
 
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_SUMMARY;
 
+import static org.lineageos.pad_parts.utils.SettingsUtils.METHOD_GET_CONFIG_VALUE;
+import static org.lineageos.pad_parts.utils.SettingsUtils.EXTRA_CONFIG_VALUE;
+
 public class SettingsProvider extends ContentProvider {
 
     private static final boolean DEBUG = true;
@@ -57,6 +60,8 @@ public class SettingsProvider extends ContentProvider {
                 return handleIsCheckedCall(key);
             case METHOD_ON_CHECKED_CHANGED:
                 return handleOnCheckedChangedCall(key, extras);
+            case METHOD_GET_CONFIG_VALUE:
+                return handleGetConfigValueCall(key);
             default:
                 Log.w(TAG, "Unsupported method: " + method);
                 return null;
@@ -97,6 +102,14 @@ public class SettingsProvider extends ContentProvider {
 
         SettingsUtils.setSettingEnabled(getContext(), key, checked);
         return new Bundle();
+    }
+
+    private Bundle handleGetConfigValueCall(String key) {
+        String configValue = SettingsUtils.getConfigValueString(getContext(), key);
+
+        Bundle bundle = new Bundle();
+        bundle.putString(EXTRA_CONFIG_VALUE, configValue);
+        return bundle;
     }
 
     /** Returns method and key of the complete uri. */
