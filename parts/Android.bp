@@ -24,7 +24,6 @@ android_app {
         "androidx.slice_slice-builders",
         "org.lineageos.platform.internal",
         "org.lineageos.settings.resources",
-        "//hardware/xiaomi:vendor.xiaomi.hardware.touchfeature-V1.0-java",
         "vendor.xiaomi_elish.peripherals-V1.0-java",
     ],
 
