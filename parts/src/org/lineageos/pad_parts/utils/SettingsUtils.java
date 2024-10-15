@@ -24,6 +24,7 @@ import android.util.Log;
 
 import org.lineageos.pad_parts.keyboard.KeyboardUtils;
 import org.lineageos.pad_parts.rotation.RotationUtils;
+import org.lineageos.pad_parts.stylus.StylusUtils;
 
 import static com.android.settingslib.drawer.SwitchesProvider.METHOD_GET_DYNAMIC_SUMMARY;
 // import static com.android.settingslib.drawer.SwitchesProvider.METHOD_IS_CHECKED;
@@ -37,9 +38,12 @@ public final class SettingsUtils {
 
     public static final String FORCE_ROTATE_ENABLE = "force_rotate_enable";
     public static final String KEYBOARD_ENABLE = "keyboard_enable";
+    public static final String COMPATIBLE_STYLUS_ENABLE = "compatible_stylus_enable";
 
     public static boolean isValidPrefKey(String key) {
-        return FORCE_ROTATE_ENABLE.equals(key) || KEYBOARD_ENABLE.equals(key);
+        return FORCE_ROTATE_ENABLE.equals(key)
+                || KEYBOARD_ENABLE.equals(key)
+                || COMPATIBLE_STYLUS_ENABLE.equals(key);
     }
 
     public static boolean isSettingEnabled(Context context, String prefKey) {
