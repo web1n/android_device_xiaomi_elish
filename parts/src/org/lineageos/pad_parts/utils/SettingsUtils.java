@@ -19,8 +19,11 @@ package org.lineageos.pad_parts.utils;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.net.Uri;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
+import java.util.Map;
 
 import org.lineageos.pad_parts.keyboard.KeyboardUtils;
 import org.lineageos.pad_parts.rotation.RotationUtils;
@@ -39,6 +42,11 @@ public final class SettingsUtils {
     public static final String FORCE_ROTATE_ENABLE = "force_rotate_enable";
     public static final String KEYBOARD_ENABLE = "keyboard_enable";
     public static final String COMPATIBLE_STYLUS_ENABLE = "compatible_stylus_enable";
+
+    public static final Uri SETTINGS_AUTHORITY_URI =
+            Uri.parse("content://org.lineageos.pad_parts.settings");
+    public static final String METHOD_GET_CONFIG_VALUE = "getConfigValue";
+    public static final String EXTRA_CONFIG_VALUE = "org.lineageos.pad_parts.CONFIG_VALUE";
 
     public static boolean isValidSwitchKey(String key) {
         return FORCE_ROTATE_ENABLE.equals(key)
@@ -67,6 +75,34 @@ public final class SettingsUtils {
 
         checkService(context, prefKey);
         notifySettingChange(context, prefKey);
+    }
+
+    public static String getConfigValueString(Context context, String prefKey) {
+        if (context == null) {
+            return null;
+        }
+
+        Map<String, ?> allEntries =
+                PreferenceManager.getDefaultSharedPreferences(context).getAll();
+        Object value = allEntries.get(prefKey);
+        return value != null ? value.toString() : null;
+    }
+
+    public static String getConfigValueString(ContentResolver resolver, String prefKey, String def) {
+        Uri configValueUri = SETTINGS_AUTHORITY_URI.buildUpon()
+                .appendPath(METHOD_GET_CONFIG_VALUE)
+                .appendPath(prefKey)
+                .build();
+
+        Bundle result = resolver.call(SETTINGS_AUTHORITY_URI,
+                METHOD_GET_CONFIG_VALUE, configValueUri.toString(), null);
+        if (result != null) {
+            String configValue = result.getString(EXTRA_CONFIG_VALUE);
+            Log.e(TAG, "getSettingString: " + prefKey + " value: " + configValue);
+            if (configValue != null) return configValue;
+        }
+
+        return def;
     }
 
     private static void checkService(Context context, String key) {
