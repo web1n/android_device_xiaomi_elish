@@ -46,7 +46,7 @@ public class SettingsProvider extends ContentProvider {
     public Bundle call(String method, String uri, Bundle extras) {
         final String key = getKeyFromUriStr(uri);
         if (DEBUG) Log.d(TAG, "method: " + method + " key: " + key + " extras: " + extras);
-        if (method == null || !isValidKey(key)) {
+        if (method == null || key == null) {
             return null;
         }
 
@@ -67,7 +67,7 @@ public class SettingsProvider extends ContentProvider {
         String summary = null;
         if (KEY_BUTTON.equals(key)) {
             summary = ButtonUtils.getButtonSettingsSummary(getContext());
-        } else if (SettingsUtils.isValidPrefKey(key)) {
+        } else if (SettingsUtils.isValidSwitchKey(key)) {
             boolean enabled = SettingsUtils.isSettingEnabled(getContext(), key);
             summary = getContext().getString(
                     enabled ? R.string.summary_enabled : R.string.summary_disabled);
@@ -79,6 +79,9 @@ public class SettingsProvider extends ContentProvider {
     }
 
     private Bundle handleIsCheckedCall(String key) {
+        if (!SettingsUtils.isValidSwitchKey(key)) {
+            return null;
+        }
         boolean isChecked = SettingsUtils.isSettingEnabled(getContext(), key);
 
         Bundle bundle = new Bundle();
@@ -87,14 +90,13 @@ public class SettingsProvider extends ContentProvider {
     }
 
     private Bundle handleOnCheckedChangedCall(String key, Bundle extras) {
+        if (!SettingsUtils.isValidSwitchKey(key)) {
+            return null;
+        }
         boolean checked = extras.getBoolean(EXTRA_SWITCH_CHECKED_STATE);
 
         SettingsUtils.setSettingEnabled(getContext(), key, checked);
         return new Bundle();
-    }
-
-    private static boolean isValidKey(String key) {
-        return KEY_BUTTON.equals(key) || SettingsUtils.isValidPrefKey(key);
     }
 
     /** Returns method and key of the complete uri. */
