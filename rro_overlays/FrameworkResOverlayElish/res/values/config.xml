@@ -515,10 +515,26 @@
          from the HAL in the future. -->
     <array name="config_sfps_sensor_props" translatable="false">
         <item>@array/config_sfps_sensor_props_0</item>
+        <item>@array/config_sfps_sensor_props_1</item>
+        <item>@array/config_sfps_sensor_props_2</item>
     </array>
 
     <array name="config_sfps_sensor_props_0" translatable="false">
-        <item></item> <!--item>displayId</item-->
+        <item>local:19260527152667265</item> <!--item>displayId</item-->
+        <item>1400</item> <!--item>sensorLocationX</item-->
+        <item>0</item> <!--item>sensorLocationY</item-->
+        <item>50</item> <!--item>sensorRadius</item-->
+    </array>
+
+    <array name="config_sfps_sensor_props_1" translatable="false">
+        <item>local:4630946481717202305</item> <!--item>displayId</item-->
+        <item>1400</item> <!--item>sensorLocationX</item-->
+        <item>0</item> <!--item>sensorLocationY</item-->
+        <item>50</item> <!--item>sensorRadius</item-->
+    </array>
+
+    <array name="config_sfps_sensor_props_2" translatable="false">
+        <item>local:4630946545580055169</item> <!--item>displayId</item-->
         <item>1400</item> <!--item>sensorLocationX</item-->
         <item>0</item> <!--item>sensorLocationY</item-->
         <item>50</item> <!--item>sensorRadius</item-->
