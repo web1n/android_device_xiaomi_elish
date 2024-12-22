@@ -48,7 +48,6 @@ public class StylusUtils {
     private static final int INPUT_PRODUCT_ID_XIAOMI_STYLUS_2 = 0x4D81;
 
     private static final String SLICE_SETTINGS_URI = "content://org.lineageos.pad_parts.stylus/settings/";
-    protected static final String INTENT_ACTION_DUMMY = "org.lineageos.pad_parts.action.DUMMY";
 
     public static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");

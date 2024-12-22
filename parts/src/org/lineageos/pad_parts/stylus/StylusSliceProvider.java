@@ -96,16 +96,9 @@ public class StylusSliceProvider extends SliceProvider {
         String versionName = getContext().getString(hardwareVersion == 1
                 ? R.string.stylus_hardware_version_1 : R.string.stylus_hardware_version_2);
 
-        Intent intent = new Intent(StylusUtils.INTENT_ACTION_DUMMY)
-                .setPackage(StylusUtils.RECEIVER_PACKAGE);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                getContext(), 0, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
         return new ListBuilder.RowBuilder()
                 .setTitle(getContext().getString(R.string.stylus_hardware_version_title))
-                .setSubtitle(versionName)
-                .setPrimaryAction(createSliceAction(pendingIntent));
+                .setSubtitle(versionName);
     }
 
     private SliceAction createSliceAction(PendingIntent pendingIntent) {
