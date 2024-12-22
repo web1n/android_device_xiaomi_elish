@@ -74,21 +74,43 @@ public class ButtonUtils {
         if (context == null) {
             return null;
         }
+
+        return String.format("%s: %s, %s: %s",
+                context.getString(R.string.headset_button_title),
+                getHeadsetButtonConfigSummary(context),
+                context.getString(R.string.stylus_button_title),
+                getStylusButtonConfigSummary(context));
+    }
+
+    public static String getHeadsetButtonConfigSummary(Context context) {
+        return getArrayConfigSummary(context, R.array.headset_button_values,
+                R.array.headset_button_entries, HEADSET_BUTTON, HEADSET_BUTTON_MUSIC);
+    }
+
+    public static String getStylusButtonConfigSummary(Context context) {
+        return getArrayConfigSummary(context, R.array.stylus_button_values,
+                R.array.stylus_button_entries, STYLUS_BUTTON, STYLUS_BUTTON_DEFAULT);
+    }
+
+    private static String getArrayConfigSummary(
+            Context context, int valuesResId, int summariesResId, String key, String defValue) {
+        if (context == null) {
+            return null;
+        }
         Resources res = context.getResources();
         ContentResolver resolver = context.getContentResolver();
 
-        int headsetIndex = Arrays.asList(res.getStringArray(R.array.headset_button_values))
-                .indexOf(SettingsUtils.getConfigValueString(resolver, HEADSET_BUTTON, HEADSET_BUTTON_MUSIC));
-        int stylusIndex = Arrays.asList(res.getStringArray(R.array.stylus_button_values))
-                .indexOf(SettingsUtils.getConfigValueString(resolver, STYLUS_BUTTON, STYLUS_BUTTON_DEFAULT));
-        headsetIndex = headsetIndex == -1 ? 0 : headsetIndex;
-        stylusIndex = stylusIndex == -1 ? 0 : stylusIndex;
+        String configValue = SettingsUtils.getConfigValueString(resolver, key, defValue);
 
-        return String.format("%s: %s, %s: %s",
-                res.getString(R.string.headset_button_title),
-                res.getStringArray(R.array.headset_button_entries)[headsetIndex],
-                res.getString(R.string.stylus_button_title),
-                res.getStringArray(R.array.stylus_button_entries)[stylusIndex]);
+        String[] values = context.getResources().getStringArray(valuesResId);
+        String[] summaries = context.getResources().getStringArray(summariesResId);
+
+        int index = Arrays.asList(values).indexOf(configValue);
+        if (index < 0 || index >= summaries.length) {
+            index = 0;
+        }
+
+        return summaries[index];
     }
 
     public static void enableButtonSettingsActivity(Context context) {

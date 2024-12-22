@@ -81,6 +81,7 @@ public class StylusSliceProvider extends SliceProvider {
 
         return new ListBuilder.RowBuilder()
                 .setTitle(getContext().getString(R.string.stylus_button_title))
+                .setSubtitle(ButtonUtils.getStylusButtonConfigSummary(getContext()))
                 .setPrimaryAction(createSliceAction(pendingIntent));
     }
 
