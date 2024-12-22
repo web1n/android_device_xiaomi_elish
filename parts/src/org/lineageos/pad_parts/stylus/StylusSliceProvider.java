@@ -28,6 +28,8 @@ import androidx.slice.SliceProvider;
 import androidx.slice.builders.SliceAction;
 import androidx.slice.builders.ListBuilder;
 
+import com.android.settingslib.drawer.TileUtils;
+
 import org.lineageos.pad_parts.button.ButtonSettingsActivity;
 import org.lineageos.pad_parts.button.ButtonUtils;
 import org.lineageos.pad_parts.R;
@@ -73,6 +75,7 @@ public class StylusSliceProvider extends SliceProvider {
         }
 
         Intent intent = new Intent(getContext(), ButtonSettingsActivity.class);
+        intent.setAction(TileUtils.IA_SETTINGS_ACTION);
         PendingIntent pendingIntent = PendingIntent.getActivity(
                 getContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
