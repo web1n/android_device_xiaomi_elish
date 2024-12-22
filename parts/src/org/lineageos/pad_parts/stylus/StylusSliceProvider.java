@@ -82,7 +82,7 @@ public class StylusSliceProvider extends SliceProvider {
         return new ListBuilder.RowBuilder()
                 .setTitle(getContext().getString(R.string.stylus_button_title))
                 .setSubtitle(ButtonUtils.getStylusButtonConfigSummary(getContext()))
-                .setPrimaryAction(createSliceAction(pendingIntent));
+                .setPrimaryAction(createSliceAction(pendingIntent, R.drawable.ic_settings_buttons));
     }
 
     private ListBuilder.RowBuilder createHardwareVersionBuilder() {
@@ -102,13 +102,13 @@ public class StylusSliceProvider extends SliceProvider {
                 .setSubtitle(versionName);
     }
 
-    private SliceAction createSliceAction(PendingIntent pendingIntent) {
+    private SliceAction createSliceAction(PendingIntent pendingIntent, int iconResId) {
         if (getContext() == null) {
             return null;
         }
 
         return SliceAction.create(pendingIntent,
-                IconCompat.createWithResource(getContext(), android.R.drawable.stat_sys_data_bluetooth),
+                IconCompat.createWithResource(getContext(), iconResId),
                 ListBuilder.ICON_IMAGE, getContext().getString(R.string.app_name));
     }
 }
