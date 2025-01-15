@@ -20,7 +20,13 @@ using ::android::hardware::Void;
 #define TOUCH_MAGIC 0x5400
 #define TOUCH_IOC_SETMODE (TOUCH_MAGIC + SET_CUR_VALUE)
 
-#define STYLUS_DRIVER_VERSION 2
+#ifdef STYLUS_USE_OLD_DRIVER
+#define FLAG_STYLUS_ENABLE  1
+#define FLAG_STYLUS_DISABLE 0
+#else
+#define FLAG_STYLUS_ENABLE  0x12
+#define FLAG_STYLUS_DISABLE 0x02
+#endif
 
 class Peripherals : public IPeripherals {
 public:

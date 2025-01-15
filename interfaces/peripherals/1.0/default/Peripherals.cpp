@@ -28,7 +28,7 @@ Return<bool> Peripherals::setStylusEnable(bool enable) {
         return false;
     }
 
-    int flag = (enable ? 0x10 : 0x00) | STYLUS_DRIVER_VERSION;
+    int flag = enable ? FLAG_STYLUS_ENABLE : FLAG_STYLUS_DISABLE;
     int arg[2] = {TOUCH_STYLUS_MODE, flag};
     if (ioctl(fd, TOUCH_IOC_SETMODE, &arg) < 0) {
         LOG(ERROR) << "Failed to set stylus mode.";
