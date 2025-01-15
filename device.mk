@@ -54,6 +54,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.xiaomi_elish.peripherals@1.0-service.default
 
+ifneq ($(TARGET_USE_PREBUILT_KERNEL), true)
+$(call soong_config_set, xiaomi_elish_peripherals, stylus_use_old_driver, true)
+endif
+
 # Remove unused packages
 PRODUCT_PACKAGES += \
     RemovePackages
