@@ -58,10 +58,6 @@ ifneq ($(TARGET_USE_PREBUILT_KERNEL), true)
 $(call soong_config_set, xiaomi_elish_peripherals, stylus_use_old_driver, true)
 endif
 
-# Remove unused packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # Rootdir
 PRODUCT_PACKAGES += \
     init.elish.rc
