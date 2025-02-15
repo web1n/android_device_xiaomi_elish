@@ -461,14 +461,6 @@
          rotations as the default behavior. -->
     <bool name="config_allowAllRotations">true</bool>
 
-    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
-         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
-         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
-         and Strength as defined in Authenticators.java -->
-    <string-array name="config_biometric_sensors" translatable="false" >
-        <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
-    </string-array>
-
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
@@ -476,42 +468,6 @@
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
-
-    <!-- Indicates whether device has a power button fingerprint sensor. -->
-    <bool name="config_is_powerbutton_fps">true</bool>
-
-    <!-- Specify if the fingerprint hardware support gestures-->
-    <bool name="config_fingerprintSupportsGestures">true</bool>
-
-    <!-- An array of arrays of side fingerprint sensor properties relative to each display.
-         Note: this value is temporary and is expected to be queried directly
-         from the HAL in the future. -->
-    <array name="config_sfps_sensor_props" translatable="false">
-        <item>@array/config_sfps_sensor_props_0</item>
-        <item>@array/config_sfps_sensor_props_1</item>
-        <item>@array/config_sfps_sensor_props_2</item>
-    </array>
-
-    <array name="config_sfps_sensor_props_0" translatable="false">
-        <item>local:19260527152667265</item> <!--item>displayId</item-->
-        <item>1400</item> <!--item>sensorLocationX</item-->
-        <item>0</item> <!--item>sensorLocationY</item-->
-        <item>50</item> <!--item>sensorRadius</item-->
-    </array>
-
-    <array name="config_sfps_sensor_props_1" translatable="false">
-        <item>local:4630946481717202305</item> <!--item>displayId</item-->
-        <item>1400</item> <!--item>sensorLocationX</item-->
-        <item>0</item> <!--item>sensorLocationY</item-->
-        <item>50</item> <!--item>sensorRadius</item-->
-    </array>
-
-    <array name="config_sfps_sensor_props_2" translatable="false">
-        <item>local:4630946545580055169</item> <!--item>displayId</item-->
-        <item>1400</item> <!--item>sensorLocationX</item-->
-        <item>0</item> <!--item>sensorLocationY</item-->
-        <item>50</item> <!--item>sensorRadius</item-->
-    </array>
 
     <!-- Flag indicating whether the show Stylus pointer icon.
      If set, a pointer icon will be shown over the location of a stylus pointer.-->
