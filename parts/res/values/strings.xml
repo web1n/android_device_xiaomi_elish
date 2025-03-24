@@ -28,11 +28,6 @@
     <string name="keyboard_title">Xiaomi Keyboard</string>
     <string name="keyboard_switch_title">Enable Xiaomi Keyboard</string>
 
-    <!-- Rotation -->
-    <string name="force_rotate_title">Force app rotate</string>
-    <string name="force_rotate_switch_title">Force app rotate</string>
-    <string name="force_rotate_app_list_title">App list</string>
-
     <!-- Button -->
     <string name="button_control_title">Headset and Stylus button</string>
     <string name="headset_button_title">Headser Up/Down button</string>

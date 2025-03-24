@@ -26,7 +26,6 @@ import android.util.Log;
 import java.util.Map;
 
 import org.lineageos.pad_parts.keyboard.KeyboardUtils;
-import org.lineageos.pad_parts.rotation.RotationUtils;
 import org.lineageos.pad_parts.stylus.StylusUtils;
 
 import static com.android.settingslib.drawer.SwitchesProvider.METHOD_GET_DYNAMIC_SUMMARY;
@@ -39,7 +38,6 @@ public final class SettingsUtils {
 
     public static final String AUTHORITY_SETTINGS = "org.lineageos.pad_parts.settings";
 
-    public static final String FORCE_ROTATE_ENABLE = "force_rotate_enable";
     public static final String KEYBOARD_ENABLE = "keyboard_enable";
     public static final String COMPATIBLE_STYLUS_ENABLE = "compatible_stylus_enable";
 
@@ -49,8 +47,7 @@ public final class SettingsUtils {
     public static final String EXTRA_CONFIG_VALUE = "org.lineageos.pad_parts.CONFIG_VALUE";
 
     public static boolean isValidSwitchKey(String key) {
-        return FORCE_ROTATE_ENABLE.equals(key)
-                || KEYBOARD_ENABLE.equals(key)
+        return KEYBOARD_ENABLE.equals(key)
                 || COMPATIBLE_STYLUS_ENABLE.equals(key);
     }
 
@@ -112,9 +109,6 @@ public final class SettingsUtils {
         }
 
         switch (key) {
-            case FORCE_ROTATE_ENABLE:
-                RotationUtils.checkRotateService(context);
-                break;
             case KEYBOARD_ENABLE:
                 KeyboardUtils.checkKeyboardService(context);
                 break;

@@ -21,7 +21,6 @@ import android.app.Application;
 import android.util.Log;
 
 import org.lineageos.pad_parts.keyboard.KeyboardUtils;
-import org.lineageos.pad_parts.rotation.RotationUtils;
 import org.lineageos.pad_parts.stylus.StylusUtils;
 
 public class PersistentApplication extends Application {
@@ -35,7 +34,6 @@ public class PersistentApplication extends Application {
         if (DEBUG) Log.d(TAG, "PadParts Application onCreate");
 
         KeyboardUtils.checkKeyboardService(this);
-        RotationUtils.checkRotateService(this);
         StylusUtils.checkStylusService(this);
     }
 }

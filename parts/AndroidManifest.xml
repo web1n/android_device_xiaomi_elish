@@ -58,28 +58,6 @@
         </activity>
 
         <activity
-            android:name=".rotation.RotationSettingsActivity"
-            android:exported="false"
-            android:label="@string/force_rotate_title"
-            android:theme="@style/Theme.SubSettingsBase">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.display" />
-            <meta-data
-                android:name="com.android.settings.switch_uri"
-                android:value="content://org.lineageos.pad_parts.settings" />
-            <meta-data
-                android:name="com.android.settings.summary_uri"
-                android:value="content://org.lineageos.pad_parts.settings" />
-            <meta-data
-                android:name="com.android.settings.keyhint"
-                android:value="force_rotate_enable" />
-        </activity>
-
-        <activity
             android:name=".button.ButtonSettingsActivity"
             android:enabled="false"
             android:exported="false"
@@ -130,8 +108,6 @@
             android:enabled="false" />
 
         <service android:name=".keyboard.KeyboardService" />
-
-        <service android:name=".rotation.RotationService" />
 
         <service android:name=".stylus.StylusService" />
 
