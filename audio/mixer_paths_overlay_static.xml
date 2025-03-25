@@ -1097,21 +1097,6 @@
         <ctl name="Cirrus SP Usecase Config" value="None" />
     </path>
 
-    <path name="ultrasound-cover1">
-        <!--  mixer controls for RX use-case  -->
-    </path>
-
-    <path name="ultrasound-cover1-output">
-        <!--  mixer controls for RX use-case  -->
-    </path>
-
-    <path name="ultrasound-cover1-output handset">
-    </path>
-
-    <path name="ultrasound-cover1-input">
-        <!--  mixer controls for TX use-case  -->
-    </path>
-
     <path name="ultrasound-rampdown">
         <!--ctl name="Mi_Ultrasound RampDown" value="On"/-->
     </path>
