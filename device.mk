@@ -35,6 +35,10 @@ PRODUCT_PACKAGES += \
     libmegface \
     libpiex_shim
 
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    DSPVolumeSynchronizer
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.xiaomi \
