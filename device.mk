@@ -100,9 +100,9 @@ PRODUCT_PACKAGES += \
     firmware_qca6390_wlan_mac.bin_symlink
 endif
 
-# Xiaomi Bluetooth
+# XiaomiTWS
 PRODUCT_PACKAGES += \
-    XiaomiBluetooth
+    XiaomiTWS
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/elish/elish-vendor.mk)
