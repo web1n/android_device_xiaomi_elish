@@ -4,3 +4,6 @@ on early-init
 on boot
     # Load WLAN driver
     exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ qca_cld3_wlan qca_cld3_qca6390 qca_cld3_qca6490
+
+    # Torch
+    chown cameraserver cameraserver /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:torch_0/max_brightness
