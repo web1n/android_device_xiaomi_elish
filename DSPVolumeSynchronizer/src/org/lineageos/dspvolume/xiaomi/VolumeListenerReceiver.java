@@ -22,7 +22,7 @@ public class VolumeListenerReceiver extends BroadcastReceiver {
                             "android.media.EXTRA_VOLUME_STREAM_VALUE",
                             0
                           );
-            audioManager.setParameters("volume_change=" + current + ";flags=8");
+            audioManager.setParameters("volume_change=" + current + ";flags=6");
         }
     }
 }

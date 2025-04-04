@@ -23,7 +23,7 @@ public class VolumeListenerService extends Service {
 
         AudioManager audioManager = getSystemService(AudioManager.class);
         int current = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        audioManager.setParameters("volume_change=" + current + ";flags=8");
+        audioManager.setParameters("volume_change=" + current + ";flags=6");
 
         return super.onStartCommand(intent, flags, startId);
     }
