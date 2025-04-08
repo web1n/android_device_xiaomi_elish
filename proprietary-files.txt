@@ -411,6 +411,9 @@ vendor/etc/charger_fstab.qti
 vendor/bin/batterysecret
 vendor/etc/init/init.batterysecret.rc
 
+# Display
+product/etc/display_settings.xml
+
 # Fingerprint
 vendor/etc/init/init.fpc1540_ko.rc
 vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so;FIX_SONAME
