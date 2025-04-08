@@ -389,4 +389,11 @@
          calling Activity#setRequestedOrientation. See
          LetterboxUiController#shouldIgnoreRequestedOrientation for details. -->
     <bool name="config_letterboxIsPolicyForIgnoringRequestedOrientationEnabled">true</bool>
+
+    <!-- Whether per-app user aspect ratio override settings is enabled -->
+    <bool name="config_appCompatUserAppAspectRatioSettingsIsEnabled">true</bool>
+
+    <!-- Whether per-app fullscreen override option is allowed in user aspect ratio settings -->
+    <bool name="config_appCompatUserAppAspectRatioFullscreenIsEnabled">true</bool>
+
 </resources>
