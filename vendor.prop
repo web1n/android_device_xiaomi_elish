@@ -1,7 +1,4 @@
 # Audio
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
 persist.vendor.audio.delta.refresh=true
 persist.vendor.audio.misound.disable=true
 ro.audio.monitorRotation=true
@@ -50,7 +47,6 @@ ro.vendor.audio.videobox.switch=true
 ro.vendor.audio.voice.change.version=2
 ro.vendor.audio.zoom.support=false
 ro.vendor.audio.zoom.type=1
-tunnel.audio.encode=true
 vendor.audio.adm.buffering.ms=6
 vendor.audio.camera.unsupport_low_latency=true
 vendor.audio.feature.compr_voip.enable=false
