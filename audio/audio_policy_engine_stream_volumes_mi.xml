@@ -39,12 +39,6 @@ volume index from 0 to 100.
             <point>66,-800</point>
             <point>100,0</point>
         </volume>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP">
-              <point>0,-4200</point>
-              <point>33,-2800</point>
-              <point>66,-1400</point>
-              <point>100,0</point>
-        </volume>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE">
             <point>0,-2400</point>
             <point>33,-1600</point>
@@ -66,12 +60,6 @@ volume index from 0 to 100.
              <point>100,-1800</point>
         </volume>
         <volume deviceCategory="DEVICE_CATEGORY_SPEAKER" ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP">
-             <point>1,-3000</point>
-             <point>33,-2600</point>
-             <point>66,-2200</point>
-             <point>100,-1800</point>
-        </volume>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_DEVICE_CATEGORY_EXT_MEDIA_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID" ref="DEFAULT_HEARING_AID_VOLUME_CURVE"/>
@@ -88,7 +76,6 @@ volume index from 0 to 100.
             <point>66,-1020</point>
             <point>100,0</point>
         </volume>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP" ref="DEFAULT_DEVICE_CATEGORY_HEADSET_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_DEVICE_CATEGORY_EARPIECE_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_DEVICE_CATEGORY_EXT_MEDIA_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID" ref="DEFAULT_HEARING_AID_VOLUME_CURVE"/>
@@ -115,12 +102,6 @@ volume index from 0 to 100.
            <point>53,-1600</point>
            <point>60,-1300</point>
            <point>100,0</point>
-        </volume>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP">
-           <point>1,-5200</point>
-           <point>33,-3600</point>
-           <point>66,-1900</point>
-           <point>100,-300</point>
         </volume>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_MEDIA_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_MEDIA_VOLUME_CURVE"/>
@@ -149,12 +130,6 @@ volume index from 0 to 100.
            <point>60,-1300</point>
            <point>100,0</point>
         </volume>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP">
-           <point>1,-6800</point>
-           <point>33,-4800</point>
-           <point>73,-1700</point>
-           <point>100,-300</point>
-        </volume>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_MEDIA_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_MEDIA_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID"  ref="DEFAULT_HEARING_AID_VOLUME_CURVE"/>
@@ -171,7 +146,6 @@ volume index from 0 to 100.
             <point>66,-1020</point>
             <point>100,0</point>
         </volume>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP" ref="DEFAULT_NON_MUTABLE_HEADSET_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_NON_MUTABLE_EARPIECE_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_NON_MUTABLE_EXT_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID" ref="DEFAULT_NON_MUTABLE_HEARING_AID_VOLUME_CURVE"/>
@@ -188,7 +162,6 @@ volume index from 0 to 100.
             <point>66,-1020</point>
             <point>100,0</point>
         </volume>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP" ref="DEFAULT_DEVICE_CATEGORY_HEADSET_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_DEVICE_CATEGORY_EARPIECE_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_DEVICE_CATEGORY_EXT_MEDIA_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID" ref="DEFAULT_DEVICE_CATEGORY_HEADSET_VOLUME_CURVE"/>
@@ -208,12 +181,6 @@ volume index from 0 to 100.
             <point>0,-2400</point>
             <point>33,-1600</point>
             <point>66,-800</point>
-            <point>100,0</point>
-        </volume>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP">
-            <point>0,-4200</point>
-            <point>33,-2800</point>
-            <point>66,-1400</point>
             <point>100,0</point>
         </volume>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE">
@@ -237,12 +204,6 @@ volume index from 0 to 100.
             <point>100,-1800</point>
         </volume>
         <volume deviceCategory="DEVICE_CATEGORY_SPEAKER" ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP">
-            <point>1,-3000</point>
-            <point>33,-2600</point>
-            <point>66,-2200</point>
-            <point>100,-1800</point>
-        </volume>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_DEVICE_CATEGORY_EXT_MEDIA_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID" ref="DEFAULT_HEARING_AID_VOLUME_CURVE"/>
@@ -259,12 +220,6 @@ volume index from 0 to 100.
             <point>100,-1800</point>
         </volume>
         <volume deviceCategory="DEVICE_CATEGORY_SPEAKER" ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP">
-            <point>1,-3000</point>
-            <point>33,-2600</point>
-            <point>66,-2200</point>
-            <point>100,-1800</point>
-        </volume>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_DEVICE_CATEGORY_EXT_MEDIA_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID" ref="DEFAULT_HEARING_AID_VOLUME_CURVE"/>
@@ -276,7 +231,6 @@ volume index from 0 to 100.
         <indexMax>15</indexMax>
         <volume deviceCategory="DEVICE_CATEGORY_HEADSET" ref="SILENT_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_SPEAKER" ref="FULL_SCALE_VOLUME_CURVE"/>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP" ref="SILENT_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="SILENT_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="SILENT_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID" ref="SILENT_VOLUME_CURVE"/>
@@ -288,7 +242,6 @@ volume index from 0 to 100.
         <indexMax>15</indexMax>
         <volume deviceCategory="DEVICE_CATEGORY_HEADSET" ref="DEFAULT_NON_MUTABLE_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_SPEAKER" ref="DEFAULT_NON_MUTABLE_SPEAKER_VOLUME_CURVE"/>
-        <volume deviceCategory="DEVICE_CATEGORY_A2DP" ref="DEFAULT_NON_MUTABLE_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EARPIECE" ref="DEFAULT_NON_MUTABLE_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_EXT_MEDIA" ref="DEFAULT_NON_MUTABLE_VOLUME_CURVE"/>
         <volume deviceCategory="DEVICE_CATEGORY_HEARING_AID" ref="DEFAULT_NON_MUTABLE_HEARING_AID_VOLUME_CURVE"/>

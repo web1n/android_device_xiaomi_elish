@@ -29,7 +29,6 @@
             <Attributes> <Usage value="AUDIO_USAGE_VOICE_COMMUNICATION"/> </Attributes>
         </AttributesGroup>
         <AttributesGroup streamType="AUDIO_STREAM_BLUETOOTH_SCO" volumeGroup="bluetooth_sco">
-            <Attributes> <Usage value="AUDIO_USAGE_BLUETOOTH_SCO"/> </Attributes>
             <Attributes> <Flags value="AUDIO_FLAG_SCO"/> </Attributes>
         </AttributesGroup>
     </ProductStrategy>
@@ -45,7 +44,6 @@
 
     <ProductStrategy name="STRATEGY_ENFORCED_AUDIBLE">
         <AttributesGroup streamType="AUDIO_STREAM_ENFORCED_AUDIBLE" volumeGroup="enforced_audible">
-            <Attributes> <Usage value="AUDIO_USAGE_ENFORCED_AUDIBLE"/> </Attributes>
             <Attributes> <Flags value="AUDIO_FLAG_AUDIBILITY_ENFORCED"/> </Attributes>
         </AttributesGroup>
     </ProductStrategy>
@@ -95,7 +93,6 @@
          (TTS) of the device -->
     <ProductStrategy name="STRATEGY_TRANSMITTED_THROUGH_SPEAKER">
         <AttributesGroup streamType="AUDIO_STREAM_TTS" volumeGroup="tts">
-            <Attributes> <Usage value="AUDIO_USAGE_TTS"/> </Attributes>
             <Attributes> <Flags value="AUDIO_FLAG_BEACON"/> </Attributes>
         </AttributesGroup>
     </ProductStrategy>
