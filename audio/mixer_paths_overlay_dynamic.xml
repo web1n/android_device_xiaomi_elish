@@ -25,14 +25,10 @@
 <!-- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN -->
 <!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                          -->
 <mixer>
-    <ctl name="COMP1 Switch" value="0" />
-    <ctl name="COMP2 Switch" value="0" />
     <ctl name="HPHL Volume" value="12" />
     <ctl name="HPHR Volume" value="12" />
 
     <path name="headphones">
-        <ctl name="COMP1 Switch" value="0" />
-        <ctl name="COMP2 Switch" value="0" />
         <ctl name="HPHL Volume" value="20" />
         <ctl name="HPHR Volume" value="20" />
         <ctl name="RX_RX0 Digital Volume" value="72" />
@@ -41,8 +37,6 @@
 
     <path name="voice-headphones">
         <path name="headphones" />
-        <ctl name="COMP1 Switch" value="0" />
-        <ctl name="COMP2 Switch" value="0" />
         <ctl name="HPHL Volume" value="16" />
         <ctl name="HPHR Volume" value="16" />
     </path>

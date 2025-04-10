@@ -46,16 +46,9 @@
     <ctl name="DSP1 Firmware" value="Protection" />
     <ctl name="DSP1 Preload Switch" value="1" />
     <ctl name="DRE DRE Switch" value="1" />
-    <ctl name="PCM Source" value="None" />
     <ctl name="PCM Soft Ramp" value="4ms" />
     <ctl name="AMP PCM Gain" value="18" />
     <ctl name="DSP Block Bypass" value="Off" />
-    <ctl name="ASP TX1 Source" value="Zero" />
-    <ctl name="ASP TX2 Source" value="Zero" />
-    <ctl name="DSP RX1 Source" value="Zero" />
-    <ctl name="DSP RX2 Source" value="Zero" />
-    <ctl name="ASPTX Ref" value="None" />
-    <ctl name="ASPRX1 Slot Position" value="1" />
     <ctl name="ASPRX2 Slot Position" value="4" />
     <ctl name="Fast Use Case Delta File" value="spk1_playback_delta.txt"/>
     <ctl name="Fast Use Case Switch Enable" value="1"/>
@@ -65,21 +58,10 @@
     <ctl name="RCV DSP1 Firmware" value="Protection" />
     <ctl name="RCV DSP1 Preload Switch" value="1" />
     <ctl name="RCV DRE DRE Switch" value="1" />
-    <ctl name="RCV PCM Source" value="None" />
     <ctl name="RCV PCM Soft Ramp" value="4ms" />
-    <ctl name="RCV AMP PCM Gain" value="18" />
     <ctl name="RCV DSP Block Bypass" value="Off" />
-    <ctl name="RCV ASP TX1 Source" value="Zero" />
-    <ctl name="RCV ASP TX2 Source" value="Zero" />
-    <ctl name="RCV DSP RX1 Source" value="Zero" />
-    <ctl name="RCV DSP RX2 Source" value="Zero" />
-    <ctl name="RCV ASPTX Ref" value="None" />
-    <ctl name="RCV ASPRX1 Slot Position" value="0" />
-    <ctl name="RCV ASPRX2 Slot Position" value="2" />
-    <ctl name="RCV Fast Use Case Delta File" value="spk2_playback_delta.txt"/>
     <ctl name="RCV Fast Use Case Switch Enable" value="1"/>
-    <ctl name="RCV Boost Class-H Tracking Enable" value="1" />
-    <ctl name="RCV Boost Target Voltage" value="0" /> -->
+    -->
     
     <ctl name="TRH DSP1 Firmware" value="Protection" />
     <ctl name="TRH DSP1 Preload Switch" value="1" />
@@ -299,8 +281,6 @@
     <ctl name="BRH VPBR Config" value="33575688" />
     <ctl name="BRH Noise Gate Config" value="16245" />
     <!-- smart PA end -->
-    <ctl name="COMP1 Switch" value="0" />
-    <ctl name="COMP2 Switch" value="0" />
     <ctl name="HPHL Volume" value="20" />
     <ctl name="HPHR Volume" value="20" />
     <!-- Multimode Voice1 -->
@@ -527,7 +507,6 @@
     </path>
 
     <path name="compress-voip-call speaker">
-        <ctl name="VOIP_EXT_EC MUX" value="TERT_TDM_TX_0" />
         <ctl name="TERT_TDM_RX_0_Voice Mixer Voip" value="1" />
         <ctl name="Voip_Tx Mixer TX_CDC_DMA_TX_3_Voip" value="1" />
         <ctl name="TLL Noise Gate Config" value="51" />
@@ -1054,23 +1033,19 @@
     </path>
 
     <path name="ultrasound-proximity">
-        <ctl name="Mi_Ultrasound Enable" value="On" />
-        <!--<ctl name="Mi_Ultrasound Mode" value="725" />
+        <!--
         <ctl name="Mi_Ultrasound Log Level" value="4" />
         <ctl name="Mi_Ultrasound Debug Mode" value="1" />
         <ctl name="Mi_Ultrasound Custom Setting 1" value="1" />-->
     </path>
 
     <path name="ultrasound-proximity-output">
-        <ctl name="Mi_Ultrasound Rx Device" value="0"/>
     </path>
 
     <path name="ultrasound-proximity-output handset">
-        <ctl name="Mi_Ultrasound Rx Device" value="0"/>
     </path>
 
     <path name="ultrasound-proximity-output speaker">
-        <ctl name="Mi_Ultrasound Rx Device" value="1"/>
         <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />
         <ctl name="TERT_TDM_RX_1 Channels" value="One" />
         <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
@@ -1087,26 +1062,15 @@
         <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />
         <ctl name="TERT_TDM_RX_1 Channels" value="One" />
         <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
-        <ctl name="RCV PCM Source" value="DSP" />
-        <ctl name="RCV DSP RX1 Source" value="ASPRX1" />
-        <ctl name="RCV DSP RX2 Source" value="ASPRX2" />
-        <ctl name="RCV ASP TX1 Source" value="DSPTX1" />
-        <ctl name="RCV ASPRX1 Slot Position" value="0" />
-        <ctl name="RCV ASPRX2 Slot Position" value="2" />
-        <ctl name="RCV ASPTX Ref" value="Ref" />
-        <ctl name="Cirrus SP Usecase Config" value="None" />
     </path>
 
     <path name="ultrasound-rampdown">
-        <!--ctl name="Mi_Ultrasound RampDown" value="On"/-->
     </path>
 
     <path name="ultrasound-screen-on">
-        <ctl name="Mi_Ultrasound Event" value="1"/>
     </path>
 
     <path name="ultrasound-on">
-        <ctl name="Mi_Ultrasound Tx Port" value="On" />
     </path>
 
     <path name="ultrasound-output-stereo">
@@ -1114,11 +1078,9 @@
     </path>
 
     <path name="ultrasound-suspend">
-        <ctl name="Mi_Ultrasound Suspend" value="1"/>
     </path>
 
     <path name="ultrasound-stop-report">
-        <ctl name="Mi_Ultrasound ReportNone" value="1"/>
     </path>
 
     <path name="ultrasound-input">
@@ -1210,29 +1172,12 @@
         <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
         <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
         <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
-        <ctl name="ASP TX1 Source" value="DSPTX1" />
-        <ctl name="ASP TX2 Source" value="DSPTX1" />
-        <ctl name="DSP RX1 Source" value="ASPRX1" />
-        <ctl name="DSP RX2 Source" value="ASPRX1" />
-        <ctl name="ASPRX1 Slot Position" value="1" />
-        <ctl name="RCV PCM Source" value="None" />
-        <ctl name="PCM Source" value="DSP" />
-        <ctl name="ASPTX Ref" value="Ref" />
     </path>
 
     <path name="speaker-mono-2">
         <ctl name="TERT_TDM_RX_0 Channels" value="Two" />
         <ctl name="TERT_TDM_RX_0 Format" value="S24_LE" />
         <ctl name="TERT_TDM_RX_0 SampleRate" value="KHZ_48" />
-        <ctl name="RCV DSP RX1 Source" value="ASPRX1" />
-        <ctl name="RCV DSP RX2 Source" value="ASPRX2" />
-        <ctl name="RCV ASP TX1 Source" value="DSPTX1" />
-        <ctl name="RCV ASP TX2 Source" value="DSPTX1" />
-        <ctl name="RCV ASPRX1 Slot Position" value="0" />
-        <ctl name="RCV ASPRX2 Slot Position" value="2" />
-        <ctl name="PCM Source" value="None" />
-        <ctl name="RCV PCM Source" value="DSP" />
-        <ctl name="RCV ASPTX Ref" value="Ref" />
     </path>
 
     <path name="speaker-protected">
@@ -1309,19 +1254,6 @@
         <ctl name="TERT_TDM_RX_1 SampleRate" value="KHZ_48" />
         <ctl name="TERT_TDM_RX_1 Channels" value="One" />
         <ctl name="TERT_TDM_RX_1 Format" value="S24_LE" />
-        <ctl name="RCV DSP RX1 Source" value="ASPRX1" />
-        <ctl name="RCV DSP RX2 Source" value="ASPRX2" />
-        <ctl name="RCV ASP TX1 Source" value="DSPTX1" />
-        <ctl name="RCV ASPRX1 Slot Position" value="0" />
-        <ctl name="RCV ASPRX2 Slot Position" value="2" />
-        <ctl name="RCV ASPTX Ref" value="Ref" />
-        <ctl name="RCV PCM Source" value="DSP" />
-        <ctl name="RCV AMP PCM Gain" value="3" />
-        <ctl name="Cirrus SP Usecase Config" value="None" />
-        <ctl name="RCV Fast Use Case Delta File" value="rcv_voice_delta.txt"/>
-        <ctl name="RCV Boost Class-H Tracking Enable" value="0" />
-        <ctl name="RCV Boost Target Voltage" value="50" />
-        <ctl name="Mi_Ultrasound Rx Device" value="0"/>
     </path>
 
     <path name="handset-mic">
@@ -1390,8 +1322,6 @@
 
     <path name="voice-headphones">
         <path name="headphones" />
-        <ctl name="COMP1 Switch" value="0" />
-        <ctl name="COMP2 Switch" value="0" />
         <ctl name="HPHL Volume" value="20" />
         <ctl name="HPHR Volume" value="20" />
     </path>
@@ -1414,8 +1344,6 @@
         <ctl name="HPHR Volume" value="20" />
         <ctl name="HPHL_RDAC Switch" value="1" />
         <ctl name="HPHR_RDAC Switch" value="1" />
-        <ctl name="COMP1 Switch" value="0" />
-        <ctl name="COMP2 Switch" value="0" />
     </path>
 
     <path name="hph-lowpower-mode">
