@@ -89,13 +89,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel
 
-# Wlan fix for stock kernel
-ifeq ($(TARGET_USE_PREBUILT_KERNEL),true)
-PRODUCT_PACKAGES += \
-    firmware_qca6390_WCNSS_qcom_cfg.ini_symlink \
-    firmware_qca6390_wlan_mac.bin_symlink
-endif
-
 # XiaomiTWS
 PRODUCT_PACKAGES += \
     XiaomiTWS
