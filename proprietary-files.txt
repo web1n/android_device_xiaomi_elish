@@ -412,7 +412,7 @@ vendor/bin/batterysecret
 vendor/etc/init/init.batterysecret.rc
 
 # Display
-product/etc/display_settings.xml
+product/etc/display_settings.xml:vendor/etc/display_settings.xml
 
 # Fingerprint
 vendor/etc/init/init.fpc1540_ko.rc
