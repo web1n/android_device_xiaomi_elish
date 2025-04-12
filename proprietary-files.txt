@@ -441,7 +441,7 @@ vendor/etc/gnss/partition_table.bin
 vendor/etc/gnss/slave_da_UART.bin
 vendor/etc/init/airoha.hardware.anld.rc
 vendor/etc/init/android.hardware.gnss@2.1-service-airoha.rc
--vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-airoha.xml
+vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-airoha.xml
 
 # IPA firmware
 vendor/etc/init/ipa_fws.rc
