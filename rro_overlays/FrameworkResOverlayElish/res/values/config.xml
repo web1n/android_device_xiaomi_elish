@@ -396,4 +396,10 @@
     <!-- Whether per-app fullscreen override option is allowed in user aspect ratio settings -->
     <bool name="config_appCompatUserAppAspectRatioFullscreenIsEnabled">true</bool>
 
+    <!-- List of string types for the secondary light sensor. The secondary light sensor
+         is typically located on the back or side of the device. -->
+    <string-array name="config_secondaryLightSensorStringTypes">
+         <item>xiaomi.sensor.back_lux</item>
+    </string-array>
+
 </resources>
