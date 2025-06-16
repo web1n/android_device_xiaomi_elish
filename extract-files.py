@@ -19,7 +19,10 @@ from extract_utils.main import (
 blob_fixups: blob_fixups_user_type = {
     'vendor/etc/init/init.batterysecret.rc': blob_fixup()
         .regex_replace('.*seclabel u:r:batterysecret:s0\n', ''),
+    'vendor/lib/libaudioroute_ext.so': blob_fixup()
+        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
     'vendor/lib/hw/audio.primary.elish.so': blob_fixup()
+        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so')
         .binary_regex_replace(
             b'/vendor/lib/liba2dpoffload.so',
             b'liba2dpoffload_elish.so\x00\x00\x00\x00\x00\x00',
