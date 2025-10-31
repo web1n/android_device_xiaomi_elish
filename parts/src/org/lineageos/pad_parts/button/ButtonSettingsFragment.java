@@ -18,12 +18,11 @@ package org.lineageos.pad_parts.button;
 
 import android.os.Bundle;
 
-import androidx.preference.PreferenceFragment;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
 import org.lineageos.pad_parts.R;
 
-public class ButtonSettingsFragment extends PreferenceFragment {
-
+public class ButtonSettingsFragment extends SettingsBasePreferenceFragment {
     private static final String TAG = "ButtonFragment";
     private static final boolean DEBUG = true;
 

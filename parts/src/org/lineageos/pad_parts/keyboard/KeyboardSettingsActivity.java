@@ -29,7 +29,7 @@ public class KeyboardSettingsActivity extends CollapsingToolbarBaseActivity {
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction().replace(
+            getSupportFragmentManager().beginTransaction().replace(
                     com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                     new KeyboardSettingsFragment(), TAG_KEYBOARD).commit();
         }

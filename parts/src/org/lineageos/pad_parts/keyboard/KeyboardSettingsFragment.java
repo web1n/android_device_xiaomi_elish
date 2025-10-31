@@ -20,7 +20,7 @@ import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-import androidx.preference.PreferenceFragment;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
 import com.android.settingslib.widget.MainSwitchPreference;
 
@@ -28,7 +28,7 @@ import org.lineageos.pad_parts.utils.SettingsUtils;
 
 import org.lineageos.pad_parts.R;
 
-public class KeyboardSettingsFragment extends PreferenceFragment implements OnCheckedChangeListener {
+public class KeyboardSettingsFragment extends SettingsBasePreferenceFragment implements OnCheckedChangeListener {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {

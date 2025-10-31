@@ -18,12 +18,11 @@ package org.lineageos.pad_parts.stylus;
 
 import android.os.Bundle;
 
-import androidx.preference.PreferenceFragment;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
 import org.lineageos.pad_parts.R;
 
-public class CompatibleStylusSettingsFragment extends PreferenceFragment {
-
+public class CompatibleStylusSettingsFragment extends SettingsBasePreferenceFragment {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.compatible_stylus_settings);
