@@ -1,4 +1,5 @@
 app_domain(padsettings_app)
+typeattribute padsettings_app coredomain;
 
 # Allow padsettings_app to find *_service
 allow padsettings_app app_api_service:service_manager find;
