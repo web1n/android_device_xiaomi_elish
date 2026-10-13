@@ -80,9 +80,5 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# XiaomiTWS
-PRODUCT_PACKAGES += \
-    XiaomiTWS
-
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/elish/elish-vendor.mk)
